@@ -15,7 +15,7 @@ def compareValues(userInput):
             print(trait)
             print(userInput[trait])
             print(data[str(major)][trait]['Mean'])
-            tempScore += (float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['Variance']+0.001)
+            tempScore += (float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']+0.001)
         resultScores[major] = math.sqrt(tempScore);
     #print(resultScores)
     print()
