@@ -42,6 +42,7 @@ def dictToSortedList(d):
 def getInput():
     unprocessedInput = {}
     unprocessedInput["Like_Parties"] = input("Rate on a scale from 1-5 how much you like parties: ")
+    """
     unprocessedInput["Like_HangingOut"] = input("Rate on a scale from 1-5 how much you like Hanging out with friends: ")
     unprocessedInput["Like_Hiking"] = input("Rate on a scale from 1-5 how much you like Hiking: ")
     unprocessedInput["Like_BoardGames"] = input("Rate on a scale from 1-5 how much you like Board Games: ")
@@ -69,7 +70,7 @@ def getInput():
         "Rank on a scale from 1-5 how much you would like to watch the talk WhatGardeningToldMeAboutLife: ")
     unprocessedInput["WhatIfGentrificationWasAboutHealing"] = input(
         "Rank on a scale from 1-5 how much you would like to watch the talk WhatIfGentrificationWasAboutHealing: ")
-
+    """
     return unprocessedInput
 
 
