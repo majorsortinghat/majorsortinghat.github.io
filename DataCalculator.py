@@ -22,9 +22,11 @@ for person in data:
         majors[str(person['Major_1'])] = {}
         majors[str(person['Major_1'])]['NumberOfPeople'] = 1
 
-        if str(person['Major_2']) not in majors:
+        if str(person['Major_2']) not in majors and str(person['Major_2']) != "":
             majors[str(person['Major_2'])] = {}
             majors[str(person['Major_2'])]['NumberOfPeople'] = 1
+        elif str(person['Major_2']) != "":
+            majors[str(person['Major_2'])]['NumberOfPeople'] += 1
 
         for trait in person:
             if trait != 'NumberOfPeople' and trait != "Clubs" and trait != "Major_2" and trait != "Major_1" and trait != 'Graduation' and trait != 'Satisfaction': #Ignore what's not useful/easy info
@@ -44,7 +46,7 @@ for person in data:
         weight = (float(person['Satisfaction']) - 4) / 2;
         majors[str(person['Major_1'])]['NumberOfPeople'] += 1
 
-        if str(person['Major_2']) not in majors:
+        if str(person['Major_2']) not in majors and str(person['Major_2']) != "":
             majors[str(person['Major_2'])] = {}
             majors[str(person['Major_2'])]['NumberOfPeople'] = 1
             for trait in person:
@@ -53,6 +55,9 @@ for person in data:
                         majors[str(person['Major_2'])][trait] = 0
                     else:
                         majors[str(person['Major_2'])][trait] = (float(person[trait]) + correctionVar) * weight
+
+        elif str(person['Major_2']) != "":
+            majors[str(person['Major_2'])]['NumberOfPeople'] += 1
 
         for trait in majors[str(person['Major_1'])].keys():
             if trait != 'NumberOfPeople' and trait != "Clubs" and trait != "Major_2" and trait != "Major_1" and trait != 'Graduation' and trait != 'Satisfaction': #Ignore what's not useful/easy info
