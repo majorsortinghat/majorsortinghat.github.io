@@ -10,15 +10,36 @@ counter = 0
 majors ={}
 correctionVar = -3 #Used to normalize from a scale of 1:5 to -2:2. Why -2:2 and not -1:1? Because
 
+
+
+
+def checkTrait(trait):
+    if trait != 'NumberOfPeople' and trait != "Clubs" and trait != "Major_2" and trait != "Major_1" and trait != 'Graduation' and trait != 'Satisfaction':  # Ignore what's not useful/easy
+        return True
+    else:
+        return False
+
+
+def weightCalc(person):
+    return (float(
+        person['Satisfaction']) - 4) / 2;  # Weight each answer in accordance to how much they like the major.
+
 for person in data:
 
     if str(person['Major_1']) not in majors and person['Major_1'] != 'Undeclared': #If the major isn't already in the dict.
-        weight = (float(person['Satisfaction']) - 4) / 2; #Weight each answer in accordance to how much they like the major.
+
+
+        #weight = (float(person['Satisfaction']) - 4) / 2; #Weight each answer in accordance to how much they like the major.
+        weight = weightCalc(person)
+        #print (weight)
+
         print()
         print(person['Major_1'])
         print(person['Major_2'])
         print(person['Satisfaction'])
         print(person['Like_Parties'])
+
+
         majors[str(person['Major_1'])] = {}
         majors[str(person['Major_1'])]['NumberOfPeople'] = 1
 
@@ -29,7 +50,7 @@ for person in data:
             majors[str(person['Major_2'])]['NumberOfPeople'] += 1
 
         for trait in person:
-            if trait != 'NumberOfPeople' and trait != "Clubs" and trait != "Major_2" and trait != "Major_1" and trait != 'Graduation' and trait != 'Satisfaction': #Ignore what's not useful/easy info
+            if checkTrait(trait):
                 if person[trait] == "" or person[trait] == "N/A":
                     majors[str(person['Major_1'])][trait] = 0
                     if str(person['Major_2']) != "":
@@ -39,18 +60,19 @@ for person in data:
                     if str(person['Major_2']) != "":
                         majors[str(person['Major_2'])][trait] = (float(person[trait]) + correctionVar) * weight
 
-        print(majors[str(person['Major_1'])])
+        #print(majors[str(person['Major_1'])])
 
     elif person['Major_1'] != 'Undeclared': #The major is in the dict, so this is where the data is updated
 
-        weight = (float(person['Satisfaction']) - 4) / 2;
+        #weight = (float(person['Satisfaction']) - 4) / 2;
+        weight = weightCalc(person)
         majors[str(person['Major_1'])]['NumberOfPeople'] += 1
 
         if str(person['Major_2']) not in majors and str(person['Major_2']) != "":
             majors[str(person['Major_2'])] = {}
             majors[str(person['Major_2'])]['NumberOfPeople'] = 1
             for trait in person:
-                if trait != 'NumberOfPeople' and trait != "Clubs" and trait != "Major_2" and trait != "Major_1" and trait != 'Graduation' and trait != 'Satisfaction':  # Ignore what's not useful/easy info
+                if checkTrait(trait):
                     if person[trait] == "" or person[trait] == "N/A":
                         majors[str(person['Major_2'])][trait] = 0
                     else:
@@ -60,7 +82,7 @@ for person in data:
             majors[str(person['Major_2'])]['NumberOfPeople'] += 1
 
         for trait in majors[str(person['Major_1'])].keys():
-            if trait != 'NumberOfPeople' and trait != "Clubs" and trait != "Major_2" and trait != "Major_1" and trait != 'Graduation' and trait != 'Satisfaction': #Ignore what's not useful/easy info
+            if checkTrait(trait):
                 if person[trait] != "" and person[trait] != "N/A":
                     majors[str(person['Major_1'])][trait] += (person[trait]+correctionVar)*weight
                     if str(person['Major_2']) != "":
@@ -71,8 +93,10 @@ for person in data:
 
 
 for major in majors.keys():
+
     print()
     print('Major: ' + major)
+    
     for trait in majors[major].keys():
         if trait != 'NumberOfPeople':
             tempVariance = 0
@@ -90,7 +114,7 @@ for major in majors.keys():
 
         print(trait + ': ' + str(majors[major][trait]))
 
-    print('The scales go from -3 to 3, with -3 being "hate it" and 3 being "love it".')
+    #print('The scales go from -3 to 3, with -3 being "hate it" and 3 being "love it".')
 
 with open('outdata.json', 'w') as outfile:
     json.dump(majors, outfile, indent=4, sort_keys=True)
