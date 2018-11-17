@@ -12,12 +12,14 @@ def compareValues(userInput):
         tempScore = 0;
         print(major)
         for trait in userInput:
-            print(trait)
-            print(userInput[trait])
-            print(str(major))
-            print(data[str(major)])
-            print(data[str(major)][trait]['Mean'])
-            tempScore += (float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']+0.001)
+            if trait in data[str(major)]:
+                print(trait)
+                print(userInput[trait])
+                print(str(major))
+                print(data[str(major)])
+                print(data[str(major)][trait]['Mean'])
+
+                tempScore += (float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']+0.001)
         resultScores[major] = math.sqrt(tempScore);
     #print(resultScores)
     print()
@@ -279,7 +281,7 @@ def processInput(unprocessedInput):
         processedOutput[i] = float(unprocessedInput[i])-3
     return processedOutput
 
-compareValues(processInput(getInput()))
+compareValues(processInput(fake6_2Input()))
 
 
 userInput = {}

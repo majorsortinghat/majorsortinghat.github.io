@@ -28,6 +28,37 @@ def weightCalc(person):
 def addTraitToMajor():
     return
 
+def addCountToMajor(person, major):
+    if (person[major] == ""):
+        return
+    if(str(person[major]) not in majors):
+        majors[str(person[major])] = {}
+        majors[str(person[major])]['NumberOfPeople'] = 1
+    else:
+        majors[str(person[major])]['NumberOfPeople'] += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def iterateThroughData():
+    for person in data:
+        continue
+
+
+def checkifEmptyString(person):
+    return person[trait] == "" or person[trait] == "N/A"
+
 for person in data:
 
     if str(person['Major_1']) not in majors and person['Major_1'] != 'Undeclared': #If the major isn't already in the dict.
@@ -47,15 +78,17 @@ for person in data:
         majors[str(person['Major_1'])] = {}
         majors[str(person['Major_1'])]['NumberOfPeople'] = 1
 
-        if str(person['Major_2']) not in majors and str(person['Major_2']) != "":
+        addCountToMajor(person, 'Major_2')
+
+        """if str(person['Major_2']) not in majors and str(person['Major_2']) != "":
             majors[str(person['Major_2'])] = {}
             majors[str(person['Major_2'])]['NumberOfPeople'] = 1
         elif str(person['Major_2']) != "":
-            majors[str(person['Major_2'])]['NumberOfPeople'] += 1
+            majors[str(person['Major_2'])]['NumberOfPeople'] += 1"""
 
         for trait in person:
             if checkTrait(trait):
-                if person[trait] == "" or person[trait] == "N/A":
+                if checkifEmptyString(person):
                     majors[str(person['Major_1'])][trait] = 0
                     if str(person['Major_2']) != "":
                         majors[str(person['Major_2'])][trait] = 0
@@ -77,7 +110,7 @@ for person in data:
             majors[str(person['Major_2'])]['NumberOfPeople'] = 1
             for trait in person:
                 if checkTrait(trait):
-                    if person[trait] == "" or person[trait] == "N/A":
+                    if checkifEmptyString(person):
                         majors[str(person['Major_2'])][trait] = 0
                     else:
                         majors[str(person['Major_2'])][trait] = (float(person[trait]) + correctionVar) * weight
@@ -87,7 +120,7 @@ for person in data:
 
         for trait in majors[str(person['Major_1'])].keys():
             if checkTrait(trait):
-                if person[trait] != "" and person[trait] != "N/A":
+                if not checkifEmptyString(person):
                     majors[str(person['Major_1'])][trait] += (person[trait]+correctionVar)*weight
                     if str(person['Major_2']) != "":
                         majors[str(person['Major_2'])][trait] += (person[trait] + correctionVar) * weight
