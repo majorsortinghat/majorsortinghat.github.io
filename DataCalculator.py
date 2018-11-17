@@ -2,7 +2,7 @@ import json
 import math
 
 
-with open("Major_Mapping_Survey_1.json", "r") as read_file:
+with open("Major_Mapping_Survey_2.json", "r") as read_file:
     data = json.load(read_file)
 
 counter = 0
@@ -23,6 +23,10 @@ def checkTrait(trait):
 def weightCalc(person):
     return (float(
         person['Satisfaction']) - 4) / 2;  # Weight each answer in accordance to how much they like the major.
+
+
+def addTraitToMajor():
+    return
 
 for person in data:
 
@@ -96,7 +100,7 @@ for major in majors.keys():
 
     print()
     print('Major: ' + major)
-    
+
     for trait in majors[major].keys():
         if trait != 'NumberOfPeople':
             tempVariance = 0

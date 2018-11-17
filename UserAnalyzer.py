@@ -43,6 +43,7 @@ def dictToSortedList(d):
 
 def getInput():
     unprocessedInput = {}
+
     unprocessedInput["Like_Parties"] = input("Rate on a scale from 1-5 how much you like parties: ")
     unprocessedInput["Like_HangingOut"] = input("Rate on a scale from 1-5 how much you like Hanging out with friends: ")
     unprocessedInput["Like_Hiking"] = input("Rate on a scale from 1-5 how much you like Hiking: ")
@@ -53,7 +54,7 @@ def getInput():
     unprocessedInput["Like_IndividualSports"] = input("Rate on a scale from 1-5 how much you like individual sports: ")
     unprocessedInput["Like_TeamSports"] = input("Rate on a scale from 1-5 how much you like team sports: ")
     unprocessedInput["Like_ReadingBook"] = input("Rate on a scale from 1-5 how much you like Reading a book: ")
-    
+    """
     unprocessedInput["PowerOfVulnerability"] = input("Rank on a scale from 1-5 how much you would like to watch the talk PowerOfVulnerability: ")
     unprocessedInput["FakeVideosOfRealPeople"] = input(
         "Rank on a scale from 1-5 how much you would like to watch the talk FakeVideosOfRealPeople: ")
@@ -71,7 +72,7 @@ def getInput():
         "Rank on a scale from 1-5 how much you would like to watch the talk WhatGardeningToldMeAboutLife: ")
     unprocessedInput["WhatIfGentrificationWasAboutHealing"] = input(
         "Rank on a scale from 1-5 how much you would like to watch the talk WhatIfGentrificationWasAboutHealing: ")
-
+    """
     return unprocessedInput
 
 
@@ -278,7 +279,7 @@ def processInput(unprocessedInput):
         processedOutput[i] = float(unprocessedInput[i])-3
     return processedOutput
 
-compareValues(processInput(fake2AInput()))
+compareValues(processInput(getInput()))
 
 
 userInput = {}
