@@ -47,7 +47,7 @@ def getInput():
     unprocessedInput = {}
 
     unprocessedInput["Like_Parties"] = input("Rate on a scale from 1-5 how much you like parties: ")
-    """
+    
     unprocessedInput["Like_HangingOut"] = input("Rate on a scale from 1-5 how much you like Hanging out with friends: ")
     unprocessedInput["Like_Hiking"] = input("Rate on a scale from 1-5 how much you like Hiking: ")
     unprocessedInput["Like_BoardGames"] = input("Rate on a scale from 1-5 how much you like Board Games: ")
