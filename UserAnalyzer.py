@@ -19,7 +19,8 @@ def compareValues(userInput):
                 print(data[str(major)])
                 print(data[str(major)][trait]['Mean'])
 
-                tempScore += (float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']+0.001)
+                tempScore += ((float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']))**2
+        print(tempScore)
         resultScores[major] = math.sqrt(tempScore);
     #print(resultScores)
     print()
@@ -47,7 +48,7 @@ def getInput():
     unprocessedInput = {}
 
     unprocessedInput["Like_Parties"] = input("Rate on a scale from 1-5 how much you like parties: ")
-    
+
     unprocessedInput["Like_HangingOut"] = input("Rate on a scale from 1-5 how much you like Hanging out with friends: ")
     unprocessedInput["Like_Hiking"] = input("Rate on a scale from 1-5 how much you like Hiking: ")
     unprocessedInput["Like_BoardGames"] = input("Rate on a scale from 1-5 how much you like Board Games: ")
@@ -111,6 +112,7 @@ def fake6_2Input():
     "HighSchool_Art": 5,
     "HighSchool_Leader": 3,
     "HighSchool_Engineering": 3,
+    """
     "Now_Math": 1,
     "Now_Physics": 1,
     "Now_Chemistry": 4,
@@ -121,6 +123,7 @@ def fake6_2Input():
     "Now_Art": 5,
     "Now_Leader": 3,
     "Now_Engineering": 3,
+    """
     "Rank_Understand": 4,
     "Rank_FullOfIdeas": 5,
     "Rank_Imagination": 5,
@@ -177,6 +180,7 @@ def fake12Input():
         "HighSchool_History": 2,
         "HighSchool_Music": 5,
         "HighSchool_Art": 4,
+        """
         "Now_Math": 4,
         "Now_Physics": 4,
         "Now_Chemistry": 4,
@@ -185,6 +189,7 @@ def fake12Input():
         "Now_History": 3,
         "Now_Music": 5,
         "Now_Art": 4,
+        """
         "Rank_Understand": 4,
         "Rank_FullOfIdeas": 3,
         "Rank_Imagination": 4,
@@ -241,6 +246,7 @@ def fake2AInput():
         "HighSchool_History": 3,
         "HighSchool_Music": 5,
         "HighSchool_Art": 5,
+        """
         "Now_Math": 4,
         "Now_Physics": 4,
         "Now_Chemistry": 1,
@@ -250,6 +256,7 @@ def fake2AInput():
         "Now_Music": 5,
         "Now_Art": 5,
         "Now_Engineering": 4,
+        """
         "Rank_Understand": 3,
         "Rank_FullOfIdeas": 4,
         "Rank_Imagination": 4,
@@ -282,7 +289,7 @@ def processInput(unprocessedInput):
         processedOutput[i] = float(unprocessedInput[i])-3
     return processedOutput
 
-compareValues(processInput(fake6_2Input()))
+compareValues(processInput(fake2AInput()))
 
 
 userInput = {}

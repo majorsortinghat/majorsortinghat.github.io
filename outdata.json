@@ -6,7 +6,7 @@
         },
         "HighSchool_Art": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Bio": {
             "Mean": 1.5,
@@ -14,7 +14,7 @@
         },
         "HighSchool_Chemistry": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Engineering": {
             "Mean": 2.0,
@@ -26,7 +26,7 @@
         },
         "HighSchool_History": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Leader": {
             "Mean": 0.0,
@@ -34,7 +34,7 @@
         },
         "HighSchool_Math": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Music": {
             "Mean": -0.5,
@@ -46,7 +46,7 @@
         },
         "HowGreatLeadersInspireGreatAction": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "LetMyDatasetChangeYourMindset": {
             "Mean": 0.5,
@@ -78,15 +78,15 @@
         },
         "Like_TeamSports": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_VideoGames": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_WatchingMovies": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_WatchingTV": {
             "Mean": 1.5,
@@ -102,7 +102,7 @@
         },
         "Now_Bio": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Chemistry": {
             "Mean": 0.5,
@@ -126,7 +126,7 @@
         },
         "Now_Math": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Music": {
             "Mean": -1.0,
@@ -158,11 +158,11 @@
         },
         "Rank_DifficultyUnderstandingAbstract": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_DislikeGettingAttention": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_FeelLittleConcernForOthers": {
             "Mean": -1.5,
@@ -198,7 +198,7 @@
         },
         "Rank_NotInterestedInOthersProblems": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_QuietAroundStrangers": {
             "Mean": 1.5,
@@ -210,7 +210,7 @@
         },
         "Rank_SeldomFeelBlue": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_SoftHeart": {
             "Mean": 0.5,
@@ -222,7 +222,7 @@
         },
         "Rank_TakeTimeOutForOthers": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_TalkToDifferentPeopleAtParties": {
             "Mean": -0.5,
@@ -230,15 +230,15 @@
         },
         "Rank_ThinkALotBeforeSpeaking": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_Understand": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_WorryAboutThings": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "WhatGardeningToldMeAboutLife": {
             "Mean": 0.5,
@@ -824,11 +824,11 @@
         },
         "Like_WatchingMovies": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_WatchingTV": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "MagicIngredientBringsLifeToPixar": {
             "Mean": -0.6666666666666666,
@@ -868,7 +868,7 @@
         },
         "Now_Music": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Physics": {
             "Mean": 1.1666666666666667,
@@ -876,7 +876,7 @@
         },
         "PharmacyOfTheFuture": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "PowerOfIntroverts": {
             "Mean": 0.0,
@@ -984,7 +984,7 @@
         },
         "WhatIfGentrificationWasAboutHealing": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         }
     },
     "10-ENG": {
@@ -1272,7 +1272,7 @@
         },
         "HighSchool_Music": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Physics": {
             "Mean": 0.0,
@@ -1288,7 +1288,7 @@
         },
         "Like_BoardGames": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_HangingOut": {
             "Mean": 1.3333333333333333,
@@ -1308,7 +1308,7 @@
         },
         "Like_ReadingBook": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_TeamSports": {
             "Mean": 0.6666666666666666,
@@ -1372,7 +1372,7 @@
         },
         "PowerOfIntroverts": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "PowerOfVulnerability": {
             "Mean": 1.6666666666666667,
@@ -1392,7 +1392,7 @@
         },
         "Rank_DislikeGettingAttention": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_FeelLittleConcernForOthers": {
             "Mean": -0.6666666666666666,
@@ -1432,7 +1432,7 @@
         },
         "Rank_QuietAroundStrangers": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_RelaxedMostOfTheTime": {
             "Mean": 0.0,
@@ -1448,7 +1448,7 @@
         },
         "Rank_StartConversations": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_TakeTimeOutForOthers": {
             "Mean": 1.3333333333333333,
@@ -1476,7 +1476,7 @@
         },
         "WhatIfGentrificationWasAboutHealing": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         }
     },
     "12": {
@@ -1732,7 +1732,7 @@
     "14": {
         "FakeVideosOfRealPeople": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Art": {
             "Mean": 0.0,
@@ -1740,7 +1740,7 @@
         },
         "HighSchool_Bio": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Chemistry": {
             "Mean": -0.5,
@@ -1812,7 +1812,7 @@
         },
         "Like_VideoGames": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_WatchingMovies": {
             "Mean": -0.16666666666666666,
@@ -1892,7 +1892,7 @@
         },
         "Rank_DislikeGettingAttention": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_FeelLittleConcernForOthers": {
             "Mean": -1.1666666666666667,
@@ -1900,7 +1900,7 @@
         },
         "Rank_ForgetToPutThingsBack": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_FullOfIdeas": {
             "Mean": 0.3333333333333333,
@@ -1912,7 +1912,7 @@
         },
         "Rank_GetIrritatedEasily": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_HaveFrequentMoodSwings": {
             "Mean": -0.8333333333333334,
@@ -1948,7 +1948,7 @@
         },
         "Rank_StartConversations": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_TakeTimeOutForOthers": {
             "Mean": 1.3333333333333333,
@@ -1982,7 +1982,7 @@
     "15-1": {
         "FakeVideosOfRealPeople": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Bio": {
             "Mean": -1.5,
@@ -2002,7 +2002,7 @@
         },
         "HighSchool_Math": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Music": {
             "Mean": 2.0,
@@ -2022,11 +2022,11 @@
         },
         "Like_BoardGames": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_HangingOut": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_Hiking": {
             "Mean": 0.0,
@@ -2054,7 +2054,7 @@
         },
         "Like_WatchingMovies": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_WatchingTV": {
             "Mean": 1.5,
@@ -2138,7 +2138,7 @@
         },
         "Rank_ForgetToPutThingsBack": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_FullOfIdeas": {
             "Mean": 0.0,
@@ -2170,11 +2170,11 @@
         },
         "Rank_QuietAroundStrangers": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_RelaxedMostOfTheTime": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_SeldomFeelBlue": {
             "Mean": 0.5,
@@ -2186,15 +2186,15 @@
         },
         "Rank_StartConversations": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_TakeTimeOutForOthers": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_TalkToDifferentPeopleAtParties": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_ThinkALotBeforeSpeaking": {
             "Mean": 0.0,
@@ -2206,7 +2206,7 @@
         },
         "Rank_WorryAboutThings": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "WhatGardeningToldMeAboutLife": {
             "Mean": -1.5,
@@ -2214,7 +2214,7 @@
         },
         "WhatIfGentrificationWasAboutHealing": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         }
     },
     "15-2": {
@@ -4994,7 +4994,7 @@
         },
         "LetMyDatasetChangeYourMindset": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_BoardGames": {
             "Mean": 1.25,
@@ -5002,7 +5002,7 @@
         },
         "Like_HangingOut": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_Hiking": {
             "Mean": 0.25,
@@ -5058,7 +5058,7 @@
         },
         "Now_English": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_History": {
             "Mean": 1.0,
@@ -5106,7 +5106,7 @@
         },
         "Rank_FeelLittleConcernForOthers": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_ForgetToPutThingsBack": {
             "Mean": 0.25,
@@ -5138,7 +5138,7 @@
         },
         "Rank_NotInterestedInOthersProblems": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_QuietAroundStrangers": {
             "Mean": -0.25,
@@ -5446,7 +5446,7 @@
         },
         "HighSchool_Art": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Bio": {
             "Mean": 1.5,
@@ -5462,7 +5462,7 @@
         },
         "HighSchool_English": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_History": {
             "Mean": 0.0,
@@ -5474,7 +5474,7 @@
         },
         "HighSchool_Math": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Music": {
             "Mean": -0.5,
@@ -5482,11 +5482,11 @@
         },
         "HighSchool_Physics": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HowGreatLeadersInspireGreatAction": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "LetMyDatasetChangeYourMindset": {
             "Mean": -0.5,
@@ -5494,23 +5494,23 @@
         },
         "Like_BoardGames": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_HangingOut": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_Hiking": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_IndividualSports": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_Parties": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_ReadingBook": {
             "Mean": 0.5,
@@ -5518,27 +5518,27 @@
         },
         "Like_TeamSports": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_VideoGames": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_WatchingMovies": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_WatchingTV": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "MagicIngredientBringsLifeToPixar": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Art": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Bio": {
             "Mean": 0.0,
@@ -5570,7 +5570,7 @@
         },
         "Now_Music": {
             "Mean": -2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Physics": {
             "Mean": 0.0,
@@ -5582,31 +5582,31 @@
         },
         "PowerOfIntroverts": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "PowerOfVulnerability": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_AlwaysPrepared": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_AttentionToDetails": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_DifficultyUnderstandingAbstract": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_DislikeGettingAttention": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_FeelLittleConcernForOthers": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_ForgetToPutThingsBack": {
             "Mean": 1.5,
@@ -5614,7 +5614,7 @@
         },
         "Rank_FullOfIdeas": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_GetChoresDoneRightAway": {
             "Mean": -0.5,
@@ -5642,7 +5642,7 @@
         },
         "Rank_QuietAroundStrangers": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_RelaxedMostOfTheTime": {
             "Mean": 0.0,
@@ -5650,23 +5650,23 @@
         },
         "Rank_SeldomFeelBlue": {
             "Mean": -2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_SoftHeart": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_StartConversations": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_TakeTimeOutForOthers": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_TalkToDifferentPeopleAtParties": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_ThinkALotBeforeSpeaking": {
             "Mean": 0.5,
@@ -5686,7 +5686,7 @@
         },
         "WhatIfGentrificationWasAboutHealing": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         }
     },
     "21-G": {
@@ -6288,7 +6288,7 @@
         },
         "Now_Leader": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Math": {
             "Mean": 0.0,
@@ -6668,11 +6668,11 @@
     "22": {
         "FakeVideosOfRealPeople": {
             "Mean": -2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Art": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Bio": {
             "Mean": 0.5,
@@ -6688,11 +6688,11 @@
         },
         "HighSchool_English": {
             "Mean": 2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_History": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Math": {
             "Mean": 0.5,
@@ -6724,7 +6724,7 @@
         },
         "Like_Hiking": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_IndividualSports": {
             "Mean": -1.5,
@@ -6808,11 +6808,11 @@
         },
         "PowerOfVulnerability": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_AlwaysPrepared": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_AttentionToDetails": {
             "Mean": 0.5,
@@ -6848,7 +6848,7 @@
         },
         "Rank_HaveFrequentMoodSwings": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_Imagination": {
             "Mean": 0.5,
@@ -6856,11 +6856,11 @@
         },
         "Rank_MakePeopleFeelAtEase": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_NotInterestedInOthersProblems": {
             "Mean": -1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_QuietAroundStrangers": {
             "Mean": 0.0,
@@ -6868,7 +6868,7 @@
         },
         "Rank_RelaxedMostOfTheTime": {
             "Mean": -2.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_SeldomFeelBlue": {
             "Mean": -0.5,
@@ -6904,7 +6904,7 @@
         },
         "WhatGardeningToldMeAboutLife": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "WhatIfGentrificationWasAboutHealing": {
             "Mean": 0.5,
@@ -6954,7 +6954,7 @@
         },
         "HighSchool_Physics": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HowGreatLeadersInspireGreatAction": {
             "Mean": -0.75,
@@ -6966,7 +6966,7 @@
         },
         "Like_BoardGames": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_HangingOut": {
             "Mean": 1.5,
@@ -6978,7 +6978,7 @@
         },
         "Like_IndividualSports": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_Parties": {
             "Mean": -0.75,
@@ -6990,11 +6990,11 @@
         },
         "Like_TeamSports": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_VideoGames": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Like_WatchingMovies": {
             "Mean": 0.75,
@@ -7014,7 +7014,7 @@
         },
         "Now_Bio": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Chemistry": {
             "Mean": -0.75,
@@ -7030,7 +7030,7 @@
         },
         "Now_History": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Now_Leader": {
             "Mean": 0.0,
@@ -7102,7 +7102,7 @@
         },
         "Rank_Imagination": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_MakePeopleFeelAtEase": {
             "Mean": 0.75,
@@ -7114,7 +7114,7 @@
         },
         "Rank_QuietAroundStrangers": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "Rank_RelaxedMostOfTheTime": {
             "Mean": -0.75,
@@ -7154,7 +7154,7 @@
         },
         "WhatGardeningToldMeAboutLife": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "WhatIfGentrificationWasAboutHealing": {
             "Mean": 0.75,
@@ -7442,7 +7442,7 @@
         },
         "HighSchool_Leader": {
             "Mean": 0.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_Math": {
             "Mean": 0.9375,
@@ -8366,7 +8366,7 @@
         },
         "HighSchool_Engineering": {
             "Mean": 1.0,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_English": {
             "Mean": -0.3,
@@ -9612,7 +9612,7 @@
         },
         "HighSchool_Engineering": {
             "Mean": -1.5,
-            "SD": 0.0
+            "SD": 0.0001
         },
         "HighSchool_English": {
             "Mean": 0.5,
