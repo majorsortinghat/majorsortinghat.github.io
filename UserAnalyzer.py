@@ -12,10 +12,14 @@ def compareValues(userInput):
         tempScore = 0;
         print(major)
         for trait in userInput:
-            print(trait)
-            print(userInput[trait])
-            print(data[str(major)][trait]['Mean'])
-            tempScore += (float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']+0.001)
+            if trait in data[str(major)]:
+                print(trait)
+                print(userInput[trait])
+                print(str(major))
+                print(data[str(major)])
+                print(data[str(major)][trait]['Mean'])
+
+                tempScore += (float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']+0.001)
         resultScores[major] = math.sqrt(tempScore);
     #print(resultScores)
     print()
@@ -41,6 +45,7 @@ def dictToSortedList(d):
 
 def getInput():
     unprocessedInput = {}
+
     unprocessedInput["Like_Parties"] = input("Rate on a scale from 1-5 how much you like parties: ")
     """
     unprocessedInput["Like_HangingOut"] = input("Rate on a scale from 1-5 how much you like Hanging out with friends: ")
@@ -52,7 +57,7 @@ def getInput():
     unprocessedInput["Like_IndividualSports"] = input("Rate on a scale from 1-5 how much you like individual sports: ")
     unprocessedInput["Like_TeamSports"] = input("Rate on a scale from 1-5 how much you like team sports: ")
     unprocessedInput["Like_ReadingBook"] = input("Rate on a scale from 1-5 how much you like Reading a book: ")
-    
+    """
     unprocessedInput["PowerOfVulnerability"] = input("Rank on a scale from 1-5 how much you would like to watch the talk PowerOfVulnerability: ")
     unprocessedInput["FakeVideosOfRealPeople"] = input(
         "Rank on a scale from 1-5 how much you would like to watch the talk FakeVideosOfRealPeople: ")
@@ -277,7 +282,7 @@ def processInput(unprocessedInput):
         processedOutput[i] = float(unprocessedInput[i])-3
     return processedOutput
 
-compareValues(processInput(fake2AInput()))
+compareValues(processInput(fake6_2Input()))
 
 
 userInput = {}
