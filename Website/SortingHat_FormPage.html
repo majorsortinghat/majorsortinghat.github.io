@@ -6,39 +6,40 @@
 </head>
 
 <body>
-    <div id="FormPage1">
-        <form id="page1" onsubmit="return validate('FormPage1', 'FormPage2');">
+    <form id="page1" action="scoreCalc.php" method="POST">
+
+        <div id="FormPage1">
             <div>
                 <h4>Rate how much you like parties</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeParties">
-                    <input type="radio" value="2" name="likeParties">
-                    <input type="radio" value="3" name="likeParties">
-                    <input type="radio" value="4" name="likeParties">
-                    <input type="radio" value="5" name="likeParties"> love it
+                    <input type="radio" value="1" name="reply[Like_Parties]">
+                    <input type="radio" value="2" name="reply[Like_Parties]">
+                    <input type="radio" value="3" name="reply[Like_Parties]">
+                    <input type="radio" value="4" name="reply[Like_Parties]" checked>
+                    <input type="radio" value="5" name="reply[Like_Parties]"> love it
                 </div>
             </div>
             <div>
                 <h4>Rate how much you like hanging with friends?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeHanging">
-                    <input type="radio" value="2" name="likeHanging">
-                    <input type="radio" value="3" name="likeHanging">
-                    <input type="radio" value="4" name="likeHanging">
-                    <input type="radio" value="5" name="likeHanging"> love it
+                    <input type="radio" value="1" name="reply[Like_HangingOut]" checked>
+                    <input type="radio" value="2" name="reply[Like_HangingOut]">
+                    <input type="radio" value="3" name="reply[Like_HangingOut]">
+                    <input type="radio" value="4" name="reply[Like_HangingOut]">
+                    <input type="radio" value="5" name="reply[Like_HangingOut]"> love it
                 </div>
             </div>
             <div>
                 <h4>Rate how much you like hiking?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeHiking">
-                    <input type="radio" value="2" name="likeHiking">
-                    <input type="radio" value="3" name="likeHiking">
-                    <input type="radio" value="4" name="likeHiking">
-                    <input type="radio" value="5" name="likeHiking"> love it
+                    <input type="radio" value="1" name="reply[Like_Hiking]" checked>
+                    <input type="radio" value="2" name="reply[Like_Hiking]">
+                    <input type="radio" value="3" name="reply[Like_Hiking]">
+                    <input type="radio" value="4" name="reply[Like_Hiking]">
+                    <input type="radio" value="5" name="reply[Like_Hiking]"> love it
                 </div>
             </div>
 
@@ -46,11 +47,11 @@
                 <h4>Rate how much you like Board Games?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeBoardGames">
-                    <input type="radio" value="2" name="likeBoardGames">
-                    <input type="radio" value="3" name="likeBoardGames">
-                    <input type="radio" value="4" name="likeBoardGames">
-                    <input type="radio" value="5" name="likeBoardGames"> love it
+                    <input type="radio" value="1" name="reply[Like_BoardGames]" checked>
+                    <input type="radio" value="2" name="reply[Like_BoardGames]">
+                    <input type="radio" value="3" name="reply[Like_BoardGames]">
+                    <input type="radio" value="4" name="reply[Like_BoardGames]">
+                    <input type="radio" value="5" name="reply[Like_BoardGames]"> love it
                 </div>
             </div>
 
@@ -58,11 +59,11 @@
                 <h4>Rate how much you like Video Games?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeVideoGames">
-                    <input type="radio" value="2" name="likeVideoGames">
-                    <input type="radio" value="3" name="likeVideoGames">
-                    <input type="radio" value="4" name="likeVideoGames">
-                    <input type="radio" value="5" name="likeVideoGames"> love it
+                    <input type="radio" value="1" name="reply[Like_VideoGames]" checked>
+                    <input type="radio" value="2" name="reply[Like_VideoGames]">
+                    <input type="radio" value="3" name="reply[Like_VideoGames]">
+                    <input type="radio" value="4" name="reply[Like_VideoGames]">
+                    <input type="radio" value="5" name="reply[Like_VideoGames]"> love it
                 </div>
             </div>
 
@@ -70,11 +71,11 @@
                 <h4>Rate how much you like watching TV?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeWatchingTV">
-                    <input type="radio" value="2" name="likeWatchingTV">
-                    <input type="radio" value="3" name="likeWatchingTV">
-                    <input type="radio" value="4" name="likeWatchingTV">
-                    <input type="radio" value="5" name="likeWatchingTV"> love it
+                    <input type="radio" value="1" name="reply[Like_WatchingTV]" checked>
+                    <input type="radio" value="2" name="reply[Like_WatchingTV]">
+                    <input type="radio" value="3" name="reply[Like_WatchingTV]">
+                    <input type="radio" value="4" name="reply[Like_WatchingTV]">
+                    <input type="radio" value="5" name="reply[Like_WatchingTV]"> love it
                 </div>
             </div>
 
@@ -83,22 +84,22 @@
                 <h4>Rate how much you like watching movies?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeWatchingMovies">
-                    <input type="radio" value="2" name="likeWatchingMovies">
-                    <input type="radio" value="3" name="likeWatchingMovies">
-                    <input type="radio" value="4" name="likeWatchingMovies">
-                    <input type="radio" value="5" name="likeWatchingMovies"> love it
+                    <input type="radio" value="1" name="reply[likeWatchingMovies]" checked>
+                    <input type="radio" value="2" name="reply[likeWatchingMovies]">
+                    <input type="radio" value="3" name="reply[likeWatchingMovies]">
+                    <input type="radio" value="4" name="reply[likeWatchingMovies]">
+                    <input type="radio" value="5" name="reply[likeWatchingMovies]"> love it
                 </div>
             </div>
             <div>
                 <h4>Rate how much you like individual sports?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeIndividualSports">
-                    <input type="radio" value="2" name="likeIndividualSports">
-                    <input type="radio" value="3" name="likeIndividualSports">
-                    <input type="radio" value="4" name="likeIndividualSports">
-                    <input type="radio" value="5" name="likeIndividualSports"> love it
+                    <input type="radio" value="1" name="reply[likeIndividualSports]" checked>
+                    <input type="radio" value="2" name="reply[likeIndividualSports]">
+                    <input type="radio" value="3" name="reply[likeIndividualSports]">
+                    <input type="radio" value="4" name="reply[likeIndividualSports]">
+                    <input type="radio" value="5" name="reply[likeIndividualSports]"> love it
                 </div>
             </div>
 
@@ -106,11 +107,11 @@
                 <h4>Rate how much you like team sports?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeTeamSports">
-                    <input type="radio" value="2" name="likeTeamSports">
-                    <input type="radio" value="3" name="likeTeamSports">
-                    <input type="radio" value="4" name="likeTeamSports">
-                    <input type="radio" value="5" name="likeTeamSports"> love it
+                    <input type="radio" value="1" name="reply[likeTeamSports]" checked>
+                    <input type="radio" value="2" name="reply[likeTeamSports]">
+                    <input type="radio" value="3" name="reply[likeTeamSports]">
+                    <input type="radio" value="4" name="reply[likeTeamSports]">
+                    <input type="radio" value="5" name="reply[likeTeamSports]"> love it
                 </div>
             </div>
 
@@ -118,53 +119,51 @@
                 <h4>Rate how much you like reading a book (of your favorite genre)?</h4>
                 <div class="loveHateRating">
                     hate it
-                    <input type="radio" value="1" name="likeReadingBook">
-                    <input type="radio" value="2" name="likeReadingBook">
-                    <input type="radio" value="3" name="likeReadingBook">
-                    <input type="radio" value="4" name="likeReadingBook">
-                    <input type="radio" value="5" name="likeReadingBook"> love it
+                    <input type="radio" value="1" name="reply[likeReadingBook]" checked>
+                    <input type="radio" value="2" name="reply[likeReadingBook]">
+                    <input type="radio" value="3" name="reply[likeReadingBook]">
+                    <input type="radio" value="4" name="reply[likeReadingBook]">
+                    <input type="radio" value="5" name="reply[likeReadingBook]"> love it
                 </div>
             </div>
 
-            <input type="submit" value="Next Page">
+            <button onclick="return show('FormPage2', 'FormPage1')">Next page</button>
+        </div>
 
-        </form>
-    </div>
+        <div id="FormPage2" style="display:none">
 
-    <div id="FormPage2" style="display:none">
-        <form id="page2" onsubmit="return validate('FormPage2', 'FormPage3');">
             <h3>Which of these talks would you like to watch?</h3>
             <div>
                 <h4>The Power of Vulnerability</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="powerOfVulnerability">
-                    <input type="radio" value="2" name="powerOfVulnerability">
-                    <input type="radio" value="3" name="powerOfVulnerability">
-                    <input type="radio" value="4" name="powerOfVulnerability">
-                    <input type="radio" value="5" name="powerOfVulnerability"> I would love it
+                    <input type="radio" value="1" name="reply[powerOfVulnerability]" checked>
+                    <input type="radio" value="2" name="reply[powerOfVulnerability]">
+                    <input type="radio" value="3" name="reply[powerOfVulnerability]">
+                    <input type="radio" value="4" name="reply[powerOfVulnerability]">
+                    <input type="radio" value="5" name="reply[powerOfVulnerability]"> I would love it
                 </div>
             </div>
             <div>
                 <h4>Fake Videos of Real People-and How to Spot Them</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="fakeVideos">
-                    <input type="radio" value="2" name="fakeVideos">
-                    <input type="radio" value="3" name="fakeVideos">
-                    <input type="radio" value="4" name="fakeVideos">
-                    <input type="radio" value="5" name="fakeVideos"> I would love it
+                    <input type="radio" value="1" name="reply[fakeVideos]" checked>
+                    <input type="radio" value="2" name="reply[fakeVideos]">
+                    <input type="radio" value="3" name="reply[fakeVideos]">
+                    <input type="radio" value="4" name="reply[fakeVideos]">
+                    <input type="radio" value="5" name="reply[fakeVideos]"> I would love it
                 </div>
             </div>
             <div>
                 <h4>The Pharmacy of the Future? Personalized Pills, 3D printed at home</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="futurePharmacy">
-                    <input type="radio" value="2" name="futurePharmacy">
-                    <input type="radio" value="3" name="futurePharmacy">
-                    <input type="radio" value="4" name="futurePharmacy">
-                    <input type="radio" value="5" name="futurePharmacy"> I would love it
+                    <input type="radio" value="1" name="reply[futurePharmacy]" checked>
+                    <input type="radio" value="2" name="reply[futurePharmacy]">
+                    <input type="radio" value="3" name="reply[futurePharmacy]">
+                    <input type="radio" value="4" name="reply[futurePharmacy]">
+                    <input type="radio" value="5" name="reply[futurePharmacy]"> I would love it
                 </div>
             </div>
 
@@ -172,11 +171,11 @@
                 <h4>How Great Leaders Inspire Actions</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="greatLeaders">
-                    <input type="radio" value="2" name="greatLeaders">
-                    <input type="radio" value="3" name="greatLeaders">
-                    <input type="radio" value="4" name="greatLeaders">
-                    <input type="radio" value="5" name="greatLeaders"> I would love it
+                    <input type="radio" value="1" name="reply[greatLeaders]" checked>
+                    <input type="radio" value="2" name="reply[greatLeaders]">
+                    <input type="radio" value="3" name="reply[greatLeaders]">
+                    <input type="radio" value="4" name="reply[greatLeaders]">
+                    <input type="radio" value="5" name="reply[greatLeaders]"> I would love it
                 </div>
             </div>
 
@@ -184,11 +183,11 @@
                 <h4>Let my Dataset change your Mindset</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="letMyDatasetChangeYou">
-                    <input type="radio" value="2" name="letMyDatasetChangeYou">
-                    <input type="radio" value="3" name="letMyDatasetChangeYou">
-                    <input type="radio" value="4" name="letMyDatasetChangeYou">
-                    <input type="radio" value="5" name="letMyDatasetChangeYou"> I would love it
+                    <input type="radio" value="1" name="reply[letMyDatasetChangeYou]" checked>
+                    <input type="radio" value="2" name="reply[letMyDatasetChangeYou]">
+                    <input type="radio" value="3" name="reply[letMyDatasetChangeYou]">
+                    <input type="radio" value="4" name="reply[letMyDatasetChangeYou]">
+                    <input type="radio" value="5" name="reply[letMyDatasetChangeYou]"> I would love it
                 </div>
             </div>
 
@@ -196,11 +195,11 @@
                 <h4>The Magic Ingredient that brings Life to Pixar</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="theMagicIngredientPixar">
-                    <input type="radio" value="2" name="theMagicIngredientPixar">
-                    <input type="radio" value="3" name="theMagicIngredientPixar">
-                    <input type="radio" value="4" name="theMagicIngredientPixar">
-                    <input type="radio" value="5" name="theMagicIngredientPixar"> I would love it
+                    <input type="radio" value="1" name="reply[theMagicIngredientPixar]" checked>
+                    <input type="radio" value="2" name="reply[theMagicIngredientPixar]">
+                    <input type="radio" value="3" name="reply[theMagicIngredientPixar]">
+                    <input type="radio" value="4" name="reply[theMagicIngredientPixar]">
+                    <input type="radio" value="5" name="reply[theMagicIngredientPixar]"> I would love it
                 </div>
             </div>
 
@@ -209,22 +208,22 @@
                 <h4>The Power of Introverts</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="thePowerOfIntroverts">
-                    <input type="radio" value="2" name="thePowerOfIntroverts">
-                    <input type="radio" value="3" name="thePowerOfIntroverts">
-                    <input type="radio" value="4" name="thePowerOfIntroverts">
-                    <input type="radio" value="5" name="thePowerOfIntroverts"> I would love it
+                    <input type="radio" value="1" name="reply[thePowerOfIntroverts]" checked>
+                    <input type="radio" value="2" name="reply[thePowerOfIntroverts]">
+                    <input type="radio" value="3" name="reply[thePowerOfIntroverts]">
+                    <input type="radio" value="4" name="reply[thePowerOfIntroverts]">
+                    <input type="radio" value="5" name="reply[thePowerOfIntroverts]"> I would love it
                 </div>
             </div>
             <div>
                 <h4>What Gardening told me about Life</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="whatGardeningToldMe">
-                    <input type="radio" value="2" name="whatGardeningToldMe">
-                    <input type="radio" value="3" name="whatGardeningToldMe">
-                    <input type="radio" value="4" name="whatGardeningToldMe">
-                    <input type="radio" value="5" name="whatGardeningToldMe"> I would love it
+                    <input type="radio" value="1" name="reply[whatGardeningToldMe]">
+                    <input type="radio" value="2" name="reply[whatGardeningToldMe]">
+                    <input type="radio" value="3" name="reply[whatGardeningToldMe]">
+                    <input type="radio" value="4" name="reply[whatGardeningToldMe]">
+                    <input type="radio" value="5" name="reply[whatGardeningToldMe]"> I would love it
                 </div>
             </div>
 
@@ -232,53 +231,53 @@
                 <h4>What if gentrification was about healing communities instead of displacing them?</h4>
                 <div class="loveHateRating">
                     I would hate to watch it
-                    <input type="radio" value="1" name="gentrificationHealing">
-                    <input type="radio" value="2" name="gentrificationHealing">
-                    <input type="radio" value="3" name="gentrificationHealing">
-                    <input type="radio" value="4" name="gentrificationHealing">
-                    <input type="radio" value="5" name="gentrificationHealing"> I would love it
+                    <input type="radio" value="1" name="reply[gentrificationHealing]">
+                    <input type="radio" value="2" name="reply[gentrificationHealing]">
+                    <input type="radio" value="3" name="reply[gentrificationHealing]">
+                    <input type="radio" value="4" name="reply[gentrificationHealing]">
+                    <input type="radio" value="5" name="reply[gentrificationHealing]"> I would love it
                 </div>
             </div>
 
-            <input type="submit" value="Next Page">
+            <button onclick="return show('FormPage3', 'FormPage2')">Next page</button>
 
-        </form>
-    </div>
 
-    <div id="FormPage3" style="display:none">
-        <form onsubmit="return validate('FormPage1', 'FormPage2');">
+        </div>
+
+        <div id="FormPage3" style="display:none">
+
             <h3>How much did you like these subjects in high school? Only give an answer if you had the subject.</h3>
             <div>
                 <h4>Math</h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highschoolMath">
-                    <input type="radio" value="2" name="highschoolMath">
-                    <input type="radio" value="3" name="highschoolMath">
-                    <input type="radio" value="4" name="highschoolMath">
-                    <input type="radio" value="5" name="highschoolMath"> Loved it
+                    <input type="radio" value="1" name="reply[highschoolMath]">
+                    <input type="radio" value="2" name="reply[highschoolMath]">
+                    <input type="radio" value="3" name="reply[highschoolMath]">
+                    <input type="radio" value="4" name="reply[highschoolMath]">
+                    <input type="radio" value="5" name="reply[highschoolMath]"> Loved it
                 </div>
             </div>
             <div>
                 <h4>Physics</h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highschoolPhysics">
-                    <input type="radio" value="2" name="highschoolPhysics">
-                    <input type="radio" value="3" name="highschoolPhysics">
-                    <input type="radio" value="4" name="highschoolPhysics">
-                    <input type="radio" value="5" name="highschoolPhysics"> Loved it
+                    <input type="radio" value="1" name="reply[highschoolPhysics]">
+                    <input type="radio" value="2" name="reply[highschoolPhysics]">
+                    <input type="radio" value="3" name="reply[highschoolPhysics]">
+                    <input type="radio" value="4" name="reply[highschoolPhysics]">
+                    <input type="radio" value="5" name="reply[highschoolPhysics]"> Loved it
                 </div>
             </div>
             <div>
                 <h4>Chemistry</h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highscoolChemistry">
-                    <input type="radio" value="2" name="highscoolChemistry">
-                    <input type="radio" value="3" name="highscoolChemistry">
-                    <input type="radio" value="4" name="highscoolChemistry">
-                    <input type="radio" value="5" name="highscoolChemistry"> Loved it
+                    <input type="radio" value="1" name="reply[highscoolChemistry]">
+                    <input type="radio" value="2" name="reply[highscoolChemistry]">
+                    <input type="radio" value="3" name="reply[highscoolChemistry]">
+                    <input type="radio" value="4" name="reply[highscoolChemistry]">
+                    <input type="radio" value="5" name="reply[highscoolChemistry]"> Loved it
                 </div>
             </div>
 
@@ -286,11 +285,11 @@
                 <h4>Biology</h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highschoolBiology">
-                    <input type="radio" value="2" name="highschoolBiology">
-                    <input type="radio" value="3" name="highschoolBiology">
-                    <input type="radio" value="4" name="highschoolBiology">
-                    <input type="radio" value="5" name="highschoolBiology"> Loved it
+                    <input type="radio" value="1" name="reply[highschoolBiology]">
+                    <input type="radio" value="2" name="reply[highschoolBiology]">
+                    <input type="radio" value="3" name="reply[highschoolBiology]">
+                    <input type="radio" value="4" name="reply[highschoolBiology]">
+                    <input type="radio" value="5" name="reply[highschoolBiology]"> Loved it
                 </div>
             </div>
 
@@ -298,11 +297,11 @@
                 <h4>English</h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highschoolEnglish">
-                    <input type="radio" value="2" name="highschoolEnglish">
-                    <input type="radio" value="3" name="highschoolEnglish">
-                    <input type="radio" value="4" name="highschoolEnglish">
-                    <input type="radio" value="5" name="highschoolEnglish"> Loved it
+                    <input type="radio" value="1" name="reply[highschoolEnglish]">
+                    <input type="radio" value="2" name="reply[highschoolEnglish]">
+                    <input type="radio" value="3" name="reply[highschoolEnglish]">
+                    <input type="radio" value="4" name="reply[highschoolEnglish]">
+                    <input type="radio" value="5" name="reply[highschoolEnglish]"> Loved it
                 </div>
             </div>
 
@@ -310,11 +309,11 @@
                 <h4>History</h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highschoolHistory">
-                    <input type="radio" value="2" name="highschoolHistory">
-                    <input type="radio" value="3" name="highschoolHistory">
-                    <input type="radio" value="4" name="highschoolHistory">
-                    <input type="radio" value="5" name="highschoolHistory"> Loved it
+                    <input type="radio" value="1" name="reply[highschoolHistory]">
+                    <input type="radio" value="2" name="reply[highschoolHistory]">
+                    <input type="radio" value="3" name="reply[highschoolHistory]">
+                    <input type="radio" value="4" name="reply[highschoolHistory]">
+                    <input type="radio" value="5" name="reply[highschoolHistory]"> Loved it
                 </div>
             </div>
 
@@ -323,22 +322,22 @@
                 <h4>Music</h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highschoolMusic">
-                    <input type="radio" value="2" name="highschoolMusic">
-                    <input type="radio" value="3" name="highschoolMusic">
-                    <input type="radio" value="4" name="highschoolMusic">
-                    <input type="radio" value="5" name="highschoolMusic"> Loved it
+                    <input type="radio" value="1" name="reply[highschoolMusic]">
+                    <input type="radio" value="2" name="reply[highschoolMusic]">
+                    <input type="radio" value="3" name="reply[highschoolMusic]">
+                    <input type="radio" value="4" name="reply[highschoolMusic]">
+                    <input type="radio" value="5" name="reply[highschoolMusic]"> Loved it
                 </div>
             </div>
             <div>
                 <h4>Art </h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highscoolArt">
-                    <input type="radio" value="2" name="highscoolArt">
-                    <input type="radio" value="3" name="highscoolArt">
-                    <input type="radio" value="4" name="highscoolArt">
-                    <input type="radio" value="5" name="highscoolArt"> Loved it
+                    <input type="radio" value="1" name="reply[highscoolArt]">
+                    <input type="radio" value="2" name="reply[highscoolArt]">
+                    <input type="radio" value="3" name="reply[highscoolArt]">
+                    <input type="radio" value="4" name="reply[highscoolArt]">
+                    <input type="radio" value="5" name="reply[highscoolArt]"> Loved it
                 </div>
             </div>
 
@@ -346,20 +345,20 @@
                 <h4>Leader</h4>
                 <div class="loveHateRating">
                     Hated it
-                    <input type="radio" value="1" name="highschoolLeader">
-                    <input type="radio" value="2" name="highschoolLeader">
-                    <input type="radio" value="3" name="highschoolLeader">
-                    <input type="radio" value="4" name="highschoolLeader">
-                    <input type="radio" value="5" name="highschoolLeader"> Loved it
+                    <input type="radio" value="1" name="reply[highschoolLeader]">
+                    <input type="radio" value="2" name="reply[highschoolLeader]">
+                    <input type="radio" value="3" name="reply[highschoolLeader]">
+                    <input type="radio" value="4" name="reply[highschoolLeader]">
+                    <input type="radio" value="5" name="reply[highschoolLeader]"> Loved it
                 </div>
             </div>
 
-            <input type="submit" value="Next Page">
+            <input type="submit" value="Submit">
 
-        </form>
 
-    </div>
 
+        </div>
+    </form>
     <script src="FormScript.js"></script>
 
 </body>
