@@ -5,11 +5,61 @@
     //echo $data['1']['HighSchool_Bio']['Mean'];
 
     $replies = array();
-    echo $_POST['reply']['Like_Parties'];
-/*
+    //echo $replies;
+    //echo $_POST['reply']['Like_Parties'];
+
     foreach($_POST['reply'] as $index => $value) {
-        echo $value;
+        //echo $value;
+        //echo $index;
+        $replies[$index] = $value;
     }
+    unset($index);
+    unset($value);
+
+    
+function compareValues($data, $replies) {
+    $resultscores = array();
+    foreach($data as $major => $value) {
+        //echo "O";
+        $tempScore = 0;
+        //echo $value["FakeVideosOfRealPeople"]["Mean"];
+        foreach(array_keys($value) as $key) {
+            //echo $key;
+        }
+
+        
+        foreach($replies as $trait => $val) {
+            //echo $trait;
+            if(in_array($trait, array_keys($value))) {
+                
+                /*
+                foreach($value as $item) {
+                    //echo "A";
+                    foreach($item as $subitem){
+                        //echo "1";
+                    }
+                        
+                }*/
+                
+                //echo $trait;
+                //echo $value[$trait]['Mean'];
+                $tempScore += pow($val-$value[$trait]['Mean'],2)/($value[$trait]['SD']);
+
+                
+            }
+        }
+        $resultscores[$major] = $tempScore;
+        //$resultscores[$tempScore] = $major;
+        //echo $tempScore;
+    }
+
+    foreach($resultscores as $score => $name) {
+        echo $score,  $name;
+    }
+}
+compareValues($data, $replies);
+
+    //echo $replies['Like_Parties'];
 
 /*
     $FakeVideosOfRealPeople
