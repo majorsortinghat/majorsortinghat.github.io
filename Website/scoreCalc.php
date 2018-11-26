@@ -52,12 +52,23 @@ function compareValues($data, $replies) {
         //$resultscores[$tempScore] = $major;
         //echo $tempScore;
     }
-    //sort($resultscores);
-    foreach($resultscores as $key => $val) {
-        echo $key . " : " . $val . "\n";
+    asort($resultscores);
+    
+
+    return $resultscores;
+}
+
+
+
+function topThree($data, $replies) {
+    $fullList = compareValues($data, $replies);
+    $three = array_slice($fullList, 0, 3, true); 
+    foreach($three as $key => $val) {
+        echo $key . ": " . $val .  "\n";
     }
 }
-compareValues($data, $replies);
+
+topThree($data, $replies);
 
     //echo $replies['Like_Parties'];
 
