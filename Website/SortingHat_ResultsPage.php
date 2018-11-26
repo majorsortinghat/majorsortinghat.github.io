@@ -21,7 +21,6 @@
     </div>
     <script type="text/javascript">
 
-console.log("yo");
         var data = <?php
         echo json_encode(topThree($data, $replies), JSON_HEX_TAG); ?>; //Don't forget the extra semicolon!
 
