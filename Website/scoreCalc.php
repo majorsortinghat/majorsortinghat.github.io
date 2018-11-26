@@ -52,9 +52,9 @@ function compareValues($data, $replies) {
         //$resultscores[$tempScore] = $major;
         //echo $tempScore;
     }
-
-    foreach($resultscores as $score => $name) {
-        echo $score,  $name;
+    //sort($resultscores);
+    foreach($resultscores as $key => $val) {
+        echo $key . " : " . $val . "\n";
     }
 }
 compareValues($data, $replies);
