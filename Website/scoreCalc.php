@@ -22,33 +22,22 @@ function compareValues($data, $replies) {
     foreach($data as $major => $value) {
         //echo "O";
         $tempScore = 0;
-        //echo $value["FakeVideosOfRealPeople"]["Mean"];
-        foreach(array_keys($value) as $key) {
-            //echo $key;
-        }
+        $numberOfTriatsChecked = 0;
+
 
         
         foreach($replies as $trait => $val) {
             //echo $trait;
             if(in_array($trait, array_keys($value))) {
                 
-                /*
-                foreach($value as $item) {
-                    //echo "A";
-                    foreach($item as $subitem){
-                        //echo "1";
-                    }
-                        
-                }*/
-                
-                //echo $trait;
-                //echo $value[$trait]['Mean'];
-                $tempScore += pow($val-$value[$trait]['Mean'],2)/($value[$trait]['SD']);
 
+                $tempScore += pow($val-$value[$trait]['Mean'],2)/($value[$trait]['SD']);
+                $numberOfTriatsChecked++;
                 
             }
         }
-        $resultscores[$major] = $tempScore;
+        //echo $numberOfTriatsChecked . ": ". $major . " |||         \n";
+        $resultscores[$major] = $tempScore/$numberOfTriatsChecked;
         //$resultscores[$tempScore] = $major;
         //echo $tempScore;
     }
@@ -63,12 +52,14 @@ function compareValues($data, $replies) {
 function topThree($data, $replies) {
     $fullList = compareValues($data, $replies);
     $three = array_slice($fullList, 0, 3, true); 
+    /*
     foreach($three as $key => $val) {
         echo $key . ": " . $val .  "\n";
-    }
+    }*/
+    return $three;
 }
 
-topThree($data, $replies);
+//topThree($data, $replies);
 
     //echo $replies['Like_Parties'];
 
