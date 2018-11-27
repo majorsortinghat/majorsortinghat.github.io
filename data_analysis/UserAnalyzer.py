@@ -1,29 +1,117 @@
 import json
 import math
+import sklearn.tree
+import numpy as np
+
+keys = ["Satisfaction",
+    "Like_Parties",
+    "Like_HangingOut",
+    "Like_Hiking",
+    "Like_BoardGames",
+    "Like_VideoGames",
+    "Like_WatchingTV",
+    "Like_WatchingMovies",
+    "Like_IndividualSports",
+    "Like_TeamSports",
+    "Like_ReadingBook",
+    "PowerOfVulnerability",
+    "FakeVideosOfRealPeople",
+    "PharmacyOfTheFuture",
+    "HowGreatLeadersInspireGreatAction",
+    "LetMyDatasetChangeYourMindset",
+    "MagicIngredientBringsLifeToPixar",
+    "PowerOfIntroverts",
+    "WhatGardeningToldMeAboutLife",
+    "WhatIfGentrificationWasAboutHealing",
+    "HighSchool_Math",
+    "HighSchool_Physics",
+    "HighSchool_Chemistry",
+    "HighSchool_Bio",
+    "HighSchool_English",
+    "HighSchool_History",
+    "HighSchool_Music",
+    "HighSchool_Art",
+    "HighSchool_Leader",
+    "HighSchool_Engineering",
+    "Rank_Understand",
+    "Rank_FullOfIdeas",
+    "Rank_Imagination",
+    "Rank_DifficultyUnderstandingAbstract",
+    "Rank_AlwaysPrepared",
+    "Rank_AttentionToDetails",
+    "Rank_GetChoresDoneRightAway",
+    "Rank_ForgetToPutThingsBack",
+    "Rank_StartConversations",
+    "Rank_TalkToDifferentPeopleAtParties",
+    "Rank_ThinkALotBeforeSpeaking",
+    "Rank_DislikeGettingAttention",
+    "Rank_QuietAroundStrangers",
+    "Rank_SoftHeart",
+    "Rank_TakeTimeOutForOthers",
+    "Rank_MakePeopleFeelAtEase",
+    "Rank_NotInterestedInOthersProblems",
+    "Rank_FeelLittleConcernForOthers",
+    "Rank_GetIrritatedEasily",
+    "Rank_HaveFrequentMoodSwings",
+    "Rank_WorryAboutThings",
+    "Rank_RelaxedMostOfTheTime",
+    "Rank_SeldomFeelBlue"]
 
 with open("outdata.json", "r") as read_file:
     data = json.load(read_file)
 
+def loadRaw(rawDataFile):
+    with open(rawDataFile, "r") as read_file:
+        rawData = json.load(read_file)
+
+        alldataarr = []
+        alllabelsarr = []
+
+        for person in rawData:
+            if person["Major_1"] != "Undeclared":
+                alllabelsarr.append(person["Major_1"])
+                add_data = []
+                for key in keys:
+                    if key in person:
+                        if person[key] != 'N/A' and person[key] != "":
+                            add_data.append(int(person[key]))
+                        else:
+                            add_data.append(-1)
+                    else:
+                        add_data.append(-1)
+                alldataarr.append(add_data)
+
+                if person["Major_2"] != "":
+                    alllabelsarr.append(person["Major_2"])
+                    alldataarr.append(add_data)
+
+        alldata = np.array(alldataarr)
+        alllabels = np.array(alllabelsarr)
+    return alldata, alllabels
+        #traindata=np.array(alldataarr[:int(len(alldataarr)*.9)])
+        #trainlabels=np.array(alllabelsarr[:int(len(alllabelsarr)*.9)])
+        #testdata=np.array(alldataarr[int(len(alldataarr)*.9):])
+        #testlabels=np.array(alllabelsarr[int(len(alllabelsarr)*.9):])
 
 def compareValues(userInput):
-    print("userInput: "+str(userInput))
+    #print("userInput: "+str(userInput))
     resultScores = {}
     for major in data:
         tempScore = 0;
-        print(major)
+        #print(major)
         for trait in userInput:
             if trait in data[str(major)]:
-                print(trait)
-                print(userInput[trait])
-                print(str(major))
-                print(data[str(major)])
-                print(data[str(major)][trait]['Mean'])
+                #print(trait)
+                #print(userInput[trait])
+                #print(str(major))
+                #print(data[str(major)])
+                #print(data[str(major)][trait]['Mean'])
 
-                tempScore += ((float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']))**2
-        print(tempScore)
+                tempScore += ((float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']))
+        #print(tempScore)
         resultScores[major] = math.sqrt(tempScore);
     #print(resultScores)
-    print()
+    #print()
     invDict = invertDict(resultScores)
     #print(invDict)
     #print(dictToSortedList(invDict))
@@ -58,7 +146,7 @@ def getInput():
     unprocessedInput["Like_IndividualSports"] = input("Rate on a scale from 1-5 how much you like individual sports: ")
     unprocessedInput["Like_TeamSports"] = input("Rate on a scale from 1-5 how much you like team sports: ")
     unprocessedInput["Like_ReadingBook"] = input("Rate on a scale from 1-5 how much you like Reading a book: ")
-    """
+    
     unprocessedInput["PowerOfVulnerability"] = input("Rank on a scale from 1-5 how much you would like to watch the talk PowerOfVulnerability: ")
     unprocessedInput["FakeVideosOfRealPeople"] = input(
         "Rank on a scale from 1-5 how much you would like to watch the talk FakeVideosOfRealPeople: ")
@@ -76,9 +164,8 @@ def getInput():
         "Rank on a scale from 1-5 how much you would like to watch the talk WhatGardeningToldMeAboutLife: ")
     unprocessedInput["WhatIfGentrificationWasAboutHealing"] = input(
         "Rank on a scale from 1-5 how much you would like to watch the talk WhatIfGentrificationWasAboutHealing: ")
-    """
+    
     return unprocessedInput
-
 
 
 def fake6_2Input():
@@ -289,7 +376,21 @@ def processInput(unprocessedInput):
         processedOutput[i] = float(unprocessedInput[i])-3
     return processedOutput
 
+dt6_2Input = np.array([7, 1, 5, 1, 2, 1, 5, 5, 1, 1, 4, 4, 1, 2, 1, 2, 5, 5, 1, 1, 4, 3, 4, 1, 2, 1, 5, 5, 3, 3,
+    4, 5, 5, 1, 4, 4, 1, 4, 1, 1, 4, 5, 5, 5, 2, 4, 2, 2, 2, 2, 5, 2, 2])
+
+
+values, labels = loadRaw('Major_Mapping_Survey_2.json')
+dtree = sklearn.tree.DecisionTreeClassifier()
+dtree = dtree.fit(values, labels)
+print("DTREE 6-2: ", dtree.predict(dt6_2Input.reshape(1,-1)))
+
+print('2A Returns...')
 compareValues(processInput(fake2AInput()))
+print('12 Returns...')
+compareValues(processInput(fake12Input()))
+print('6-2 Returns...')
+compareValues(processInput(fake6_2Input()))
 
 
 userInput = {}
