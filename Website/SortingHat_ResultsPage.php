@@ -6,8 +6,8 @@
         The MIT Sorting Hat Results Page
 
     </title>
-    <script src="vis/dist/vis.js"></script>
-    <link href="vis/dist/vis.css" rel="stylesheet" type="text/css" />
+    
+    
 </head>
 
 <body>
