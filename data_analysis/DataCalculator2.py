@@ -79,7 +79,10 @@ def calculateSD():
                 sd = statistics.stdev(majors[major][trait])
             print(len(majors[major][trait]))
             if(len(majors[major][trait]) > 0):
+                if (sd == 0):
+                    sd = 0.0001
                 meanSDMajors[major][trait] = {'Mean': sum(majors[major][trait])/len(majors[major][trait]), 'SD': sd}
+
 
 calculateSD()
 
