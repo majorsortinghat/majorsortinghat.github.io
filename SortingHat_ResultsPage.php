@@ -25,16 +25,21 @@
 
 <body>
 
+    <header>
+        <a href="index.php"> The MIT Sorting Hat </a>
+    </header>
+
 
 
     <?php include "scoreCalc.php";?>
 
 
     <div id="visualization">
-
-
-
     </div>
+
+    <div id="headline">
+
+        </div>
 
 
     <script type="text/javascript">
