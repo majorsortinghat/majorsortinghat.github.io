@@ -39,8 +39,9 @@
 
     <script type="text/javascript">
 
-        var data = <?php
-        echo json_encode(compareValues($data, $replies), JSON_HEX_TAG); ?>; //Don't forget the extra semicolon!
+        var data = <?php echo json_encode(compareValues($data, $replies), JSON_HEX_TAG); ?>; //Don't forget the extra semicolon!
+
+        console.log(data);
 
         //console.log(data);
 

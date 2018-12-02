@@ -30,7 +30,11 @@ function draw() {
     var n = 1;
     for (var key in majors) {
 
-        line(center[0], center[1], center[0] + (minScreensDimension / 7) * Math.cos(2 * Math.PI * n / majors_len) * majors[key], center[1] + (minScreensDimension / 7) * Math.sin(2 * Math.PI * n / majors_len) * majors[key]);
+        var x = center[0] + (minScreensDimension / 7) * Math.cos(2 * Math.PI * n / majors_len) * majors[key];
+        var y = center[1] + (minScreensDimension / 7) * Math.sin(2 * Math.PI * n / majors_len) * majors[key];
+
+        line(center[0], center[1], x, y);
+        //Text(key, x, y);
         n++;
         //console.log(key, majors[key]);
     }

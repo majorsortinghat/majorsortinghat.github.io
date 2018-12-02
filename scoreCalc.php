@@ -1,8 +1,8 @@
 <?php
     ini_set("display_errors", 1);
-    $jsondata = file_get_contents("outdata.json");
+    $jsondata = file_get_contents("majorsortinghat/outdata.json");
     $data = json_decode($jsondata, true);
-    //echo $data['1']['HighSchool_Bio']['Mean'];
+    echo $data['1']['HighSchool_Bio']['Mean'];
 
     $replies = array();
     //echo $replies;
