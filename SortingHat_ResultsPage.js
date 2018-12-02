@@ -34,7 +34,7 @@ function draw() {
         var y = center[1] + (minScreensDimension / 7) * Math.sin(2 * Math.PI * n / majors_len) * majors[key];
 
         line(center[0], center[1], x, y);
-        //Text(key, x, y);
+        text(key, x, y);
         n++;
         //console.log(key, majors[key]);
     }
