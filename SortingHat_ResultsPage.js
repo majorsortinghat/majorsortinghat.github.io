@@ -9,21 +9,25 @@ var minScreensDimension = Math.min.apply(null, [w, h]);
 console.log(minScreensDimension);
 var center = [w / 2, h / 2];
 
-var bestMajor;
 
+document.getElementById("headline").innerHTML = "You got " + findBestMajor(majors, 1);
 //console.log(data);
 
-function writeBestMajor(majors, value) { //This doeasn't work at the moment
+function findBestMajor(majors, value) { //This doeasn't work at the moment
 
-    bestMajor = function getKeyByValue(majors, value) {
-        return Object.keys(majors).find(key => majors[key] === value);
+    for (var key in majors) {
+
+        if (majors[key] == value) {
+            return key;
+        }
     }
 
+    return null;
 
 }
 
 
-document.getElementById("headline").innerHTML = "You got " + bestMajor;
+
 
 
 
@@ -93,6 +97,7 @@ function cleanData(dirtyData) {
             //console.log(key, dictionary[key]);
         }
     }
-    writeBestMajor(cleanDict, min_value);
+    findBestMajor(cleanDict, min_value);
+
     return cleanDict;
 }
