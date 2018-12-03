@@ -10,6 +10,9 @@ console.log(minScreensDimension);
 var center = [w / 2, h / 2];
 
 
+var highlightKey = null;
+
+
 document.getElementById("headline").innerHTML = "You got " + findBestMajor(majors, 1);
 //console.log(data);
 
@@ -40,37 +43,91 @@ function setup() {
 
 
 function draw() {
-
+    background(255, 200, 150);
     //var majors = cleanData(data);
-    var n = 1;
-    fill(0);
-    textSize(14);
+    var textcolor = [255, 255, 255];
+    var n = 0.6;
+    fill(textcolor);
+
     textAlign(CENTER, CENTER);
+    ellipseMode(CENTER); // Set ellipseMode to CENTER
+
+
+
+    var x = mouseX,
+        y = mouseY;
     for (var key in majors) {
+
+        textSize(14);
+
         stroke(150);
         var dx = (minScreensDimension / 7) * Math.cos(2 * Math.PI * n / majors_len) * majors[key];
         var dy = (minScreensDimension / 7) * Math.sin(2 * Math.PI * n / majors_len) * majors[key];
 
-        var corrY = 1;
+        var corrY = 1 * (dx);
         var corrX = 1;
 
         line(center[0], center[1], center[0] + dx, center[1] + dy);
         noStroke();
+        var horizAlign = CENTER;
+
         if (dx + center[0] < center[0]) {
             corrX = -1;
+            horizAlign = CENTER;
         }
         if (dy + center[1] < center[1]) {
             corrY = -1;
+            textAlign(horizAlign, CENTER);
+        } else {
+            textAlign(horizAlign, CENTER);
         }
-        text(key, center[0] + dx + 10 * corrX, center[1] + dy + 10 * corrY);
+
+
+        var posX = center[0] + dx * 1.1,
+            posY = center[1] + dy * 1.1;
+
+
+
+        if ((highlightKey == key && (x > posX - 40 && x < posX + 40 && y > posY - 40 && y < posY + 40)) || (x > posX - 20 && x < posX + 20 && y > posY - 10 && y < posY + 10)) {
+            console.log(key);
+            highlightKey = key;
+            fill(122, 0, 255);
+            //posX += dx * 1.01;
+            //posY += dy * 1.01;
+            ellipse(posX, posY, 80);
+
+            textSize(12);
+            fill(textcolor);
+            text("Distance: " + data[key].toFixed(2) + ". \n click to learn more.", posX, posY + 15);
+            textSize(30);
+            text(key, posX, posY - 10);
+
+        } else {
+            text(key, posX, posY);
+        }
+
+
         n++;
+
         //console.log(key, majors[key]);
     }
 
-    ellipseMode(CENTER); // Set ellipseMode to CENTER
+
+
+
     fill(255, 0, 50); // Set fill
 
-    ellipse(center[0], center[1], 50); // Draw gray ellipse using CENTER mode
+    if (x < center[0] + 20 && x > center[0] - 20 && y < center[1] + 20 && y > center[1] - 20) {
+        ellipse(center[0], center[1], 60); // Draw gray ellipse using CENTER mode
+        fill(textcolor);
+        textSize(14);
+        text("ABOUT\nYOU", center[0], center[1]);
+    } else {
+        ellipse(center[0], center[1], 30); // Draw gray ellipse using CENTER mode
+    }
+
+
+
 
 }
 
@@ -90,7 +147,7 @@ function cleanData(dirtyData) {
         //console.log(key);
         // check if the property/key is defined in the object itself, not in parent
         if (dirtyData.hasOwnProperty(key)) {
-            if (dirtyData[key] <= min_value * 5) {
+            if (dirtyData[key] <= min_value * 3) {
                 //console.log(dirtyData[key]);
                 cleanDict[key] = dirtyData[key] / min_value;
             }
