@@ -94,13 +94,18 @@ function draw() {
             fill(200 / majors[key], 200 / majors[key], 400 / majors[key]);
             //posX += dx * 1.01;
             //posY += dy * 1.01;
-            ellipse(posX, posY, 80);
+            ellipse(posX, posY, 90);
 
             textSize(12);
             fill(textcolor);
             text("Distance: " + data[key].toFixed(2) + "\nlearn more", posX, posY + 15);
             textSize(30);
             text(key, posX, posY - 15);
+            if (mouseIsPressed) {
+                console.log("Pressed");
+                var url = "http://" + window.location.host + "/" + "major.php?id=" + key;
+                window.location = url;
+            }
 
 
         } else {
