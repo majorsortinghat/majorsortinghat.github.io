@@ -43,7 +43,7 @@ function setup() {
 
 
 function draw() {
-    background(255, 200, 150);
+    background(180, 200, 255);
     //var majors = cleanData(data);
     var textcolor = [255, 255, 255];
     var n = 0.6;
@@ -61,8 +61,8 @@ function draw() {
         textSize(14);
 
         stroke(150);
-        var dx = (minScreensDimension / 7) * Math.cos(2 * Math.PI * n / majors_len) * majors[key];
-        var dy = (minScreensDimension / 7) * Math.sin(2 * Math.PI * n / majors_len) * majors[key];
+        var dx = (minScreensDimension / 6) * Math.cos(2 * Math.PI * n / majors_len) * majors[key];
+        var dy = (minScreensDimension / 6) * Math.sin(2 * Math.PI * n / majors_len) * majors[key];
 
         var corrY = 1 * (dx);
         var corrX = 1;
@@ -91,16 +91,17 @@ function draw() {
         if ((highlightKey == key && (x > posX - 40 && x < posX + 40 && y > posY - 40 && y < posY + 40)) || (x > posX - 20 && x < posX + 20 && y > posY - 10 && y < posY + 10)) {
             console.log(key);
             highlightKey = key;
-            fill(122, 0, 255);
+            fill(200 / majors[key], 200 / majors[key], 400 / majors[key]);
             //posX += dx * 1.01;
             //posY += dy * 1.01;
             ellipse(posX, posY, 80);
 
             textSize(12);
             fill(textcolor);
-            text("Distance: " + data[key].toFixed(2) + ". \n click to learn more.", posX, posY + 15);
+            text("Distance: " + data[key].toFixed(2) + "\nlearn more", posX, posY + 15);
             textSize(30);
-            text(key, posX, posY - 10);
+            text(key, posX, posY - 15);
+
 
         } else {
             text(key, posX, posY);
@@ -115,6 +116,8 @@ function draw() {
 
 
 
+
+
     fill(255, 0, 50); // Set fill
 
     if (x < center[0] + 20 && x > center[0] - 20 && y < center[1] + 20 && y > center[1] - 20) {
@@ -122,6 +125,11 @@ function draw() {
         fill(textcolor);
         textSize(14);
         text("ABOUT\nYOU", center[0], center[1]);
+        if (mouseIsPressed) {
+            console.log("Pressed");
+            var url = "http://" + window.location.host + "/" + "about_you.html";
+            window.location = url;
+        }
     } else {
         ellipse(center[0], center[1], 30); // Draw gray ellipse using CENTER mode
     }
