@@ -103,7 +103,13 @@ function draw() {
             text(key, posX, posY - 15);
             if (mouseIsPressed) {
                 console.log("Pressed");
-                var url = "http://" + window.location.host + "/" + "major.php?id=" + key;
+                var urlEnd = "";
+                for (var reply in replies) {
+                    urlEnd = urlEnd.concat("&" + reply + "=" + replies[reply]);
+                }
+                console.log(urlEnd);
+                var url = "http://" + window.location.host + "/" + "major.php?id=" + key + urlEnd;
+                console.log(url);
                 window.location = url;
             }
 

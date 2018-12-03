@@ -5,7 +5,7 @@
     //echo $data['1']['HighSchool_Bio']['Mean'];
 
     $replies = array();
-    //echo $replies;
+    
     //echo $_POST['reply']['Like_Parties'];
 
     foreach($_POST['reply'] as $index => $value) {
@@ -15,7 +15,8 @@
     }
     unset($index);
     unset($value);
-
+    
+    //echo $replies;
     
 function compareValues($data, $replies) {
     $resultscores = array();
@@ -43,8 +44,12 @@ function compareValues($data, $replies) {
     }
     asort($resultscores);
     
-
+    //echo $resultscores;
     return $resultscores;
+}
+
+function returnReplies() {
+    return $replies;
 }
 
 

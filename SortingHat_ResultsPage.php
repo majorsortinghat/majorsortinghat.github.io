@@ -31,7 +31,6 @@
 
     <?php include "scoreCalc.php";?>
 
-
     <div id="visualization">
     </div>
 
@@ -43,18 +42,14 @@
     <script type="text/javascript">
 
         var data = <?php echo json_encode(compareValues($data, $replies), JSON_HEX_TAG); ?>; //Don't forget the extra semicolon!
+        var replies = <?php echo json_encode($replies, JSON_HEX_TAG); ?>;
+        console.log("Replies");
+        console.log(replies);
 
+        console.log("Data");
         console.log(data);
 
         //console.log(data);
-
-
-
-
-
-
-        
-
         console.log("hey");
         
     </script>
