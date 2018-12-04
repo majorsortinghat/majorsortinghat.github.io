@@ -5,6 +5,10 @@
     <title><?php echo $_GET["id"]; ?></title>
     <link rel="stylesheet" href="major.css">
     <link rel="shortcut icon" type="image/png" href="HatLogo_favicon.png"/>
+    <script src="major.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+
 </head>
 
 <body>
@@ -60,9 +64,6 @@ echo $thisMajorNum;  ?>: </div>
         <a class="footerLink" href="about.html">About the project</a> <a class="footerLink" href="ourDataset.html">Our dataset</a>
 </footer>
 
-<script src="major.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
 </body>
 
 </html>
