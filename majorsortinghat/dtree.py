@@ -4,6 +4,7 @@ from flask import (
 from werkzeug.exceptions import abort
 import sklearn.ensemble
 import numpy as np
+import pickle
 
 dt = Blueprint('dtree', __name__)
 
@@ -13,9 +14,12 @@ with open("keys.txt", "r") as read_file:
 @dt.route('/hat/dtree', methods=['GET', 'POST'])
 def dtreeout():
     if request.method == 'POST':
-    	dtree = sklearn.ensemble.RandomForestClassifier(n_estimators=100, random_state=23)
-		dtree = dtree.fit(values, labels)
-		ans = dtree.predict(dt6_2Input.reshape(1,-1)))
+        input_data = request.data.split('&')
+        input_data = [var.split('=')[-1] for var in input_data]
+        input_data = [int(var) for var in input_data]
+        file = open('dtree.sav', 'rb')
+        dtree = pickle.load(file)
+        ans = dtree.predict(input_data)
         return #TODO insert function
     else:
         return 'Hello, World!'

@@ -1,21 +1,16 @@
 # tensorflow code modified by grace gu, then pp
 
-#from __future__ import absolute_import
-#from __future__ import division
-#from __future__ import print_function
- 
-#import argparse
-#import sys
+
 import numpy as np
 import random
  
 import tensorflow as tf
 import json
 import math
-import pandas
 
-#import os
-#os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
  
 #FLAGS = None
  
@@ -84,26 +79,14 @@ def arrtotens_input(input_arr):
 
 def main():
 
-    pd_df = pandas.read_json("Major_Mapping_Survey_2.json")
-    pd_df['Major_2'] = pd_df['Major_2'].replace("", np.nan)
-    pd_df1 = pd_df.filter(items = traits + ['Major_1'])
-    pd_df2 = pd_df.filter(items = traits + ['Major_2'])
-    pd_df2 = pd_df2.dropna(axis=0, subset=['Major_2'])
-    pd_df2 = pd_df2.rename({'Major_2': 'Major_1'}, axis = 'columns')
-    pd_df = pandas.concat([pd_df1, pd_df2])
-    pd_df['Major_1'] = pd_df['Major_1'].replace("Undeclared", np.nan)
-    pd_df = pd_df.dropna(axis=0, subset=['Major_1'])
-
-    my_features = pd_df.filter(items = traits)
-    target = pd_df['Major_1']
-
+    
     with open("outdata.json", "r") as read_file:
         major_data = json.load(read_file)
         majors = major_data.keys()
     
     with open("Major_Mapping_Survey_2.json", "r") as read_file:
         data = json.load(read_file)
-    '''
+    
     alldataarr =[]
     alllabelsarr = []
 
@@ -125,69 +108,39 @@ def main():
                 alllabelsarr.append(str(person["Major_2"]))
                 alldataarr.append(add_data)
 
-    '''
-    input_cols = []
-    for trait in traits:
-        max_score = 6
-        if trait == "Satisfaction":
-            max_score = 8
-        trait_column = tf.feature_column.categorical_column_with_identity(
-            key=trait,
-            num_buckets=max_score)
-        print(trait_column)
-        input_cols.append(trait_column)
+    g = tf.Graph()
+    with g.as_default():
+        input_cols = []
+        for trait in traits:
+            max_score = 6
+            if trait == "Satisfaction":
+                max_score = 8
+            trait_column = tf.feature_column.categorical_column_with_identity(
+                key=trait,
+                num_buckets=max_score)
+            input_cols.append(trait_column)
 
-    output_column = tf.feature_column.categorical_column_with_vocabulary_list(
-        'Major',
-        majors
-    )
-    estimator = tf.estimator.LinearClassifier(feature_columns=input_cols)
-    '''
-    alldata=arrtotens_input(alldataarr)
-    alllabels=tf.constant(alllabelsarr)
-    traindata=arrtotens_input(alldataarr[:int(len(alldataarr)*.9)])
-    trainlabels=tf.constant(alllabelsarr[:int(len(alllabelsarr)*.9)])
-    testdata=arrtotens_input(alldataarr[int(len(alldataarr)*.9):])
-    testlabels=tf.constant(alllabelsarr[int(len(alllabelsarr)*.9):])
-    '''
+        output_column = tf.feature_column.categorical_column_with_vocabulary_list(
+            'Major',
+            majors
+        )
+        estimator = tf.estimator.LinearClassifier(feature_columns=input_cols)
 
-    def my_input_fn(features, targets, batch_size=1, shuffle=True, num_epochs=None):
-        """Trains a linear regression model of one feature.
-      
-        Args:
-          features: pandas DataFrame of features
-          targets: pandas DataFrame of targets
-          batch_size: Size of batches to be passed to the model
-          shuffle: True or False. Whether to shuffle the data.
-          num_epochs: Number of epochs for which data should be repeated. None = repeat indefinitely
-        Returns:
-          Tuple of (features, labels) for next data batch
-        """
-      
-        # Convert pandas data into a dict of np arrays.
-        features = {key:np.array(value) for key,value in dict(features).items()}                                           
-     
-        # Construct a dataset, and configure batching/repeating.
-        ds = tf.data.Dataset.from_tensor_slices((features,targets)) # warning: 2GB limit
-        ds = ds.batch(batch_size).repeat(num_epochs)
+        alldata=arrtotens_input(alldataarr)
+        alllabels=tf.constant(alllabelsarr)
+        traindata=arrtotens_input(alldataarr[:int(len(alldataarr)*.9)])
+        print(traindata)
+        trainlabels=tf.constant(alllabelsarr[:int(len(alllabelsarr)*.9)])
+        print(trainlabels)
+        testdata=arrtotens_input(alldataarr[int(len(alldataarr)*.9):])
+        testlabels=tf.constant(alllabelsarr[int(len(alllabelsarr)*.9):])
         
-        # Shuffle the data, if specified.
-        if shuffle:
-          ds = ds.shuffle(buffer_size=10000)
-        
-        # Return the next batch of data.
-        # features, labels = ds.make_one_shot_iterator().get_next()
-        return ds# features, labels
+        def input_data(features, labels):
+            ds = tf.data.Dataset.from_tensor_slices((features, labels))
+            ds = ds.shuffle(100).repeat().batch(50)
+            return ds
 
-    def input_data(features, labels):
-        ds = tf.data.Dataset.from_tensor_slices((features, labels))
-        ds = ds.shuffle(100).repeat().batch(50)
-        return ds
-
-    for op in tf.get_default_graph().get_operations():
-        print(str(op.name))
-
-    estimator.train(input_fn = lambda:my_input_fn(my_features, target), steps = 100)
+        estimator.train(input_fn = lambda:input_data(traindata, trainlabels))
     '''
     # Create the model
     x = tf.placeholder(tf.float32, [None, 53])
@@ -246,11 +199,5 @@ def main():
     np.savetxt('accuracy', np.array([acc]))
     '''
 if __name__ == '__main__':
-    '''
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', type=str, default='C:\\Users\\Priya Pillai\\Documents\\GitHub\\majorsortinghat\\data_analysis',
-                                            help='Directory for storing input data')
-    FLAGS, unparsed = parser.parse_known_args()
-    tf.app.run(main=main)
-    '''
+
     main()

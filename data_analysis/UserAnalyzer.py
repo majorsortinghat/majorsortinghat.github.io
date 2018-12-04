@@ -1,7 +1,10 @@
 import json
 import math
 import sklearn.tree
+import sklearn.ensemble
+import sklearn.linear_model
 import numpy as np
+import pickle
 
 keys = ["Satisfaction",
     "Like_Parties",
@@ -383,7 +386,26 @@ dt6_2Input = np.array([7, 1, 5, 1, 2, 1, 5, 5, 1, 1, 4, 4, 1, 2, 1, 2, 5, 5, 1, 
 values, labels = loadRaw('Major_Mapping_Survey_2.json')
 dtree = sklearn.tree.DecisionTreeClassifier()
 dtree = dtree.fit(values, labels)
+
+forest = sklearn.ensemble.RandomForestClassifier(n_estimators = 50)
+forest = forest.fit(values, labels)
+
+linear = sklearn.linear_model.SGDClassifier(max_iter=10000, tol=1e-3)
+linear = linear.fit(values, labels)
+
+filename = 'linear.sav'
+pickling_on = open(filename, "wb")
+pickle.dump(linear, pickling_on)
+pickling_on.close()
+
 print("DTREE 6-2: ", dtree.predict(dt6_2Input.reshape(1,-1)))
+print("DTREE score: ", dtree.score(values, labels))
+print("FOREST 6-2: ", forest.predict(dt6_2Input.reshape(1,-1)))
+print("FOREST 6-2 prob: ", forest.predict_proba(dt6_2Input.reshape(1,-1)))
+print("FOREST score: ", forest.score(values, labels))
+print("LINEAR 6-2: ", linear.predict(dt6_2Input.reshape(1,-1)))
+print("LINEAR score: ", linear.score(values, labels))
+
 
 print('2A Returns...')
 compareValues(processInput(fake2AInput()))
