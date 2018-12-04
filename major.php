@@ -47,7 +47,7 @@
 </div>
 
 <div id="linegraph">
-    <div id="graphHeadline">Explore how close your match is with <?php 
+    <div id="graphHeadline">Explore how close your match is with course <?php 
 echo $thisMajorNum;  ?>: </div>
 </div>
 <div id="graphExplanation">
@@ -55,6 +55,10 @@ echo $thisMajorNum;  ?>: </div>
   <rect id="userDot" />
 </svg>You <svg ><rect id="majorDot" /></svg><?php echo $thisMajorNum;  ?>
 </div>
+
+    <footer>
+        <a class="footerLink" href="about.html">About the project</a> <a class="footerLink" href="ourDataset.html">Our dataset</a>
+</footer>
 
 <script src="major.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>

@@ -138,20 +138,20 @@ function draw() {
 
 
     fill(180, 200, 255); // Set fill
-
-    if (x < center[0] + 20 && x > center[0] - 20 && y < center[1] + 20 && y > center[1] - 20) {
-        ellipse(center[0], center[1], 60); // Draw gray ellipse using CENTER mode
-        fill(textcolor);
-        textSize(14);
-        text("ABOUT\nYOU", center[0], center[1]);
-        if (mouseIsPressed) {
-            //console.log("Pressed");
-            var url = "http://" + window.location.host + "/" + "about_you.html";
-            window.location = url;
-        }
-    } else {
-        ellipse(center[0], center[1], 30); // Draw gray ellipse using CENTER mode
-    }
+    /*
+        if (x < center[0] + 20 && x > center[0] - 20 && y < center[1] + 20 && y > center[1] - 20) {
+            ellipse(center[0], center[1], 60); // Draw gray ellipse using CENTER mode
+            fill(textcolor);
+            textSize(14);
+            text("ABOUT\nYOU", center[0], center[1]);
+            if (mouseIsPressed) {
+                //console.log("Pressed");
+                var url = "http://" + window.location.host + "/" + "about_you.html";
+                window.location = url;
+            }
+        } else {*/
+    ellipse(center[0], center[1], 30); // Draw gray ellipse using CENTER mode
+    //}
 
 
 

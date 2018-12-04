@@ -7,7 +7,54 @@ a {
     text-decoration: none;
 }
 
-#startButton {}
+.loveHateRating {
+    padding-left: 100px;
+}
+
+button {
+    position: fixed;
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    color: #A31F34;
+    background-color: white;
+    border: 2px solid #A31F34;
+    text-decoration: none;
+}
+
+#submitButton {
+    position: fixed;
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    background-color: #A31F34;
+    color: white;
+    border: 2px solid #A31F34;
+    text-decoration: none;
+    bottom: 80px;
+    right: 30%;
+}
+
+button:disabled {
+    border: 2px solid rgba(163, 31, 53, 0.5);
+    color: rgba(163, 31, 53, 0.5);
+}
+
+button.nextPage {
+    bottom: 80px;
+    right: 30%;
+}
+
+button.prevPage {
+    bottom: 80px;
+    left: 30%;
+}
+
+#theForm {
+    margin: auto;
+    padding-top: 50px;
+    width: 30%;
+}
 
 a.bestButton {
     font-size: 20px;
@@ -62,10 +109,6 @@ header {
     left: 50%;
     transform: translate(-50%, 0);
     width: 400px;
-}
-
-#visualization {
-    z-index: 0;
 }
 
 #HomeButton {

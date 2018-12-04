@@ -23,6 +23,10 @@
         <a class="bestButton" href="SortingHat_FormPage.html">Put The Hat On</a>
     </div>
 
+        <footer>
+        <a class="footerLink" href="about.html">About the project</a> <a class="footerLink" href="ourDataset.html">Our dataset</a>
+</footer>
+
 </body>
 
 </html>
