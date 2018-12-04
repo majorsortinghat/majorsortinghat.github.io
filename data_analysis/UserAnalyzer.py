@@ -390,7 +390,7 @@ dtree = dtree.fit(values, labels)
 forest = sklearn.ensemble.RandomForestClassifier(n_estimators = 50)
 forest = forest.fit(values, labels)
 
-linear = sklearn.linear_model.SGDClassifier(max_iter=10000, tol=1e-3)
+linear = sklearn.linear_model.SGDClassifier(alpha = .1, max_iter=100, tol=1e-3)
 linear = linear.fit(values, labels)
 
 filename = 'linear.sav'
