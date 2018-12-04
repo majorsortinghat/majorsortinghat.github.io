@@ -96,8 +96,7 @@ function draw() {
                 drawInfo = true;
                 major = item;
             }
-            fill(150, 250, 200);
-            ellipse(count * w / length, vertMid - thisperson[item] * h / 5, diameter);
+
 
             rectMode(CENTER);
             fill(180, 200, 255);
@@ -105,6 +104,8 @@ function draw() {
             fill(100, 150, 255);
             ellipse(count * w / length, vertMid - thisMajorProfile[item]['Mean'] * h / 5, diameter);
             //console.log(thisMajorProfile[item]['Mean']);
+            fill(150, 250, 200);
+            ellipse(count * w / length, vertMid - thisperson[item] * h / 5, diameter);
 
 
 
@@ -116,9 +117,9 @@ function draw() {
     if (major != "") {
         fill(200);
 
-        var width = "You: ".concat(thisperson[item]).concat(".  .").concat("Avg of ").concat(currentSearch).concat(": ").concat(thisMajorProfile[item]['Mean']).length * 7 + 20;
-        if (width < thesaurus[major].length * 8 + 20) {
-            width = thesaurus[major].length * 8 + 20;
+        var width = "You: ".concat(thisperson[item]).concat(".  .").concat("Avg of ").concat(currentSearch).concat(": ").concat(thisMajorProfile[item]['Mean']).length * 7 + 25;
+        if (width < thesaurus[major].length * 8.1 + 20) {
+            width = thesaurus[major].length * 8.1 + 20;
         }
         var startX = mouseX;
         var correction = 1;
@@ -130,11 +131,11 @@ function draw() {
         rectMode(CORNER);
         rect(startX + 5, mouseY + 5, width, 55, 5);
         fill(255);
-        textSize(16);
+        textSize(17);
         text(thesaurus[major], startX + 20, mouseY + 28);
-        textSize(12);
-        text("You: " + thisperson[major], startX + 30, mouseY + 45)
-        text("Avg of " + currentSearch + ": " + thisMajorProfile[major]['Mean'], startX + 80, mouseY + 45)
+        textSize(14);
+        text("You: " + thisperson[major], startX + 35, mouseY + 45)
+        text("Avg of " + currentSearch + ": " + thisMajorProfile[major]['Mean'].toFixed(2), startX + 90, mouseY + 45)
             //console.log(thisMajorProfile[major]['Mean']);
 
 

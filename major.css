@@ -21,6 +21,10 @@ p {
     padding: 50px;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1 {
     margin: auto;
     width: 95%;
@@ -30,23 +34,63 @@ h1 {
 header {
     width: 100%;
     padding: 10px;
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid #A31F34;
+    box-shadow: 0px 0px 5px 2px #bbbbbb;
 }
 
 #HomeButton {
     padding: 0px;
-    width: 200px;
+    width: 300px;
     color: black;
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
 }
 
-#HomeButton:hover {
+a:hover {
     text-decoration: none;
-    background-color: aquamarine;
+}
+
+#sorthat {
+    text-decoration: none;
 }
 
 a:visited {
     text-decoration: none;
+    color: black;
+}
+
+#logoImg {
+    vertical-align: text-bottom;
+    width: 40px;
+}
+
+#userDot {
+    width: 20px;
+    height: 12px;
+    rx: 6px;
+    ry: 6px;
+    fill: rgb(150, 250, 200);
+    margin: 10px;
+}
+
+#majorDot {
+    width: 20px;
+    height: 12px;
+    rx: 6px;
+    ry: 6px;
+    fill: rgb(100, 150, 255);
+    margin: 10px;
+}
+
+#graphExplanation {
+    margin: auto;
+    width: 200px;
+}
+
+svg {
+    width: 20px;
+    height: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
 }

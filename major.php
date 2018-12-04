@@ -10,7 +10,8 @@
 <body>
     <header>
         <div id="HomeButton">
-            <a href="index.php">The MIT Sorting Hat</a>
+        
+            <a href="index.php"><img id="logoImg" src="HatLogo.png"> <span id="sorthat"> The MIT Sorting Hat</span></a>
         </div>
     </header>
     
@@ -27,10 +28,10 @@
     </div>
    
 <h1>
-
+<a href="<?php echo $thisMajor["CourseSite"]; ?>">
     <?php echo $thisMajorNum;  ?>:
     <?php echo $thisMajor["Name"]; ?>
-
+</a>
 
 
 </h1>
@@ -48,6 +49,11 @@
 <div id="linegraph">
     <div id="graphHeadline">Explore how close your match is with <?php 
 echo $thisMajorNum;  ?>: </div>
+</div>
+<div id="graphExplanation">
+<svg >
+  <rect id="userDot" />
+</svg>You <svg ><rect id="majorDot" /></svg><?php echo $thisMajorNum;  ?>
 </div>
 
 <script src="major.js"></script>
