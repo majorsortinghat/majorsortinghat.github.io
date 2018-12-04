@@ -3,12 +3,13 @@
 
 <head>
     <title><?php echo $_GET["id"]; ?></title>
+    <link rel="stylesheet" href="major.css">
 </head>
 
 <body>
     <a href="index.php">The MIT Sorting Hat</a>
     <div>
-         Welcome
+         
     
 </div>
    
@@ -35,19 +36,12 @@
 </p>
 </div>
 
+<div id="linegraph">
+</div>
 
-<script type="text/javascript">
-    console.log("hey");
-    var thisdata = sessionStorage;
-
-    var data = <?php echo json_encode($replies, JSON_HEX_TAG); ?>; //Don't forget the extra semicolon!
-
-    console.log(thisdata);
-
-    //console.log(data);
-    console.log("hey");
-
-</script>
+<script src="major.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
 </body>
 
 </html>

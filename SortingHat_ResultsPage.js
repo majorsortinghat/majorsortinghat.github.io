@@ -2,7 +2,7 @@ console.log("hey");
 
 var w = window.innerWidth;
 var h = window.innerHeight * 0.8;
-var majors = cleanData(data);
+var majors = cleanData(userScores);
 var majors_len = Object.keys(majors).length;
 console.log(majors_len);
 var minScreensDimension = Math.min.apply(null, [w, h]);
@@ -16,7 +16,7 @@ var highlightKey = null;
 document.getElementById("headline").innerHTML = "You got " + findBestMajor(majors, 1);
 //console.log(data);
 
-function findBestMajor(majors, value) { //This doeasn't work at the moment
+function findBestMajor(majors, value) {
 
     for (var key in majors) {
 
@@ -98,16 +98,16 @@ function draw() {
 
             textSize(12);
             fill(textcolor);
-            text("Distance: " + data[key].toFixed(2) + "\nlearn more", posX, posY + 15);
+            text("Distance: " + userScores[key].toFixed(2) + "\nlearn more", posX, posY + 15);
             textSize(30);
             text(key, posX, posY - 15);
             if (mouseIsPressed) {
                 console.log("Pressed");
                 var urlEnd = "";
-
+                //sessionStorage.setItem(key, )
 
                 for (var reply in replies) {
-                    sessionStorage.setItem(reply, parseInt(replies[reply]));
+                    sessionStorage.setItem("reply", [reply, parseInt(replies[reply])]);
 
                     //urlEnd = urlEnd.concat("&" + reply + "=t[" + replies[reply] + "]");
                 }
@@ -168,7 +168,7 @@ function cleanData(dirtyData) {
     var min_value = Math.min.apply(null, values);
 
     //console.log(min_value);
-    for (var key in data) {
+    for (var key in dirtyData) {
         //console.log(key);
         // check if the property/key is defined in the object itself, not in parent
         if (dirtyData.hasOwnProperty(key)) {
