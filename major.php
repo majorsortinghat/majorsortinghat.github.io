@@ -4,12 +4,15 @@
 <head>
     <title><?php echo $_GET["id"]; ?></title>
     <link rel="stylesheet" href="major.css">
+    <link rel="shortcut icon" type="image/png" href="HatLogo_favicon.png"/>
 </head>
 
 <body>
     <header>
-    <a href="index.php">The MIT Sorting Hat</a>
-</header>
+        <div id="HomeButton">
+            <a href="index.php">The MIT Sorting Hat</a>
+        </div>
+    </header>
     
     
     <?php 
@@ -21,13 +24,12 @@
     <div>
          
     
-</div>
+    </div>
    
 <h1>
 
-<?php 
-echo $thisMajorNum;  ?>: 
-<?php echo $thisMajor["Name"]; ?>
+    <?php echo $thisMajorNum;  ?>:
+    <?php echo $thisMajor["Name"]; ?>
 
 
 
@@ -39,11 +41,13 @@ echo $thisMajorNum;  ?>:
 <div id ="paragraph">
     <p>
         <?php echo $thisMajor["Description"]; ?>
-        <a href="<?php echo $thisMajor["TextCitation"]; ?>">link</a>
+        <a href="<?php echo $thisMajor["TextCitation"]; ?>">Text adapted from this site</a>
 </p>
 </div>
 
 <div id="linegraph">
+    <div id="graphHeadline">Explore how close your match is with <?php 
+echo $thisMajorNum;  ?>: </div>
 </div>
 
 <script src="major.js"></script>
