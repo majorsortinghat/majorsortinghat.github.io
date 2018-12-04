@@ -11,7 +11,7 @@
     <header>
         <div id="HomeButton">
         
-            <a href="index.php"><img id="logoImg" src="HatLogo.png"> <span id="sorthat"> The MIT Sorting Hat</span></a>
+            <a href="index.php" class="homebutton"><img id="logoImg" src="HatLogo.png"> <span id="sorthat"> The MIT Sorting Hat</span></a>
         </div>
     </header>
     
