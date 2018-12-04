@@ -1,0 +1,767 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Sorting...{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form id="theForm" action="SortingHat_ResultsPage.php" method="POST">
+	{% for i in range(len(questions)) %}
+        <div id={{ "FormPage" + questions[i] }}>
+        	{% if i < 10 %}
+            	<h3>Rate how much you enjoy the following activities</h3>
+            {% elif i < 19 %}
+            	<h3>Which of these talks would you like to watch?</h3>
+            {% elif i < 29 %}
+            	<h3>How much did you like these subjects in high school? Only give an answer if you had the subject.</h3>
+            {% elif i < 52 %}
+            	<h3>Rate how much you agree with the following statements.</h3>
+            {% endif %}
+
+
+ 				<div class="radioObject">
+	                <h4>{{ questions[i] }}</h4>
+	                <div class="loveHateRating">
+	                    {% if i < 10 %}
+			            	Hate it
+			            {% elif i < 19 %}
+			            	I would hate to watch it
+			            {% elif i < 29 %}
+			            	Hated it
+			            {% elif i < 52 %}
+			            	Strongly disagree
+			            {% endif %}
+			            {% if not loop.last %}
+		                    <input type="radio" value="-2" name={{ "reply" + qkey[questions[i]] }} onclick="return show( {{ 'FormPage' + (i + 1) }} , {{ 'FormPage' + i }})">
+		                    <input type="radio" value="-1" name={{ "reply" + qkey[questions[i]] }}>
+		                    <input type="radio" value="0" name={{ "reply" + qkey[questions[i]] }}>
+		                    <input type="radio" value="1" name={{ "reply" + qkey[questions[i]] }}>
+		                    <input type="radio" value="2" name={{ "reply" + qkey[questions[i]] }}>
+		                {% else %}
+
+		                {% endif %}
+	                    {% if i < 10 %}
+			            	Love it
+			            {% elif i < 19 %}
+			            	I would love to watch it
+			            {% elif i < 29 %}
+			            	Loved it
+			            {% elif i < 52 %}
+			            	Strongly agree
+			            {% endif %}
+	                </div>
+	            </div>
+
+
+	            <div class="radioObject">
+	                <h4>Parties</h4>
+	                <div class="loveHateRating">
+	                    hate it
+	                    <input type="radio" value="-2" name="reply[party]">
+	                    <input type="radio" value="-1" name="reply[party]">
+	                    <input type="radio" value="0" name="reply[party]">
+	                    <input type="radio" value="1" name="reply[party]">
+	                    <input type="radio" value="2" name="reply[party]"> love it
+	                </div>
+	            </div>
+
+        	<button class="nextPage" onclick="return show('FormPage2', 'FormPage1')">Next page</button>
+    {% endfor %}
+
+        <div id="FormPage2">
+            <h3>Rate how much you enjoy the following activities</h3>
+            <div class="radioObject">
+                <h4>Hanging with friends</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[hanging]">
+                    <input type="radio" value="-1" name="reply[hanging]">
+                    <input type="radio" value="0" name="reply[hanging]">
+                    <input type="radio" value="1" name="reply[hanging]">
+                    <input type="radio" value="2" name="reply[hanging]"> love it
+                </div>
+            </div>
+            <button class="prevPage" onclick="return show('FormPage1', 'FormPage2')">Last page</button>
+        	<button class="nextPage" onclick="return show('FormPage3', 'FormPage2')">Next page</button>
+
+        <div id="FormPage3">
+            <h3>Rate how much you enjoy the following activities</h3>
+            <div class="radioObject">
+                <h4>Hiking</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[hiking]">
+                    <input type="radio" value="-1" name="reply[hiking]">
+                    <input type="radio" value="0" name="reply[hiking]">
+                    <input type="radio" value="1" name="reply[hiking]">
+                    <input type="radio" value="2" name="reply[hiking]"> love it
+                </div>
+            </div>
+            <button class="prevPage" onclick="return show('FormPage2', 'FormPage3')">Last page</button>
+        	<button class="nextPage" onclick="return show('FormPage4', 'FormPage3')">Next page</button>
+
+        <div id="FormPage4">
+            <h3>Rate how much you enjoy the following activities</h3>
+            <div class="radioObject">
+                <h4>Playing Board Games</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[bgames]">
+                    <input type="radio" value="-1" name="reply[bgames]">
+                    <input type="radio" value="0" name="reply[bgames]">
+                    <input type="radio" value="1" name="reply[bgames]">
+                    <input type="radio" value="2" name="reply[bgames]"> love it
+                </div>
+            </div>
+            <button class="prevPage" onclick="return show('FormPage3', 'FormPage4')">Last page</button>
+        	<button class="nextPage" onclick="return show('FormPage5', 'FormPage4')">Next page</button>
+
+        <div id="FormPage5">
+            <h3>Rate how much you enjoy the following activities</h3>
+            <div class="radioObject">
+                <h4>Playing Video Games</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[vgames]">
+                    <input type="radio" value="-1" name="reply[vgames]">
+                    <input type="radio" value="0" name="reply[vgames]">
+                    <input type="radio" value="1" name="reply[vgames]">
+                    <input type="radio" value="2" name="reply[vgames]"> love it
+                </div>
+            </div>
+            <button class="prevPage" onclick="return show('FormPage4', 'FormPage5')">Last page</button>
+        	<button class="nextPage" onclick="return show('FormPage6', 'FormPage5')">Next page</button>
+
+        <div id="FormPage6">
+            <h3>Rate how much you enjoy the following activities</h3>
+            <div class="radioObject">
+                <h4>Watching TV</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[tv]">
+                    <input type="radio" value="-1" name="reply[tv]">
+                    <input type="radio" value="0" name="reply[tv]">
+                    <input type="radio" value="1" name="reply[tv]">
+                    <input type="radio" value="2" name="reply[tv]"> love it
+                </div>
+            </div>
+
+
+            <div class="radioObject">
+                <h4>Watching movies</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[movie]">
+                    <input type="radio" value="-1" name="reply[movie]">
+                    <input type="radio" value="0" name="reply[movie]">
+                    <input type="radio" value="1" name="reply[movie]">
+                    <input type="radio" value="2" name="reply[movie]"> love it
+                </div>
+            </div>
+            <div class="radioObject">
+                <h4>Individual sports</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[isport]">
+                    <input type="radio" value="-1" name="reply[isport]">
+                    <input type="radio" value="0" name="reply[isport]">
+                    <input type="radio" value="1" name="reply[isport]">
+                    <input type="radio" value="2" name="reply[isport]"> love it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>Team sports</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[tsport]">
+                    <input type="radio" value="-1" name="reply[tsport]">
+                    <input type="radio" value="0" name="reply[tsport]">
+                    <input type="radio" value="1" name="reply[tsport]">
+                    <input type="radio" value="2" name="reply[tsport]"> love it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>Reading a book (of your favorite genre)</h4>
+                <div class="loveHateRating">
+                    hate it
+                    <input type="radio" value="-2" name="reply[book]">
+                    <input type="radio" value="-1" name="reply[book]">
+                    <input type="radio" value="0" name="reply[book]">
+                    <input type="radio" value="1" name="reply[book]">
+                    <input type="radio" value="2" name="reply[book]"> love it
+                </div>
+            </div>
+
+            <button class="prevPage" disabled="true" onclick="return show('FormPage2', 'FormPage1')">Last page</button>
+
+            <button class="nextPage" onclick="return show('FormPage2', 'FormPage1')">Next page</button>
+        </div>
+
+        <div id="FormPage2" style="display:none">
+
+            <h3>Which of these talks would you like to watch?</h3>
+            <div class="radioObject">
+                <h4>The Power of Vulnerability</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[vuln]">
+                    <input type="radio" value="-1" name="reply[vuln]">
+                    <input type="radio" value="0" name="reply[vuln]">
+                    <input type="radio" value="1" name="reply[vuln]">
+                    <input type="radio" value="2" name="reply[vuln]"> I would love it
+                </div>
+            </div>
+            <div class="radioObject">
+                <h4>Fake Videos of Real People-and How to Spot Them</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[fvids]">
+                    <input type="radio" value="-1" name="reply[fvids]">
+                    <input type="radio" value="0" name="reply[fvids]">
+                    <input type="radio" value="1" name="reply[fvids]">
+                    <input type="radio" value="2" name="reply[fvids]"> I would love it
+                </div>
+            </div>
+            <div class="radioObject">
+                <h4>The Pharmacy of the Future? Personalized Pills, 3D printed at home</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[potfutu]">
+                    <input type="radio" value="-1" name="reply[potfutu]">
+                    <input type="radio" value="0" name="reply[potfutu]">
+                    <input type="radio" value="1" name="reply[potfutu]">
+                    <input type="radio" value="2" name="reply[potfutu]"> I would love it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>How Great Leaders Inspire Actions</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[glga]">
+                    <input type="radio" value="-1" name="reply[glga]">
+                    <input type="radio" value="0" name="reply[glga]">
+                    <input type="radio" value="1" name="reply[glga]">
+                    <input type="radio" value="2" name="reply[glga]"> I would love it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>Let my Dataset change your Mindset</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[lmdcym]">
+                    <input type="radio" value="-1" name="reply[lmdcym]">
+                    <input type="radio" value="0" name="reply[lmdcym]">
+                    <input type="radio" value="1" name="reply[lmdcym]">
+                    <input type="radio" value="2" name="reply[lmdcym]"> I would love it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>The Magic Ingredient that brings Life to Pixar</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[mingred]">
+                    <input type="radio" value="-1" name="reply[mingred]">
+                    <input type="radio" value="0" name="reply[mingred]">
+                    <input type="radio" value="1" name="reply[mingred]">
+                    <input type="radio" value="2" name="reply[mingred]"> I would love it
+                </div>
+            </div>
+
+
+            <div class="radioObject">
+                <h4>The Power of Introverts</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[introv]">
+                    <input type="radio" value="-1" name="reply[introv]">
+                    <input type="radio" value="0" name="reply[introv]">
+                    <input type="radio" value="1" name="reply[introv]">
+                    <input type="radio" value="2" name="reply[introv]"> I would love it
+                </div>
+            </div>
+            <div class="radioObject">
+                <h4>What Gardening told me about Life</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[garden]">
+                    <input type="radio" value="-1" name="reply[garden]">
+                    <input type="radio" value="0" name="reply[garden]">
+                    <input type="radio" value="1" name="reply[garden]">
+                    <input type="radio" value="2" name="reply[garden]"> I would love it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>What if gentrification was about healing communities instead of displacing them?</h4>
+                <div class="loveHateRating">
+                    I would hate to watch it
+                    <input type="radio" value="-2" name="reply[wigwah]">
+                    <input type="radio" value="-1" name="reply[wigwah]">
+                    <input type="radio" value="0" name="reply[wigwah]">
+                    <input type="radio" value="1" name="reply[wigwah]">
+                    <input type="radio" value="2" name="reply[wigwah]"> I would love it
+                </div>
+            </div>
+            <button class="prevPage" onclick="return show('FormPage1', 'FormPage2')">Last page</button>
+
+            <button class="nextPage" onclick="return show('FormPage3', 'FormPage2')">Next page</button>
+
+
+        </div>
+
+        <div id="FormPage3" style="display:none">
+
+            <h3>How much did you like these subjects in high school? Only give an answer if you had the subject.</h3>
+            <div class="radioObject">
+                <h4>Math</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hmath]">
+                    <input type="radio" value="-1" name="reply[hmath]">
+                    <input type="radio" value="0" name="reply[hmath]">
+                    <input type="radio" value="1" name="reply[hmath]">
+                    <input type="radio" value="2" name="reply[hmath]"> Loved it
+                </div>
+            </div>
+            <div class="radioObject">
+                <h4>Physics</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hphys]">
+                    <input type="radio" value="-1" name="reply[hphys]">
+                    <input type="radio" value="0" name="reply[hphys]">
+                    <input type="radio" value="1" name="reply[hphys]">
+                    <input type="radio" value="2" name="reply[hphys]"> Loved it
+                </div>
+            </div>
+            <div class="radioObject">
+                <h4>Chemistry</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hchem]">
+                    <input type="radio" value="-1" name="reply[hchem]">
+                    <input type="radio" value="0" name="reply[hchem]">
+                    <input type="radio" value="1" name="reply[hchem]">
+                    <input type="radio" value="2" name="reply[hchem]"> Loved it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>Biology</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hbio]">
+                    <input type="radio" value="-1" name="reply[hbio]">
+                    <input type="radio" value="0" name="reply[hbio]">
+                    <input type="radio" value="1" name="reply[hbio]">
+                    <input type="radio" value="2" name="reply[hbio]"> Loved it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>English</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hengl]">
+                    <input type="radio" value="-1" name="reply[hengl]">
+                    <input type="radio" value="0" name="reply[hengl]">
+                    <input type="radio" value="1" name="reply[hengl]">
+                    <input type="radio" value="2" name="reply[hengl]"> Loved it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>History</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hhis]">
+                    <input type="radio" value="-1" name="reply[hhis]">
+                    <input type="radio" value="0" name="reply[hhis]">
+                    <input type="radio" value="1" name="reply[hhis]">
+                    <input type="radio" value="2" name="reply[hhis]"> Loved it
+                </div>
+            </div>
+
+
+            <div class="radioObject">
+                <h4>Music</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hmus]">
+                    <input type="radio" value="-1" name="reply[hmus]">
+                    <input type="radio" value="0" name="reply[hmus]">
+                    <input type="radio" value="1" name="reply[hmus]">
+                    <input type="radio" value="2" name="reply[hmus]"> Loved it
+                </div>
+            </div>
+            <div class="radioObject">
+                <h4>Art </h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hart]">
+                    <input type="radio" value="-1" name="reply[hart]">
+                    <input type="radio" value="0" name="reply[hart]">
+                    <input type="radio" value="1" name="reply[hart]">
+                    <input type="radio" value="2" name="reply[hart]"> Loved it
+                </div>
+            </div>
+
+            <div class="radioObject">
+                <h4>Leader</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hlead]">
+                    <input type="radio" value="-1" name="reply[hlead]">
+                    <input type="radio" value="0" name="reply[hlead]">
+                    <input type="radio" value="1" name="reply[hlead]">
+                    <input type="radio" value="2" name="reply[hlead]"> Loved it
+                </div>
+            </div>
+            <div class="radioObject">
+                <h4>Engineering</h4>
+                <div class="loveHateRating">
+                    Hated it
+                    <input type="radio" value="-2" name="reply[hengi]">
+                    <input type="radio" value="-1" name="reply[hengi]">
+                    <input type="radio" value="0" name="reply[hengi]">
+                    <input type="radio" value="1" name="reply[hengi]">
+                    <input type="radio" value="2" name="reply[hengi]"> Loved it
+                </div>
+            </div>
+
+
+            <button class="prevPage" onclick="return show('FormPage2', 'FormPage3')">Last page</button>
+
+            <button class="nextPage" onclick="return show('FormPage4', 'FormPage3')">Next page</button>
+
+
+
+        </div>
+
+        <div id="FormPage4" style="display:none">
+            <h3>Rate how much you agree with the following statements</h3>
+            <div class="radioObject">
+
+                <h4>I worry about things</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[worry]">
+                    <input type="radio" value="-1" name="reply[worry]">
+                    <input type="radio" value="0" name="reply[worry]">
+                    <input type="radio" value="1" name="reply[worry]">
+                    <input type="radio" value="2" name="reply[worry]"> Strongly agree
+                </div>
+            </div>
+            <div class="radioObject">
+
+                <h4>I am quick to understand things</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[ustand]">
+                    <input type="radio" value="-1" name="reply[ustand]">
+                    <input type="radio" value="0" name="reply[ustand]">
+                    <input type="radio" value="1" name="reply[ustand]">
+                    <input type="radio" value="2" name="reply[ustand]"> Strongly agree
+                </div>
+            </div>
+            <div class="radioObject">
+
+                <h4>I think a lot before I speak or act</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[think]">
+                    <input type="radio" value="-1" name="reply[think]">
+                    <input type="radio" value="0" name="reply[think]">
+                    <input type="radio" value="1" name="reply[think]">
+                    <input type="radio" value="2" name="reply[think]"> Strongly agree
+                </div>
+            </div>
+            <div class="radioObject">
+
+                <h4>I talk to a lot of different people at parties</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[talkap]">
+                    <input type="radio" value="-1" name="reply[talkap]">
+                    <input type="radio" value="0" name="reply[talkap]">
+                    <input type="radio" value="1" name="reply[talkap]">
+                    <input type="radio" value="2" name="reply[talkap]"> Strongly agree
+                </div>
+            </div>
+            <div class="radioObject">
+
+                <h4>I take time out for others</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[timefo]">
+                    <input type="radio" value="-1" name="reply[timefo]">
+                    <input type="radio" value="0" name="reply[timefo]">
+                    <input type="radio" value="1" name="reply[timefo]">
+                    <input type="radio" value="2" name="reply[timefo]"> Strongly agree
+                </div>
+            </div>
+            <div class="radioObject">
+
+                <h4>I start conversations</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[sconv]">
+                    <input type="radio" value="-1" name="reply[sconv]">
+                    <input type="radio" value="0" name="reply[sconv]">
+                    <input type="radio" value="1" name="reply[sconv]">
+                    <input type="radio" value="2" name="reply[sconv]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I have a soft heart</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[sheart]">
+                    <input type="radio" value="-1" name="reply[sheart]">
+                    <input type="radio" value="0" name="reply[sheart]">
+                    <input type="radio" value="1" name="reply[sheart]">
+                    <input type="radio" value="2" name="reply[sheart]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I seldom feel blue</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[sfblue]">
+                    <input type="radio" value="-1" name="reply[sfblue]">
+                    <input type="radio" value="0" name="reply[sfblue]">
+                    <input type="radio" value="1" name="reply[sfblue]">
+                    <input type="radio" value="2" name="reply[sfblue]"> Strongly agree
+                </div>
+            </div>
+            <button class="prevPage" onclick="return show('FormPage3', 'FormPage4')">Last page</button>
+            <button class="nextPage" onclick="return show('FormPage5', 'FormPage4')">Next page</button>
+        </div>
+
+        <div id="FormPage5" style="display:none">
+            <h3>Rate how much you agree with the following statements</h3>
+            <div class="radioObject">
+
+                <h4>I am relaxed most of the time</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[relmott]">
+                    <input type="radio" value="-1" name="reply[relmott]">
+                    <input type="radio" value="0" name="reply[relmott]">
+                    <input type="radio" value="1" name="reply[relmott]">
+                    <input type="radio" value="2" name="reply[relmott]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I am quiet around strangers</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[qastra]">
+                    <input type="radio" value="-1" name="reply[qastra]">
+                    <input type="radio" value="0" name="reply[qastra]">
+                    <input type="radio" value="1" name="reply[qastra]">
+                    <input type="radio" value="2" name="reply[qastra]"> Strongly agree
+                </div>
+            </div>
+
+
+            <div class="radioObject">
+
+                <h4>I am not interested in other people's problems</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[niiopr]">
+                    <input type="radio" value="-1" name="reply[niiopr]">
+                    <input type="radio" value="0" name="reply[niiopr]">
+                    <input type="radio" value="1" name="reply[niiopr]">
+                    <input type="radio" value="2" name="reply[niiopr]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I make people feel at ease</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[mpfae]">
+                    <input type="radio" value="-1" name="reply[mpfae]">
+                    <input type="radio" value="0" name="reply[mpfae]">
+                    <input type="radio" value="1" name="reply[mpfae]">
+                    <input type="radio" value="2" name="reply[mpfae]"> Strongly agree
+                </div>
+            </div>
+            <div class="radioObject">
+
+                <h4>I have a good imagination</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[imagin]">
+                    <input type="radio" value="-1" name="reply[imagin]">
+                    <input type="radio" value="0" name="reply[imagin]">
+                    <input type="radio" value="1" name="reply[imagin]">
+                    <input type="radio" value="2" name="reply[imagin]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I have frequent mood swings</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[ihfms]">
+                    <input type="radio" value="-1" name="reply[ihfms]">
+                    <input type="radio" value="0" name="reply[ihfms]">
+                    <input type="radio" value="1" name="reply[ihfms]">
+                    <input type="radio" value="2" name="reply[ihfms]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I get irritated easily</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[gieasily]">
+                    <input type="radio" value="-1" name="reply[gieasily]">
+                    <input type="radio" value="0" name="reply[gieasily]">
+                    <input type="radio" value="1" name="reply[gieasily]">
+                    <input type="radio" value="2" name="reply[gieasily]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I get chores done right away</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[gcdraway]">
+                    <input type="radio" value="-1" name="reply[gcdraway]">
+                    <input type="radio" value="0" name="reply[gcdraway]">
+                    <input type="radio" value="1" name="reply[gcdraway]">
+                    <input type="radio" value="2" name="reply[gcdraway]"> Strongly agree
+                </div>
+            </div>
+            <button class="prevPage" onclick="return show('FormPage4', 'FormPage5')">Last page</button>
+            <button class="nextPage" onclick="return show('FormPage6', 'FormPage5')">Next page</button>
+        </div>
+
+        <div id="FormPage6" style="display:none">
+            <h3>Rate how much you agree with the following statements</h3>
+            <div class="radioObject">
+
+                <h4>I am full of ideas</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[foideas]">
+                    <input type="radio" value="-1" name="reply[foideas]">
+                    <input type="radio" value="0" name="reply[foideas]">
+                    <input type="radio" value="1" name="reply[foideas]">
+                    <input type="radio" value="2" name="reply[foideas]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I often forget to put things back in their proper place</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[ftptback]">
+                    <input type="radio" value="-1" name="reply[ftptback]">
+                    <input type="radio" value="0" name="reply[ftptback]">
+                    <input type="radio" value="1" name="reply[ftptback]">
+                    <input type="radio" value="2" name="reply[ftptback]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I feel little concern for others</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[flcfothers]">
+                    <input type="radio" value="-1" name="reply[flcfothers]">
+                    <input type="radio" value="0" name="reply[flcfothers]">
+                    <input type="radio" value="1" name="reply[flcfothers]">
+                    <input type="radio" value="2" name="reply[flcfothers]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I don't like to draw attention to myself</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[dgatten]">
+                    <input type="radio" value="-1" name="reply[dgatten]">
+                    <input type="radio" value="0" name="reply[dgatten]">
+                    <input type="radio" value="1" name="reply[dgatten]">
+                    <input type="radio" value="2" name="reply[dgatten]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I have difficulty understanding abstract ideas</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[duabstr]">
+                    <input type="radio" value="-1" name="reply[duabstr]">
+                    <input type="radio" value="0" name="reply[duabstr]">
+                    <input type="radio" value="1" name="reply[duabstr]">
+                    <input type="radio" value="2" name="reply[duabstr]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I pay attention to details</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[atdetail]">
+                    <input type="radio" value="-1" name="reply[atdetail]">
+                    <input type="radio" value="0" name="reply[atdetail]">
+                    <input type="radio" value="1" name="reply[atdetail]">
+                    <input type="radio" value="2" name="reply[atdetail]"> Strongly agree
+                </div>
+            </div>
+
+            <div class="radioObject">
+
+                <h4>I am always prepared</h4>
+                <div class="loveHateRating">
+                    Strongly disagree
+                    <input type="radio" value="-2" name="reply[alwprep]">
+                    <input type="radio" value="-1" name="reply[alwprep]">
+                    <input type="radio" value="0" name="reply[alwprep]">
+                    <input type="radio" value="1" name="reply[alwprep]">
+                    <input type="radio" value="2" name="reply[alwprep]"> Strongly agree
+                </div>
+            </div>
+            <button class="prevPage" onclick="return show('FormPage5', 'FormPage6')">Last page</button>
+            <input id="submitButton" type="submit" value="Submit">
+
+        </div>
+
+    </form>
+
+
+
+  {% for question in questions %}
+    
+
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

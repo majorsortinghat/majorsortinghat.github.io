@@ -390,12 +390,12 @@ dtree = dtree.fit(values, labels)
 forest = sklearn.ensemble.RandomForestClassifier(n_estimators = 50)
 forest = forest.fit(values, labels)
 
-linear = sklearn.linear_model.SGDClassifier(alpha = .1, max_iter=100, tol=1e-3)
+linear = sklearn.linear_model.SGDClassifier(loss = 'modified_huber', alpha = .1, max_iter=100, tol=1e-3)
 linear = linear.fit(values, labels)
 
 filename = 'linear.sav'
-pickling_on = open(filename, "wb")
-pickle.dump(linear, pickling_on)
+pickling_on = open(filename, "rb")
+linear = pickle.load(pickling_on)
 pickling_on.close()
 
 print("DTREE 6-2: ", dtree.predict(dt6_2Input.reshape(1,-1)))
@@ -404,9 +404,11 @@ print("FOREST 6-2: ", forest.predict(dt6_2Input.reshape(1,-1)))
 print("FOREST 6-2 prob: ", forest.predict_proba(dt6_2Input.reshape(1,-1)))
 print("FOREST score: ", forest.score(values, labels))
 print("LINEAR 6-2: ", linear.predict(dt6_2Input.reshape(1,-1)))
+print("LINEAR 6-2 prob: ", linear.predict_proba(dt6_2Input.reshape(1,-1)))
+print("LINEAR 6-2 dfn: ", linear.decision_function(dt6_2Input.reshape(1,-1)))
 print("LINEAR score: ", linear.score(values, labels))
 
-
+'''
 print('2A Returns...')
 compareValues(processInput(fake2AInput()))
 print('12 Returns...')
@@ -414,5 +416,5 @@ compareValues(processInput(fake12Input()))
 print('6-2 Returns...')
 compareValues(processInput(fake6_2Input()))
 
-
+'''
 userInput = {}

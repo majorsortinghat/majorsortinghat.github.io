@@ -49,13 +49,13 @@ def create_app(test_config = None):
     except OSError:
         pass
 
-    from . import dtree
-    app.register_blueprint(dtree.dt)
-    app.add_url_rule('/hat/dtree', endpoint='dtreeout')
+    from . import hats
+    app.register_blueprint(hats.hats)
+    app.add_url_rule('/hats', endpoint='out')
 
     @app.route('/')
     def index():
-        return render_template('index.html')
+        return render_template('index.php')
 
     @app.route('/major/<major_num>')
     def major():
@@ -69,15 +69,8 @@ def create_app(test_config = None):
             return 'Hello, World!'
 
 
-    @app.route('/hat/ml', methods=['GET', 'POST'])
-    def ml():
-        if request.method == 'POST':
-            return #TODO insert function
-        else:
-            return 'Hello, World!'
-
 
 
 if name == "__main__":
-
+    create_app()
 
