@@ -8,8 +8,9 @@ var thesaurus;
 
 
 function setMajor(data) {
-    thisMajorProfile = data[currentSearch];
-    console.log(thisMajorProfile);
+    var innerThisMajorProfile = data[currentSearch];
+    console.log(innerThisMajorProfile);
+    return innerThisMajorProfile;
 }
 
 function loadJSON(path, success, error) {
@@ -18,7 +19,7 @@ function loadJSON(path, success, error) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 if (success)
-                    success(JSON.parse(xhr.responseText));
+                    return success(JSON.parse(xhr.responseText));
             } else {
                 if (error)
                     error(xhr);
@@ -29,14 +30,15 @@ function loadJSON(path, success, error) {
     xhr.send();
 }
 
-loadJSON('majorsortinghat/outdata.json',
+thisMajorProfile = loadJSON('majorsortinghat/outdata.json',
     setMajor,
     function(xhr) { console.error(xhr); }
 );
-loadJSON('majorsortinghat/majorTranslator.json',
+thesaurus = loadJSON('majorsortinghat/majorTranslator.json',
     function(data) {
-        thesaurus = data;
-        console.log(thesaurus);
+        var innerThesaurus = data;
+        console.log(innerThesaurus);
+        return innerThesaurus;
     },
     function(xhr) { console.error(xhr); }
 );
