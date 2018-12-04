@@ -44,12 +44,12 @@ thesaurus = loadJSON('majorsortinghat/majorTranslator.json',
 );
 
 
-
 console.log(thesaurus);
 console.log(thisMajorProfile);
 console.log("connected!");
 //console.log(currentSearch);
-
+setup()
+draw()
 
 function setup() {
 
