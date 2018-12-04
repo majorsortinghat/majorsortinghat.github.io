@@ -1,0 +1,394 @@
+{
+    "1": {
+        "Number": "1",
+        "Name": "Civil & Environmetnal Engineering",
+        "Description": "You got Course 1: Civil & Environmental Engineering!  This major equips you with the fundamental skills to succeed as an engineer in today’s complex world. Grounded in science and engineering, Course 1 students understand the world, invent and lead with creative design. They pursue education in classrooms, laboratories, design subjects, as well as field subjects. Many pursue opportunities such as UROPs and experiences abroad through MISTI. Course 1 pursues big engineering through innovations which may begin locally, but scale broadly and quickly to impact people everywhere. Read more about Course 1 and the different educational tracks and opportunities here! [obtained here, edited slightly]",
+        "CourseSite": "http://cee.mit.edu/undergraduate",
+        "TextCitation": "https://cee.mit.edu/undergraduate/"
+    },
+    "1-ENG": {
+        "Number": "1-ENG",
+        "Name": "General Engineering",
+        "Description": "You got Course 1-ENG: General Engineering! This degree is designed to prepare students to make an impact in solving the world’s greatest challenges. The program offers multiple tracks of study that allow for in-depth exploration of particular areas, or focusing on multidisciplinary studies within and outside the department in emerging areas of civil and environmental engineering. Read more about Course 1 and the different educational tracks and opportunities here! [obtained here, edited slightly]",
+        "CourseSite": "http://meche.mit.edu/education/undergraduate/course-2",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/mechanical-engineering/#undergraduatetext"
+    },
+    "2": {
+        "Number": "2",
+        "Name": "Mechanical Engineering",
+        "Description": "You got Course 2: Mechanical Engineering! The Mechanical Engineering, or ‘MechE’ program provides a broad intellectual foundation in the field of mechanical engineering. It develops relevant engineering fundamentals, provides real experience in application of concepts, and introduces important methods and techniques of engineering practice. Within a few years of graduation, the majority of Course 2 graduates will have completed or be progressing through top graduate programs; advancing in leadership tracks in industry, non-profit organizations, or the public sector; or pursuing entrepreneurial ventures. Read more about Course 2 and the different opportunities here! [Obtained here, edited slightly]",
+        "CourseSite": "http://meche.mit.edu/education/undergraduate/course-2",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/mechanical-engineering/#undergraduatetext"
+    },
+    "2-A": {
+        "Number": "2-A",
+        "Name": "Eningeering [As Recommended...]",
+        "Description": "You got Course 2-A: Bachelors of Science in Engineering! This course is designed for students whose academic and career goals demand greater breadth and flexibility than the main Course 2 allows. To a large extent, 2-A allows students an opportunity to tailor a curriculum to their own needs, starting from a solid mechanical engineering base. The program combines a rigorous grounding in core mechanical engineering topics with an individualized course of study focused on a second area that the student designs. Some examples of potential concentrations include robotics, engineering management, product development, biomedical engineering and pre-medicine, energy conversion engineering, sustainable development, architecture and building technology. Read more about this Course 2 alternative and the different routes you can take with this degree here! [Obtained here, edited slightly]",
+        "CourseSite": "http://meche.mit.edu/education/undergraduate/course-2",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/mechanical-engineering/#undergraduatetext"
+    },
+    "2-OE": {
+        "Number": "2-OE",
+        "Name": "Mechanical & Ocean Engineering",
+        "Description": "You got Course 2-OE: Mechanical & Ocean Engineering! This program is intended for students who are interested in combining a firm foundation in mechanical engineering with a specialization in ocean engineering. The program includes engineering aspects of the ocean sciences, ocean exploration, and utilization of the oceans for transportation, defense, and extracting resources. Graduates have exciting opportunities in offshore industries, naval architecture, the oceanographic industry, the Navy or government, or for further study in graduate school. Read more about Course 2-OE here! [Obtained here, edited slightly]",
+        "CourseSite": "http://meche.mit.edu/education/undergraduate/course-2oe",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/mechanical-engineering/#undergraduatetext"
+    },
+    "3": {
+        "Number": "3",
+        "Name": "Materials Science Engineering",
+        "Description": "You got Course 3: Materials Science Engineering! This program serves the needs of students who intend to pursue employment in materials-related industries immediately upon graduation, as well as those who will do graduate work in the engineering or science of materials. Read more about materials science here! [Obtained here, edited slightly]",
+        "CourseSite": "http://dmse.mit.edu",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/materials-science-engineering/#undergraduatetext"
+    },
+    "3-A": {
+        "Number": "3-A",
+        "Name": "Materials Scicence & Engineering",
+        "Description": "You got Course 3-A: Bachelor of Science in Materials Science Engineering! Some students may be attracted to the many opportunities available in the materials discipline but also have special interests that are not satisfied by the Course 3 program. In these cases, the 3-A program may be of value as a more flexible curriculum in which a larger number of elective choices is available. The requirements for Course 3-A are similar to but more flexible than those for Course 3. Read more about this Course 3 alternative here! [Obtained here, edited slightly]",
+        "CourseSite": "https://dmse.mit.edu/academics/undergraduate/degree-requirements/3a-program",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/materials-science-engineering/#undergraduatetext"
+    },
+    "3-C": {
+        "Number": "3-C",
+        "Name": "Archaeology & Materials",
+        "Description": "You got Course 3-C: Archaeology & Materials Science Engineering! Students who have a specific interest in archaeology and archaeological science may choose Course 3-C. The primary fields in this program include anthropological archaeology, geology, and materials science and engineering. fds The program enriches knowledge of past and present-day nonindustrial societies by making the natural and engineering sciences part of the archaeological tool kit.The program's special focus is on understanding prehistoric culture through study of the structure and properties of materials associated with human activities. Investigating peoples' interactions with materials, the objects that such interactions produced, and the related environmental settings leads to a fuller analysis of the physical, social, cultural, and ideological world in which people function. These are the goals of anthropological archaeology, goals that are reached, in part, through science and engineering perspectives. Read more about archaeology here! [Obtained here, edited slightly]",
+        "CourseSite": "https://dmse.mit.edu/academics/undergraduate/degree-requirements/3c-program",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/materials-science-engineering/#undergraduatetext"
+    },
+    "4": {
+        "Number": "4",
+        "Name": "Architecture",
+        "Description": "You got Course 4: Architecture! Course 4 offers a program introducing students to the department's five discipline areas: art, culture and technology; architectural design and urbanism; building technology; design and computation; and history, theory and criticism of architecture, art and design. The program fosters investigation and discussion in the development of sensitivity to the built environment. These sensibilities are linked to values and responsibilities to the community at large. Students in design studios develop technical and analytical skills and learn synthesis and invention using the elements of architectural form: material, structure, construction, light, sound, memory, and place. Read more about Architecture here! [Obtained here, edited slightly]",
+        "CourseSite": "https://architecture.mit.edu",
+        "TextCitation": "http://catalog.mit.edu/schools/architecture-planning/#text"
+    },
+    "4-B": {
+        "Number": "4-B",
+        "Name": "Art & Design",
+        "Description": "You got Course 4B: Art & Design! This program provides undergraduates with a cohesive program of study that exposes them to cross-disciplinary fields of art and design. It provides a rigorous conceptual foundation along with strong practical skills that can be applied across diverse design domains. Students will be introduced to the design process, from concept to completion, through contextual critical thinking, experimentation, representation, and physical production techniques, critique, iteration, and reflection. The objective is to prepare students to pursue diverse career paths from product design to visual communication to information design to 2D and 3D art practices and more. Study in this program will enable students to take advantage of emerging opportunities in industry and academia. Read more about the different Design centered opportunities here! [Obtained here, edited slightly]",
+        "CourseSite": "http://architecture.mit.edu/handbook/undergraduate-students#Bachelor-of-Science-in-Art-Design-(BSAD)",
+        "TextCitation": "http://catalog.mit.edu/schools/architecture-planning/#text"
+    },
+    "5": {
+        "Number": "5",
+        "Name": "Chemistry",
+        "Description": "You got Course 5: Chemistry! The Department of Chemistry offers an degree sufficiently broad as to provide excellent preparation for careers in many different areas of chemistry. It is designed to provide an education based on science, both for those who intend to go on to graduate study and those who intend to pursue a professional career immediately in either chemistry or an allied field, such as medicine, in which a sound knowledge of chemistry is important. Students receive thorough instruction in the principles of chemistry, supplemented by a strong foundation in mathematics, physics, biology, and the humanities. Read more about Course 5 here![Obtained here, edited slightly]",
+        "CourseSite": "https://chemistry.mit.edu/academic-programs/undergraduate-programs/chemistry-major-chem-flex/",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/"
+    },
+    "5-7": {
+        "Number": "5-7",
+        "Name": "Chemistry & Biology",
+        "Description": "You got Course 5-7: Chemistry & Biology! The Departments of Chemistry & Biology offer a joint curriculum leading to a degree that focuses on the intersection of these two subject areas, encompassing biochemistry and chemical biology. The curriculum provides strong foundations in both biology and chemistry, with flexibility in elective subjects that enable students to tailor their major program to their specific interests within the broad interface of biology and chemistry. The Bachelor of Science in Chemistry and Biology prepares students for careers that involve applications of both subjects, including the pharmaceutical and biotechnology industries, as well as further graduate study in biochemistry, molecular biology, and chemical biology. The interdepartmental major program also provides a strong foundation for the study of clinical and research careers in medicine and related health professions. Read more about this joint major here! [Obtained here, edited slightly]",
+        "CourseSite": "https://chemistry.mit.edu/academic-programs/undergraduate-programs/chemistry-biology-major/",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/"
+    },
+    "6-1": {
+        "Number": "6-1",
+        "Name": "Electrical Science & Engineering",
+        "Description": "You got Course 6-1: Electrical Science & Engineering! Students in this major study circuits and devices, materials and nanotechnology, communications, control and signal processing, and applied physics. Electrical Engineering is a very broad program that starts with basic circuit theory and moves into systems, physics of electronic devices, and quantum mechanics. Read more about Course 6-1 here!",
+        "CourseSite": "https://www.eecs.mit.edu",
+        "TextCitation": "https://www.eecs.mit.edu/academics-admissions/undergraduate-programs"
+    },
+    "6-2": {
+        "Number": "6-2",
+        "Name": "Electrical Engineering & Computer Science",
+        "Description": "You got Course 6-2: Electrical Engineering & Computer Science! Computer Science deals with how to make computers faster, more efficient, and more intelligent. Students begin by learning to deal with complexity through modeling and abstraction, and proceed to study computer system design and artificial intelligence. Electrical Engineering on the other hand is a very broad program that starts with basic circuit theory and moves into systems, physics of electronic devices, and quantum mechanics. This major combines these key focal areas into a flexible major that prepares students for careers and research fields where an understanding of both hardware and software systems is essential. Read more about Course 6-2 here!",
+        "CourseSite": "https://www.eecs.mit.edu",
+        "TextCitation": "https://www.eecs.mit.edu/academics-admissions/undergraduate-programs"
+    },
+    "6-3": {
+        "Number": "6-3",
+        "Name": "Computer Science & Engineering",
+        "Description": "You got Course 6-3: Computer Science & Engineering! Students in this major deal with complexity through modeling and abstraction, and proceed to study many topics, such as computer system design, artificial intelligence, computation structures, software engineering, and computer algorithms. Read more about this popular major here!",
+        "CourseSite": "https://www.eecs.mit.edu",
+        "TextCitation": "https://www.eecs.mit.edu/academics-admissions/undergraduate-programs"
+    },
+    "6-7": {
+        "Number": "6-7",
+        "Name": "Computer Science & Biology",
+        "Description": "You got Course 6-7: Computer Science & Molecular Biology! The Departments of Biology & Electrical Engineering & Computer Science offer a joint curriculum leading to a degree that focuses on the emerging field of computational and molecular biology. The curriculum provides strong foundations in both biology and computer science and features innovative, integrative, capstone, and elective subjects. The goal is to produce an entirely new cadre of graduates who are uniquely qualified to address the challenges and opportunities at the interface of computational and molecular biology. The Bachelor of Science in Computer Science and Molecular Biology prepares students for careers that leverage computational biology (e.g., pharmaceuticals, bioinformatics, medicine, etc.) as well as further graduate study in biology, in computer science, and in emerging programs at the interface. Read more about this joint major here! [Obtained here, edited slightly]",
+        "CourseSite": "https://www.eecs.mit.edu",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/electrical-engineering-computer-science/#undergraduatestudytext"
+    },
+    "6-14": {
+        "Number": "6-14",
+        "Name": "Computer Science, Economics, & Data Science",
+        "Description": "You got Course 6-14: Computer Science, Economics & Data Science. This degree is aimed at educating students at this intellectual nexus and equipping them with a foundational knowledge of economic analysis, computing, optimization and data science, as well as hands-on experience with empirical analysis of economic data, to identify, analyze and solve real-world challenges in real and virtual settings. Read more about Course 6-14 here! [Obtained here, edited slightly]",
+        "CourseSite": "https://www.eecs.mit.edu",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/electrical-engineering-computer-science/#undergraduatestudytext"
+    },
+    "7": {
+        "Number": "7",
+        "Name": "Biology",
+        "Description": "You got Course 7: Biology! This degree is designed to prepare students for a professional career in the area of the biological sciences. Graduates of this program are well prepared for positions in industrial or research institutes. However, experience has shown that many graduates choose to continue their education at a graduate school in order to obtain a PhD in an area such as biochemistry, microbiology, genetics, biophysics, cell biology, or physiology, followed by research or teaching in one of those areas. The undergraduate curriculum is also excellent preparation for students who wish to continue their education toward an MD, particularly if their career plans include laboratory investigations bearing on human disease. Read more about MIT’s Biology degree here! [Obtained here, edited slightly]",
+        "CourseSite": "https://biology.mit.edu",
+        "TextCitation": "http://catalog.mit.edu/schools/science/biology/#undergraduatetext"
+    },
+    "7-A": {
+        "Number": "7-A",
+        "Name": "Biology",
+        "Description": "You got Course 7-A: Bachelors of Science in Biology! Course 7-A is designed for students who wish to obtain a background in biology as preparation for careers without laboratory research. Course 7-A has the same core requirements as Course 7, but does not require a 30-unit laboratory subject within its Restricted Electives. Read more about this Course 7 alternative here! [Obtained here, edited slightly]",
+        "CourseSite": "https://biology.mit.edu",
+        "TextCitation": "http://catalog.mit.edu/schools/science/biology/#undergraduatetext"
+    },
+    "8": {
+        "Number": "8",
+        "Name": "Physics",
+        "Description": "You got Course 8: Physics! This course provides an excellent basis not only for graduate study in physics and related fields, but also for professional work in such fields as astrophysics, biophysics, engineering and applied physics, geophysics, management, law, or medicine. The undergraduate curriculum offers students the opportunity to acquire a deep conceptual understanding of fundamental physics. After completing the core subjects, the student can then choose one of two options to complete the degree: the focused option for students who plan to pursue physics as a career, and the flexible for those who want a very strong physics framework and the opportunity to pursue additional academic interests the flexibility to do so. Read more about Course 8 here! [Obtained here, edited slightly]",
+        "CourseSite": "http://web.mit.edu/physics/prospective/undergrad/index.html",
+        "TextCitation": "https://web.mit.edu/physics/prospective/undergrad/index.html"
+    },
+    "9": {
+        "Number": "9",
+        "Name": "Brain & Cognitive Sciences",
+        "Description": "You got Course 9: Brain & Cognitive Sciences! This major incorporates programming and computational skills to meet the increasing demands for those skills in both graduate school and the workforce. It prepares students to pursue advanced degrees or careers in artificial intelligence, machine learning, neuroscience, medicine, cognitive science, psychology, linguistics, philosophy, education research and technology, and human-machine interaction. Read more about the intersection between Brain & Cognitive Sciences here! [Obtained here, edited slightly]",
+        "CourseSite": "https://bcs.mit.edu/academic-program/undergraduate",
+        "TextCitation": "http://catalog.mit.edu/schools/science/brain-cognitive-sciences/"
+    },
+    "10": {
+        "Number": "10",
+        "Name": "Chemical Engineering",
+        "Description": "You got Course 10: Chemical Engineering! This degree is intended for the student who seeks a broad education in the application of chemical engineering to a variety of specific areas, including energy and the environment, nanotechnology, polymers and colloids, surface science, catalysis and reaction engineering, systems and process design, and biotechnology. The degree requirements include the core chemical engineering subjects with a chemistry emphasis, and the opportunity to add subjects in any of the listed application areas. Read more about them here! [Obtained here, edited slightly]",
+        "CourseSite": "https://cheme.mit.edu/academics/undergraduate-students/undergraduate-programs/course10/",
+        "TextCitation": "https://cheme.mit.edu/academics/undergraduate-students/undergraduate-programs/"
+    },
+    "10-B": {
+        "Number": "10-B",
+        "Name": "Chemical-Biological Engineering",
+        "Description": "You got Course 10-B: Chemical-Biological Engineering! This degree is intended for the student who is specifically interested in the application of chemical engineering in the areas of biochemical and biomedical technologies. It is excellent preparation for students also considering the biomedical engineering minor or medical school. Read more about this major here! [Obtained here, edited slightly]",
+        "CourseSite": "https://cheme.mit.edu/academics/undergraduate-students/undergraduate-programs/course10b/",
+        "TextCitation": "https://cheme.mit.edu/academics/undergraduate-students/undergraduate-programs/"
+    },
+    "10-C": {
+        "Number": "10-C",
+        "Name": "Chemical engineering",
+        "Description": "You got Course 10-C: Bachelors of Science in Chemical Engineering! Course 10-C involves basic subjects in chemistry and chemical engineering. Instead of continuing in depth in these areas, students can add breadth by study in another field, such as another engineering discipline, biology, biomedical engineering, economics, or management. Course 10-C is attractive to students who wish to specialize in an area such as those cited above while simultaneously gaining a broad exposure to the chemical engineering approach to solving problems. Read more about the possibilities here! [Obtained here, edited slightly]",
+        "CourseSite": "https://cheme.mit.edu/academics/undergraduate-students/undergraduate-programs/course10c-bachelor-of-science/",
+        "TextCitation": "https://cheme.mit.edu/academics/undergraduate-students/undergraduate-programs/"
+    },
+    "10-ENG": {
+        "Number": "10-ENG",
+        "Name": "Engineering [As recommended...",
+        "Description": "You got Course 10-ENG: Bachelors of Science in Engineering! The 10-ENG program is designed to offer flexibility within the context of chemical engineering while ensuring significant engineering content. It’s designed to enable students to pursue a deeper level of understanding in a specific interdisciplinary field that is relevant to the chemical engineering core discipline. The concentrations have been selected by the Department of Chemical Engineering to represent new and developing cross-disciplinary areas that benefit from a strong foundation in engineering within the chemical engineering context. Read more about the concentrations here! [Obtained here, edited slightly]",
+        "CourseSite": "https://cheme.mit.edu/academics/undergraduate-students/undergraduate-programs/course-10-eng/",
+        "TextCitation": "https://cheme.mit.edu/academics/undergraduate-students/undergraduate-programs/"
+    },
+    "11": {
+        "Number": "11",
+        "Name": "Planning",
+        "Description": "You got Course 11: Planning! This major is designed to prepare students for careers in both the public and private sectors. It also provides a foundation for students who are considering graduate work in law, public policy, international development, urban design, management, and planning. The subjects in the major teach students how the tools of economics, policy analysis, political science, and urban design can be used to solve social and environmental problems in the United States and abroad. In addition, students learn the skills and responsibilities of planners who seek to promote effective and equitable social change. Read more about the major, and possible tracks you could go into here! [Obtained here, edited slightly]",
+        "CourseSite": "https://dusp.mit.edu/degrees/undergraduate",
+        "TextCitation": "http://catalog.mit.edu/schools/architecture-planning/urban-studies-planning/"
+    },
+    "11-6": {
+        "Number": "11-6",
+        "Name": "Urban Science & Planning w Computer Science",
+        "Description": "You got Course 11-6: Urban Science & Planning with Computer Science! This major emphasizes the development of fundamental skills in urban planning and policy, including ethics and justice; statistics, data science, geospatial analysis, and visualization; and computer science, robotics, and machine learning. The program provides numerous opportunities for field-based problem-solving experience through labs, UROP assignments and client-based courses in which students synthesize and empirically integrate what they are learning about theory and practice at the intersection of computer and urban science. Students also have the opportunity to specialize though the selection of a customized concentration of upper-level electives in data visualization, applied spatial analysis, design, and public policy. Read more about the possibilities here! [Obtained here, edited slightly]",
+        "CourseSite": "https://dusp.mit.edu/degrees/undergraduate",
+        "TextCitation": "http://catalog.mit.edu/schools/architecture-planning/urban-studies-planning/"
+    },
+    "12": {
+        "Number": "12",
+        "Name": "Earth, Atmospheric, & Planetary Sciences",
+        "Description": "You got Course 12: Earth, Atmospheric, and Planetary Sciences! This major offers preparation for professional careers in a wide range of fields in geoscience (which includes geology, geophysics, geobiology, and geochemistry), atmospheric science, climate science, environmental systems, and planetary science and planetary astronomy. The curriculum ensures a fundamental background through general departmental subjects and advanced study in a concentration area chosen by the student. Read more about this major here! [Obtained here, edited slightly]",
+        "CourseSite": "https://eapsweb.mit.edu/prospective-students/overview",
+        "TextCitation": "http://catalog.mit.edu/schools/science/earth-atmospheric-planetary-sciences/"
+    },
+    "14-1": {
+        "Number": "14-1",
+        "Name": "Economics",
+        "Description": "You got Course 14-1: Economics! This major combines training in technical economics with opportunities for a broad and balanced undergraduate education. Students may choose from a diversified group of undergraduate subjects and are encouraged to engage in independent research. The aims of this program are threefold: to give students a firm grounding in modern economic theory and a basic understanding of economic processes; to provide a descriptive knowledge of the US and world economies; and to develop in students the capabilities for quantitative analysis and independent thought. The successful completion of the degree program prepares students for further study in economics or for careers in business administration and finance, consulting, law and related fields, and public policy. Read more about Economics here! [Obtained here, edited slightly]",
+        "CourseSite": "https://economics.mit.edu/under",
+        "TextCitation": "http://catalog.mit.edu/schools/humanities-arts-social-sciences/economics/"
+    },
+    "14-2": {
+        "Number": "14-2",
+        "Name": "Mathematical Economics",
+        "Description": "You got Course 14-2: Mathematical Economics! This program is designed for students who desire a deeper mathematical foundation than that provided by the traditional Economics program, and allows them to concentrate in a subset of economics subjects, typically those more oriented toward microeconomics or technical subjects. Course 14-2 majors will gain the strong mathematical and theoretical preparation needed for subsequent graduate study in economics. This program is well suited to students interested in game theory, other types of microeconomic theory, and econometrics. Read more about this mathematical take on Economics here! [Obtained here, edited slightly]",
+        "CourseSite": "https://economics.mit.edu/under",
+        "TextCitation": "http://catalog.mit.edu/schools/humanities-arts-social-sciences/economics/"
+    },
+    "15-1": {
+        "Number": "15-1",
+        "Name": "Management",
+        "Description": "You got Course 15-1: Management! This major provides students with an innovative business education that is comprehensive and flexible. Students begin with coursework that builds a strong foundation in probability and statistics, managerial communication, managerial psychology, microeconomics, and accounting. They can then augment this foundation by selecting two restricted electives in core business functions: finance, operations management, marketing, and strategy. Students then tailor the remainder of their program by selecting five electives that go into depth in an individualized concentration area. Read more about these opportunities here! [Obtained here, edited slightly]",
+        "CourseSite": "http://mitsloan.mit.edu/undergrad#overview",
+        "TextCitation": "http://catalog.mit.edu/schools/sloan-management/management/"
+    },
+    "15-2": {
+        "Number": "15-2",
+        "Name": "Business Analytics",
+        "Description": "You got Course 15-2: Business Analytics! This program is for students with a strong interest and ability in math and computer science. Students learn techniques such as data modeling and analysis, optimization, and machine learning, so as to help businesses make improved decisions and design efficient processes. They also have the opportunity to learn additional methodologies, such as artificial intelligence, systems dynamics, and game theory; take advanced subjects in probability, statistics, and optimization; or study how analytics is applied in content areas such as operations, transportation, marketing, and finance.Read more about Business Analytics here! [Obtained here, edited slightly]",
+        "CourseSite": "http://mitsloan.mit.edu/undergrad#overview",
+        "TextCitation": "http://catalog.mit.edu/schools/sloan-management/management/"
+    },
+    "15-3": {
+        "Number": "15-3",
+        "Name": "Finance",
+        "Description": "You got Course 15-3: Finance! At the intersection of economics, strategy, and accounting, finance is about managing assets to keep markets and organizations operating.This program is designed to train students for careers that focus on the theory and application of the tools of modern finance. It provides a theoretical foundation in managerial finance, corporate finance, and investments, and requires students to complete laboratory and communications subjects to ensure they have the ability to apply the tools of finance to industry. Read more about Course 15-3 here! [Obtained here, edited slightly]",
+        "CourseSite": "http://mitsloan.mit.edu/undergrad#overview",
+        "TextCitation": "http://catalog.mit.edu/schools/sloan-management/management/"
+    },
+    "16": {
+        "Number": "16",
+        "Name": "Aerospace Engineering",
+        "Description": "You got Course 16: Aerospace Engineering! This program is designed to prepare the graduate for an entry-level position in aerospace and related fields and for further education at the master's level, and includes an opportunity to study abroad for a year. The program builds a conceptual understanding in the foundational engineering sciences and professional subjects that span the topics critical to aerospace. The skills and attributes emphasized go beyond the formal classroom curriculum and include: modeling, design, the ability for self education, computer literacy, communication and teamwork skills, ethics, and—underlying all of these—appreciation for and understanding of interfaces and connectivity between various disciplines. Read more about Course 16 here! [Obtained here, edited slightly]",
+        "CourseSite": "https://aeroastro.mit.edu/undergraduate-program",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/aeronautics-astronautics/#undergraduatetext"
+    },
+    "16-ENG": {
+        "Number": "16-ENG",
+        "Name": "Engineering [As recommended...",
+        "Description": "You got Course 16-ENG: Bachelors of Science in Engineering! 16-ENG is a program designed to offer flexibility within the context of aerospace engineering and is a complement to the Course 16 aerospace engineering degree program. Depending on their interests, Course 16-ENG students can develop a deeper level of understanding and skill in a field of engineering that is relevant to multiple disciplinary areas (e.g., robotics and control, computational engineering, mechanics, or engineering management), or a greater understanding and skill in an interdisciplinary area (e.g., energy, environment and sustainability, or transportation). A wide variety of concentrations are possible, including aerospace software engineering, autonomous systems, communications, computation and sustainability, computational engineering, embedded systems and networks, energy, engineering management, environment, space exploration, and transportation. Read more about this program here! [Obtained here, edited slightly]",
+        "CourseSite": "https://aeroastro.mit.edu/undergraduate-program",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/aeronautics-astronautics/#undergraduatetext"
+    },
+    "17": {
+        "Number": "17",
+        "Name": "Political Science",
+        "Description": "You got Course 17: Political Science! This program combines professional social science training with opportunities for a broad liberal arts education, and prepares students for study in political science, law, public policy, and related fields, and for careers in government, business, law, research, teaching, or journalism. This program is also designed to give students, whatever their career objectives, an understanding of political institutions and processes. They may choose subjects from a wide range of both undergraduate and graduate offerings, and are encouraged to engage in independent research projects. In addition, the department sponsors an internship program in which students work in governmental agencies, legislative offices, community associations, international organizations, and advocacy groups at all levels. Read more about Political Science here! [Obtained here, edited slightly]",
+        "CourseSite": "https://polisci.mit.edu/undergraduate/major",
+        "TextCitation": "http://catalog.mit.edu/schools/humanities-arts-social-sciences/political-science/#undergraduatetext"
+    },
+    "18": {
+        "Number": "18",
+        "Name": "Mathematics",
+        "Description": "You got Course 18: Mathematics! This major has 3 different sectors: General, Applied, & Pure. The requirements for general are flexible in order to accommodate several categories of students: students who pursue programs that combine mathematics with a related field (such as physics, economics, or management), and students who are interested in both theoretical and applied mathematics. Applied mathematics is the mathematical study of general scientific concepts, principles, and phenomena that, because of their widespread occurrence and application, relate or unify various disciplines. The core of the program at MIT concerns the following principles and their mathematical formulations: propagation, equilibrium, stability, optimization, computation, statistics, and random processes. Pure mathematics is the study of the basic concepts and structures that underlie mathematics. Its purpose is to search for a deeper understanding and an expanded knowledge of mathematics itself. Traditionally, pure mathematics has been classified into three general fields: analysis, which deals with continuous aspects of mathematics; algebra, which deals with discrete aspects; and geometry. The undergraduate program is designed so that students become familiar with each of these areas. Students may also wish to explore other topics such as logic, number theory, complex analysis, and subjects within applied mathematics. Read more in depth into these different sectors here! [Obtained here, edited slightly]",
+        "CourseSite": "https://math.mit.edu/academics/undergrad/index.php",
+        "TextCitation": "https://math.mit.edu/academics/undergrad/major/index.php"
+    },
+    "18-C": {
+        "Number": "18-C",
+        "Name": "Mathematics w Computer Science",
+        "Description": "You got Course 18-C: Mathematics with Computer Science! Mathematics and computer science are closely related fields. Problems in computer science are often formalized and solved with mathematical methods. It is likely that many important problems currently facing computer scientists will be solved by researchers skilled in algebra, analysis, combinatorics, logic and/or probability theory, as well as computer science. The purpose of this program is to allow students to study a combination of these mathematical areas and potential application areas in computer science. Read more about the combinations here! [Obtained here, edited slightly]",
+        "CourseSite": "https://math.mit.edu/academics/undergrad/index.php",
+        "TextCitation": "https://math.mit.edu/academics/undergrad/major/index.php"
+    },
+    "20": {
+        "Number": "20",
+        "Name": "Biological Engineering",
+        "Description": "You got Course 20: Biological Engineering! This major offers a curriculum emphasizing quantitative, engineering-based analysis, design, and synthesis in the study of modern biology from the molecular to the systems level. It prepares students for careers in diverse fields ranging from the pharmaceutical and biotechnology industries to materials, devices, ecology, and public health. Graduates of the program will be prepared to enter positions in basic research or project-oriented product development, as well as graduate school or further professional study. Read more about the intricacies of Biological Engineering here! [Obtained here, edited slightly]",
+        "CourseSite": "https://be.mit.edu/academic-programs",
+        "TextCitation": "http://catalog.mit.edu/schools/engineering/biological-engineering/#undergraduatetext"
+    },
+    "21": {
+        "Number": "21",
+        "Name": "Humanities",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21-A": {
+        "Number": "21-A",
+        "Name": "Anthropology",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21-E": {
+        "Number": "21-E",
+        "Name": "Humanities & Engineering",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21-G": {
+        "Number": "21-G",
+        "Name": "Gloval Studies & Languages",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21-H": {
+        "Number": "21-H",
+        "Name": "History",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21-L": {
+        "Number": "21-L",
+        "Name": "Literature",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21M-1": {
+        "Number": "21M-1",
+        "Name": "Music",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21M-2": {
+        "Number": "21M-2",
+        "Name": "Theater Arts",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21-S": {
+        "Number": "21-S",
+        "Name": "Humanities & Science",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "21-W": {
+        "Number": "21-W",
+        "Name": "Writing",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "22": {
+        "Number": "22",
+        "Name": "Nuclear Science & Engineering",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "24-1": {
+        "Number": "24-1",
+        "Name": "Philosphy",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "24-2": {
+        "Number": "24-2",
+        "Name": "Linguistics & Philosophy",
+        "Description": "You got Course 24-2: Linguistics & Philosophy! This major, also known as the Program in Language and Mind, aims to provide students with a working knowledge of a variety of issues that currently occupy the intersection of philosophy, linguistics, and cognitive science. Central among these topics are the nature of language, of those mental representations that we call \"knowledge\" and \"belief,\" and of the innate basis for the acquisition of certain types of knowledge (especially linguistic knowledge). Students have the option of pursuing either a philosophy track or a linguistics track. Each track requires a set of subjects drawn primarily from its discipline and is designed to prepare students for graduate study either in philosophy/cognitive science or in linguistics. Read more about this major here! [Obtained here, slightly edited]",
+        "CourseSite": "http://linguistics.mit.edu/undergraduate/",
+        "TextCitation": "http://catalog.mit.edu/schools/humanities-arts-social-sciences/linguistics-philosophy/#undergraduatetext"
+    },
+    "CMS": {
+        "Number": "CMS",
+        "Name": "Comparative Media Studies",
+        "Description": "You got CMS: Comparative Media Studies! This degree is designed to integrate the study of contemporary media (film, television, digital systems) with a broad historical understanding of older forms of human expression. Students explore the complexity of the media environment by learning to think across media, to see beyond the boundaries imposed by older medium-specific approaches to the study of audio-visual and literary forms. The undergraduate program serves as preparation for advanced study in a range of scholarly and professional disciplines and also for careers in media or industry. Read more about this major here! [Obtained here, slightly edited]",
+        "CourseSite": "https://cmsw.mit.edu",
+        "TextCitation": "http://catalog.mit.edu/schools/humanities-arts-social-sciences/comparative-media-studies-writing/#course-cms"
+    },
+    "HST": {
+        "Number": "HST",
+        "Name": "Health Sciences & Technology",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "STS": {
+        "Number": "STS",
+        "Name": "Science, Technology, & Society",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    },
+    "WGS": {
+        "Number": "WGS",
+        "Name": "Women & Gender Studies",
+        "Description": "",
+        "CourseSite": "",
+        "TextCitation": ""
+    }
+}

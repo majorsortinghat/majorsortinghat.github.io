@@ -7,15 +7,27 @@
 </head>
 
 <body>
+    <header>
     <a href="index.php">The MIT Sorting Hat</a>
+</header>
+    
+    
+    <?php 
+    $jsondata = file_get_contents("major_Descriptions.json");
+    $data = json_decode($jsondata, true);
+    $thisMajorNum = $_GET["id"];
+    $thisMajor = $data[$thisMajorNum];
+    ?>
     <div>
          
     
 </div>
    
 <h1>
-<?php echo $_GET["id"]; 
-    $replies = array(); ?>
+
+<?php 
+echo $thisMajorNum;  ?>: 
+<?php echo $thisMajor["Name"]; ?>
 
 
 
@@ -26,13 +38,8 @@
 
 <div id ="paragraph">
     <p>
-    Drinking vinegar helvetica lo-fi yr bicycle rights prism health goth YOLO. 
-    Aesthetic four dollar toast selfies food truck, poutine hexagon street art 
-    vexillologist man braid gluten-free blog hashtag next level shabby chic. 
-    Vexillologist knausgaard lumbersexual kitsch celiac kale chips edison bulb. 
-    Tbh iPhone listicle hella gastropub. Cold-pressed +1 wayfarers deep v kombucha 
-    microdosing. 3 wolf moon pitchfork sustainable bicycle rights, shabby chic coloring 
-    book truffaut irony gluten-free.
+        <?php echo $thisMajor["Description"]; ?>
+        <a href="<?php echo $thisMajor["TextCitation"]; ?>">link</a>
 </p>
 </div>
 

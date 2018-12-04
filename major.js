@@ -1,7 +1,7 @@
 var thisMajorProfile;
 var currentSearch = window.location.search.replace('?id=', '');
-var w = window.innerWidth;
-var h = window.innerHeight / 8;
+var w = window.innerWidth * 0.9;
+var h = window.innerHeight / 6;
 var thisperson = sessionStorage;
 var vertMid = h / 2;
 var thesaurus;
@@ -70,7 +70,7 @@ function draw() {
     var count = 1;
 
     for (var i = 0; i < 5; i++) {
-        stroke(200);
+        stroke(220);
         line(0, (0.5 + i) * h / 5, w, (0.5 + i) * h / 5);
     }
     var major = "";
@@ -87,20 +87,24 @@ function draw() {
             //console.log(thisMajorProfile[item]['Mean']);
             var colorPerson = [255, 0, 0];
             var colorPerson = [0, 255, 0];
-            var diameter = 5;
+            var diameter = 9;
             var drawInfo = false;
             noStroke();
 
-            if ((x > posX - 10 && x < posX + 10 && y > posY - vertMid && y < posY + vertMid)) {
-                diameter = 10;
+            if ((x > posX - 0.5 * w / length && x < posX + 0.5 * w / length && y > posY - vertMid && y < posY + vertMid)) {
+                diameter = 15;
                 drawInfo = true;
                 major = item;
             }
-            fill(255, 0, 0);
-            ellipse(count * w / length, vertMid + thisperson[item] * h / 5, diameter);
-            fill(0, 255, 0);
-            ellipse(count * w / length, vertMid + thisMajorProfile[item]['Mean'] * h / 5, diameter);
+            fill(150, 250, 200);
+            ellipse(count * w / length, vertMid - thisperson[item] * h / 5, diameter);
 
+            rectMode(CENTER);
+            fill(180, 200, 255);
+            rect(count * w / length, vertMid - thisMajorProfile[item]['Mean'] * h / 5, 5, thisMajorProfile[item]['Mean'] * h / 5);
+            fill(100, 150, 255);
+            ellipse(count * w / length, vertMid - thisMajorProfile[item]['Mean'] * h / 5, diameter);
+            //console.log(thisMajorProfile[item]['Mean']);
 
 
 
@@ -112,24 +116,26 @@ function draw() {
     if (major != "") {
         fill(200);
 
-        var width = "You: ".concat(thisperson[item]).concat(".    .").concat("Avg of ").concat(currentSearch).concat(": ").concat(thisMajorProfile[item]['Mean']).length * 7 + 20;
-        if (width < thesaurus[major].length * 7 + 20) {
-            width = thesaurus[major].length * 7 + 20;
+        var width = "You: ".concat(thisperson[item]).concat(".  .").concat("Avg of ").concat(currentSearch).concat(": ").concat(thisMajorProfile[item]['Mean']).length * 7 + 20;
+        if (width < thesaurus[major].length * 8 + 20) {
+            width = thesaurus[major].length * 8 + 20;
         }
         var startX = mouseX;
         var correction = 1;
         if (mouseX + width > w) {
-            console.log("Too big");
+
             startX = mouseX - width;
             //correction = -1;
         }
-        rect(startX + 5 * correction, mouseY + 5, width, 55, 5);
+        rectMode(CORNER);
+        rect(startX + 5, mouseY + 5, width, 55, 5);
         fill(255);
-        textSize(14);
-        text(thesaurus[major], startX + 20 * correction, mouseY + 25);
+        textSize(16);
+        text(thesaurus[major], startX + 20, mouseY + 28);
         textSize(12);
-        text("You: " + thisperson[item], startX + 20 * correction, mouseY + 45)
-        text("Avg of " + currentSearch + ": " + thisMajorProfile[item]['Mean'], startX + 70 * correction, mouseY + 45)
+        text("You: " + thisperson[major], startX + 30, mouseY + 45)
+        text("Avg of " + currentSearch + ": " + thisMajorProfile[major]['Mean'], startX + 80, mouseY + 45)
+            //console.log(thisMajorProfile[major]['Mean']);
 
 
     }
