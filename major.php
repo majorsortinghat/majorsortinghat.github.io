@@ -13,11 +13,14 @@
 </div>
    
 <h1>
-<?php echo $_GET["id"]; ?><br>
+<?php echo $_GET["id"]; 
+    $replies = array(); ?>
+
+
 
 </h1>
 
-<?php echo $_SESSION['data']; ?><br>
+
 
 
 <div id ="paragraph">
@@ -35,9 +38,11 @@
 
 <script type="text/javascript">
     console.log("hey");
-    var data = <?php echo json_encode($_SESSION['data'], JSON_HEX_TAG); ?>; //Don't forget the extra semicolon!
+    var thisdata = sessionStorage;
 
-    console.log(data);
+    var data = <?php echo json_encode($replies, JSON_HEX_TAG); ?>; //Don't forget the extra semicolon!
+
+    console.log(thisdata);
 
     //console.log(data);
     console.log("hey");

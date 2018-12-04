@@ -104,12 +104,18 @@ function draw() {
             if (mouseIsPressed) {
                 console.log("Pressed");
                 var urlEnd = "";
+
+
                 for (var reply in replies) {
-                    urlEnd = urlEnd.concat("&" + reply + "=" + replies[reply]);
+                    sessionStorage.setItem(reply, parseInt(replies[reply]));
+
+                    //urlEnd = urlEnd.concat("&" + reply + "=t[" + replies[reply] + "]");
                 }
-                console.log(urlEnd);
-                var url = "http://" + window.location.host + "/" + "major.php?id=" + key + urlEnd;
-                console.log(url);
+                //console.log(urlEnd);
+
+                console.log(sessionStorage);
+                var url = "http://" + window.location.host + "/" + "major.php?id=" + key;
+                //console.log(url);
                 window.location = url;
             }
 
