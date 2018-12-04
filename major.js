@@ -53,7 +53,7 @@ console.log("connected!");
 function setup() {
 
     var myCanvas = createCanvas(w, h);
-    myCanvas.parent('linegraph');
+    myCanvas.parent("linegraph");
 
 }
 
