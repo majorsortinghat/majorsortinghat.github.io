@@ -56,6 +56,7 @@ function setup() {
 
 }
 
+var notPrinted = true;
 
 function draw() {
     background(255);
@@ -97,10 +98,9 @@ function draw() {
                 major = item;
             }
 
-
             rectMode(CENTER);
             fill(180, 200, 255);
-            rect(count * w / length, vertMid - thisMajorProfile[item]['Mean'] * h / 5, 5, thisMajorProfile[item]['Mean'] * h / 5);
+            rect(count * w / length, vertMid - thisMajorProfile[item]['Mean'] * h / 5, 5, thisMajorProfile[item]['SD'] * h / 5);
             fill(100, 150, 255);
             ellipse(count * w / length, vertMid - thisMajorProfile[item]['Mean'] * h / 5, diameter);
             //console.log(thisMajorProfile[item]['Mean']);
