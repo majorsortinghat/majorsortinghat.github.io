@@ -42,7 +42,7 @@ loadJSON('majorsortinghat/majorTranslator.json',
 );
 
 
-
+console.log(thisperson);
 console.log(thesaurus);
 console.log(thisMajorProfile);
 console.log("connected!");
