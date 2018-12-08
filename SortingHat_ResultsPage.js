@@ -109,7 +109,7 @@ function draw() {
                 //sessionStorage.setItem(key, )
 
                 for (var reply in replies) {
-                    localStorage.setItem("reply", [reply, parseInt(replies[reply])]);
+                    sessionStorage.setItem(reply, parseInt(replies[reply]));
 
                     //urlEnd = urlEnd.concat("&" + reply + "=t[" + replies[reply] + "]");
                 }
