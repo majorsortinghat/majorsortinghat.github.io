@@ -12,7 +12,6 @@
 
 <body>
 <header>
-yolo
 <div id="HomeButton">
 
 <a href="index.php" class="homebutton"><img id="logoImg" src="HatLogo.png"> <span id="sorthat"> The MIT Sorting Hat</span></a>
