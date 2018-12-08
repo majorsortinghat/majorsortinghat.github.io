@@ -1,15 +1,21 @@
 var thisMajorProfile;
 var currentSearch = window.location.search.replace('?id=', '');
 var w = window.innerWidth * 0.9;
-var h = window.innerHeight / 6;
+var h = window.innerHeight / 5;
 var thisperson = sessionStorage;
 var vertMid = h / 2;
 var thesaurus;
+var personas = {};
+var descriptions;
+
+
+
 
 
 function setMajor(data) {
     thisMajorProfile = data[currentSearch];
     console.log(thisMajorProfile);
+    setNumOfPeople();
 }
 
 function loadJSON(path, success, error) {
@@ -40,6 +46,11 @@ loadJSON('majorsortinghat/majorTranslator.json',
     },
     function(xhr) { console.error(xhr); }
 );
+loadJSON('major_Descriptions_quote.json',
+    fillPersonas,
+    function(xhr) { console.error(xhr); }
+);
+
 
 
 console.log(thisperson);
@@ -86,15 +97,15 @@ function draw() {
             var posY = vertMid;
 
             //console.log(thisMajorProfile[item]['Mean']);
-            var colorPerson = [255, 0, 0];
-            var colorPerson = [0, 255, 0];
+            //var colorPerson = [255, 0, 0];
+            //var colorPerson = [0, 255, 0];
             var diameter = 9;
-            var drawInfo = false;
+            //var drawInfo = false;
             noStroke();
 
             if ((x > posX - 0.5 * w / length && x < posX + 0.5 * w / length && y > posY - vertMid && y < posY + vertMid)) {
                 diameter = 15;
-                drawInfo = true;
+                //drawInfo = true;
                 major = item;
             }
 
@@ -122,7 +133,7 @@ function draw() {
             width = thesaurus[major].length * 8.1 + 20;
         }
         var startX = mouseX;
-        var correction = 1;
+        //var correction = 1;
         if (mouseX + width > w) {
 
             startX = mouseX - width;
@@ -146,6 +157,29 @@ function draw() {
             console.log(thisMajorProfile[entry]['Mean']);
         }
         //console.log(entry);
+    }
+
+}
+
+function fillPersonas(desc) {
+    console.log(desc);
+    for (var i = 0; i < 3; i++) {
+        var tempString = "persona".concat(i.toString());
+        console.log(tempString);
+        personas[tempString] = document.getElementById(tempString);
+        console.log(personas[tempString].children[1]);
+        var dim = (Math.ceil(Math.random() * 100) * 10 + 50).toString();
+        personas[tempString].children[0].src = "https://www.placecage.com/" + dim + "/" + dim;
+        personas[tempString].children[1].children[0].innerHTML = desc[currentSearch]["Quote"][i];
+    }
+
+}
+
+function setNumOfPeople() {
+    if (thisMajorProfile["numOfPeople"] > 5) {
+        document.getElementById("numOfPeople").innerHTML = "Based on the answers from " + thisMajorProfile["numOfPeople"] + " people in this major";
+    } else {
+        document.getElementById("numOfPeople").innerHTML = "Based on the answers from fewer than 5 people in this major";
     }
 
 }

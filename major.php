@@ -13,11 +13,12 @@
         
             <a href="index.php" class="homebutton"><img id="logoImg" src="HatLogo.png"> <span id="sorthat"> The MIT Sorting Hat</span></a>
         </div>
+
     </header>
     
     
     <?php 
-    $jsondata = file_get_contents("major_Descriptions.json");
+    $jsondata = file_get_contents("major_Descriptions_quote.json");
     $data = json_decode($jsondata, true);
     $thisMajorNum = $_GET["id"];
     $thisMajor = $data[$thisMajorNum];
@@ -36,6 +37,9 @@
 
 </h1>
 
+<h3 id="matchScore">
+</h3>
+
 
 
 
@@ -46,14 +50,43 @@
 </p>
 </div>
 
+<div id="personas">
+    <div id="persona0" class ="subpersona">
+        <img id="personaImg1"  style="height: 150px; width: 150px; border-radius: 75px;">
+        <div>
+        <q id="personaQuote1"></q>
+        </div>
+    </div>
+
+    <div id="persona1"class ="subpersona">
+        <img id="personaImg1"  style="height: 150px; width: 150px; border-radius: 75px;">
+        <div>
+        <q id="personaQuote1"></q>
+        </div>
+    </div>
+´
+    <div id="persona2"class ="subpersona">
+        <img id="personaImg1"  style="height: 150px; width: 150px; border-radius: 75px;">
+        <div>
+        <q id="personaQuote1"></q>
+</div>
+
+    </div>
+
+</div>
+
+
+<div id= "linecontainer">
 <div id="linegraph">
     <div id="graphHeadline">Explore how close your match is with course <?php 
 echo $thisMajorNum;  ?>: </div>
 </div>
+<div id="numOfPeople"></div>
 <div id="graphExplanation">
 <svg >
   <rect id="userDot" />
 </svg>You <svg ><rect id="majorDot" /></svg><?php echo $thisMajorNum;  ?>
+</div>
 </div>
 
     <footer>

@@ -9,26 +9,41 @@ body {
     padding-top: 100px;
 }
 
+#linecontainer {
+    position: absolute;
+    bottom: 10%;
+}
+
 #graphHeadline {
     padding-bottom: 10px;
     font-size: 18px;
 }
 
 p {
-    margin-left: 10px;
-    margin-right: 20px;
-    width: 75%;
-    padding: 50px;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3%;
+    width: 60%;
+    padding: 0px;
 }
 
-a {
+#overviewBtn {
     text-decoration: none;
+}
+
+.homebutton,
+h1 a {
+    text-decoration: none;
+    color: black;
 }
 
 h1 {
     margin: auto;
+    margin-top: 3%;
     width: 95%;
-    padding: 10px;
+    margin-left: 6%;
+    color: black;
 }
 
 header {
@@ -84,8 +99,8 @@ a:visited {
 }
 
 #graphExplanation {
-    margin: auto;
-    width: 200px;
+    position: absolute;
+    left: 50%;
 }
 
 svg {
@@ -106,8 +121,34 @@ footer {
     text-align: center;
     width: 300px;
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     color: white;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+q {
+    clear: both;
+    text-align: right;
+    font-size: 24px;
+    color: grey;
+}
+
+.subpersona {
+    width: 200px;
+    height: 250px;
+    padding: 3%;
+}
+
+#personas {
+    display: flex;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#numOfPeople {
+    font-size: 12px;
+    margin-left: 5%;
 }
