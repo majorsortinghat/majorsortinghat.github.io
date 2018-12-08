@@ -16,6 +16,8 @@
 
     </header>
     
+
+
     
     <?php 
     $jsondata = file_get_contents("major_Descriptions_quote.json");
@@ -23,6 +25,21 @@
     $thisMajorNum = $_GET["id"];
     $thisMajor = $data[$thisMajorNum];
     ?>
+
+
+
+    <div id= "linecontainer">
+<div id="linegraph">
+    <div id="graphHeadline" style="display: none">Explore how close your match is with course <?php 
+echo $thisMajorNum;  ?>: </div>
+</div>
+<div id="numOfPeople"></div>
+<div id="graphExplanation">
+<svg >
+  <rect id="userDot" />
+</svg>You <svg ><rect id="majorDot" /></svg><?php echo $thisMajorNum;  ?>
+</div>
+</div>
     <div>
          
     
@@ -46,7 +63,7 @@
 <div id ="paragraph">
     <p>
         <?php echo $thisMajor["Description"]; ?>
-        <a href="<?php echo $thisMajor["TextCitation"]; ?>">Text adapted from this site</a>
+        
 </p>
 </div>
 
@@ -76,21 +93,10 @@
 </div>
 
 
-<div id= "linecontainer">
-<div id="linegraph">
-    <div id="graphHeadline">Explore how close your match is with course <?php 
-echo $thisMajorNum;  ?>: </div>
-</div>
-<div id="numOfPeople"></div>
-<div id="graphExplanation">
-<svg >
-  <rect id="userDot" />
-</svg>You <svg ><rect id="majorDot" /></svg><?php echo $thisMajorNum;  ?>
-</div>
-</div>
+
 
     <footer>
-        <a class="footerLink" href="about.html">About the project</a> <a class="footerLink" href="ourDataset.html">Our dataset</a>
+        <a class="footerLink" href="about.html">About the project</a> <a class="footerLink" href="ourDataset.html">Our dataset</a><a class="footerLink" href="<?php echo $thisMajor["TextCitation"]; ?>">Text adapted from this site</a>
 </footer>
 
 <script src="major.js"></script>

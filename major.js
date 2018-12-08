@@ -1,7 +1,7 @@
 var thisMajorProfile;
 var currentSearch = window.location.search.replace('?id=', '');
 var w = window.innerWidth * 0.9;
-var h = window.innerHeight / 5;
+var h = window.innerHeight / 4.5;
 var thisperson = sessionStorage;
 var vertMid = h / 2;
 var thesaurus;
@@ -70,7 +70,7 @@ function setup() {
 var notPrinted = true;
 
 function draw() {
-    background(255);
+    background(0, 30, 50);
 
 
 
@@ -80,13 +80,13 @@ function draw() {
 
     var length = thisperson.length;
     var count = 1;
-
+    strokeWeight(0.5);
     for (var i = 0; i < 5; i++) {
-        stroke(220);
+        stroke(255, 255, 255, 100);
         line(0, (0.5 + i) * h / 5, w, (0.5 + i) * h / 5);
     }
     var major = "";
-
+    strokeWeight(0.5);
     for (var item in thisMajorProfile) {
         //console.log(item);
 
@@ -99,23 +99,23 @@ function draw() {
             //console.log(thisMajorProfile[item]['Mean']);
             //var colorPerson = [255, 0, 0];
             //var colorPerson = [0, 255, 0];
-            var diameter = 9;
+            var diameter = 10;
             //var drawInfo = false;
             noStroke();
 
             if ((x > posX - 0.5 * w / length && x < posX + 0.5 * w / length && y > posY - vertMid && y < posY + vertMid)) {
-                diameter = 15;
+                diameter = 18;
                 //drawInfo = true;
                 major = item;
             }
 
             rectMode(CENTER);
-            fill(180, 200, 255);
+            fill(180, 200, 255, 200);
             rect(count * w / length, vertMid - thisMajorProfile[item]['Mean'] * h / 5, 5, thisMajorProfile[item]['SD'] * h / 5);
-            fill(100, 150, 255);
+            fill(80, 120, 255);
             ellipse(count * w / length, vertMid - thisMajorProfile[item]['Mean'] * h / 5, diameter);
             //console.log(thisMajorProfile[item]['Mean']);
-            fill(150, 250, 200);
+            fill(160, 255, 140);
             ellipse(count * w / length, vertMid - thisperson[item] * h / 5, diameter);
 
 
@@ -126,7 +126,7 @@ function draw() {
 
     }
     if (major != "") {
-        fill(200);
+        fill(120, 120, 120, 220);
 
         var width = "You: ".concat(thisperson[item]).concat(".  .").concat("Avg of ").concat(currentSearch).concat(": ").concat(thisMajorProfile[item]['Mean']).length * 7 + 25;
         if (width < thesaurus[major].length * 8.1 + 20) {
