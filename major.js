@@ -2,7 +2,7 @@ var thisMajorProfile;
 var currentSearch = window.location.search.replace('?id=', '');
 var w = window.innerWidth * 0.9;
 var h = window.innerHeight / 6;
-var thisperson = sessionStorage;
+var thisperson = localStorage;
 var vertMid = h / 2;
 var thesaurus;
 
