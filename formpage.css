@@ -8,7 +8,15 @@ a {
 }
 
 .loveHateRating {
-    padding-left: 100px;
+    position: relative;
+    margin-left: 10%;
+}
+
+.radioObject {
+    position: relative;
+    width: 50%;
+    min-width: 400px;
+    margin: auto;
 }
 
 button {
@@ -32,8 +40,8 @@ button {
     color: white;
     border: 2px solid #A31F34;
     text-decoration: none;
-    bottom: 80px;
-    right: 30%;
+    bottom: 5%;
+    right: 25%;
     box-shadow: 1px 1px 3px 1px #bbbbbb;
 }
 
@@ -51,19 +59,31 @@ button:active {
 }
 
 button.nextPage {
-    bottom: 80px;
-    right: 30%;
+    bottom: 5%;
+    right: 25%;
 }
 
 button.prevPage {
-    bottom: 80px;
-    left: 30%;
+    bottom: 5%;
+    left: 25%;
+}
+
+h3 {
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 #theForm {
     margin: auto;
-    padding-top: 50px;
-    width: 30%;
+    padding-top: 1%;
+}
+
+.Form {
+    position: absolute;
+    overflow: scroll;
+    height: 76%;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 a.bestButton {
@@ -154,7 +174,7 @@ footer {
     text-align: center;
     width: 300px;
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     color: white;
     left: 50%;
     transform: translate(-50%, 0);

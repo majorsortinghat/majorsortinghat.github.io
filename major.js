@@ -70,6 +70,8 @@ function setup() {
 var notPrinted = true;
 
 function draw() {
+    w = window.innerWidth * 0.9;
+    h = window.innerHeight / 4.5;
     background(0, 30, 50);
 
 
