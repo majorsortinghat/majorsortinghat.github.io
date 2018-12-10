@@ -1,6 +1,9 @@
 import os
 from flask import Flask, request, render_template, session, redirect, Blueprint
 
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
+APP_STATIC = os.path.join(APP_ROOT, 'static')
+
 def loadRaw(rawDataFile):
     with open(rawDataFile, "r") as read_file:
         rawData = json.load(read_file)
@@ -55,22 +58,13 @@ def create_app(test_config = None):
 
     @app.route('/')
     def index():
-        return render_template('index.php')
+        return render_template('index.html')
 
     @app.route('/major/<major_num>')
     def major():
         return 'Major %s' % major_num
+    return app
 
-    @app.route('/hat/average', methods=['GET', 'POST'])
-    def avg():
-        if request.method == 'POST':
-            return #TODO insert function
-        else:
-            return 'Hello, World!'
-
-
-
-
-if name == "__main__":
-    create_app()
-
+if __name__ == "__main__":
+    FLASK_APP = create_app()
+    app.run()

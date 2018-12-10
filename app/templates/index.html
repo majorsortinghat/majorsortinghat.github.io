@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Sorting Hat Quiz{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div id='startButton'>
+    <a class="bestButton" href="{{ url_for('hats.out') }}">Put The Hat On</a>
+</div>
+{% endblock %}
+
+{% block js %}{% endblock %}

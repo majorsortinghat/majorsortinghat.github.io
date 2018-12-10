@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Sorting Hat Quiz{% endblock %}</h1>
+<script type="text/javascript">
+    var pos = 1;
+    function upPos() {
+        pos = pos + 1;
+        return pos;
+    }
+    function downPos() {
+        pos = pos - 1;
+        return pos;
+    }
+    function getPos() {
+        return pos;
+    }
+</script>
+<script src="{{ url_for('static', filename='FormScript.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<form id="theForm" method="POST">
+    {% for field in form %}
+        {% if loop.first %}
+            <div id='{{ "FormPage" ~ loop.index }}'>
+        {% else %}
+            <div id='{{ "FormPage" ~ loop.index }}' style="display:none">
+        {% endif %}
+
+        {% if loop.index < 10 %}
+            <h3>Rate how much you enjoy the following activities.</h3>
+        {% elif loop.index < 19 %}
+            <h3>Which of these talks would you like to watch?</h3>
+        {% elif loop.index < 29 %}
+            <h3>How much did you like these subjects in high school? Only give an answer if you had the subject.</h3>
+        {% else %}
+            <h3>Rate how much you agree with the following statements.</h3>
+        {% endif %}
+
+        <div class="radioObject">
+            <h4>{{ field.label }}</h4>
+            <div class="loveHateRating">
+                {% if loop.index < 10 %}
+                    Hate it
+                {% elif loop.index < 19 %}
+                    I would hate to watch it
+                {% elif loop.index < 29 %}
+                    Hated it
+                {% else %}
+                    Strongly disagree
+                {% endif %}
+                {% if not loop.last %}
+                    {{ field(onchange="upPos(); return show('FormPage' + (getPos()), 'FormPage' + (getPos()-1));") }}
+                {% else %}
+                    {{ field() }}
+                {% endif %}
+                {% if loop.index < 10 %}
+                    Love it
+                {% elif loop.index < 19 %}
+                    I would love to watch it
+                {% elif loop.index < 29 %}
+                    Loved it
+                {% else %}
+                    Strongly agree
+                {% endif %}
+            </div>
+        </div>
+        Question {{ loop.index }} of 52
+        <br>
+        {% if not loop.first %}
+            <button class="prevPage" onclick="downPos(); return show('FormPage' + (getPos()), 'FormPage' + (getPos()+1));">Previous page</button>
+        {% endif %}
+        {% if not loop.last %}
+            <button class="nextPage" onclick="upPos(); return show('FormPage' + (getPos()), 'FormPage' + (getPos()-1));">Next page</button>
+        {% else %}
+            <input id="submitButton" type="submit" value="Submit">
+        {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

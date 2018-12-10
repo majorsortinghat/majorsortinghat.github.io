@@ -72,19 +72,6 @@ a.footerLink {
     margin: 15px;
 }
 
-h1 {
-    margin: auto;
-    width: 95%;
-    padding: 10px;
-}
-
-header {
-    z-index: 100;
-    width: 100%;
-    padding: 10px;
-    border-bottom: 1px solid #A31F34;
-    box-shadow: 0px 0px 5px 2px #bbbbbb;
-}
 
 #headline {
     font-size: 30px;

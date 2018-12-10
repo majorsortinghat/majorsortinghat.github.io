@@ -33,5 +33,5 @@ def ml():
     else:
         return 'Hello, World!'
 
-if name == '__main__':
+if __name__ == '__main__':
     app.run()
