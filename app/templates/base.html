@@ -4,17 +4,15 @@
 <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}"/>
 <nav>
   <h1><div id="HomeButton">
-	<a href="{{ url_for('index') }}" class="homebutton"><img id="logoImg" src="{{ url_for('static', filename='HatLogo.png') }}"> <span id="sorthat"> The MIT Sorting Hat</span></a>
+	<a href="{{ url_for('index') }}" class="homebutton"><img id="logoImg" src="{{ url_for('static', filename='HatLogo.png') }}"> <span id="sorthat"> MIT Major Sorting Hat</span></a>
     </h1>
 </nav>
 <section class="content">
   <header>
-  	{% block header %}{% endblock %}
+  {% block header %}{% endblock %}
   </header>
- 
   {% block content %}{% endblock %}
   <footer>
         <a class="footerLink" href="about.html">About the project</a> <a class="footerLink" href="ourDataset.html">Our dataset</a>
   </footer>
 </section>
-{% block js %}{% endblock %}

@@ -33,39 +33,47 @@ with open(os.path.join(APP_STATIC, 'linear.sav'), 'rb') as file:
 
 @hats.route('/hats', methods=['GET', 'POST'])
 def out():
-    form = sortingQuiz(name = u"bad")
+    form = sortingQuiz(request.form)
     if request.method == "POST":
-
-        session['input_data'] = np.array([field.data for field in form.fields])
-        return redirect(url_for('results'), debug = session[input_data])
-        model_input_data = session['input_data'].reshape(1, -1)
-
+        # vals = [(field.id, field.data) for field in form]
+        fieldData = {field.id: (field.data) for field in form if field.data != "None"}
+        field_data = [(int(field.data) + 3) if field.data != "None" else 0 for field in form]
+        for field in form:
+            session[field.id] = (int(field.data) + 3) if field.data != "None" else 0
+        session['order'] = {i: keys[i] for i in range(len(keys))}
+        # return render_template('/hats/results.html', debug = vals)
+        model_input_data = np.array([0] + field_data).reshape(1, -1)
         #with open("keys.txt", "r") as file:
         #    keys = file.split(',')
 
         #with open("outdata.json", "r") as file:
         #    avg_model = json.load(file)
-        session['avg_ans'], session['avg_dist'] = compareValues(session['input_data'], avg_model)
+        session['avg_ans'], avg_dist = compareValues(fieldData, avg_model)
+        session['avg_dist'] = json.dumps(avg_dist)
 
         #with open('forest.sav', 'rb') as file:
         #    forest = pickle.load(file)
         #forest_ans = forest.predict(model_input_data)
-        session['forest_ans'] = forest.predict(model_input_data)
+
+        session['forest_ans'] = forest.predict(model_input_data)[0]
         rev_forest_probs = [(1-prob) for prob in forest.predict_proba(model_input_data)]
-        session['forest_dist'] = [prob/max(rev_forest_probs)*10 for prob in rev_forest_probs]
+        forest_dist = [prob/max(rev_forest_probs)*10 for prob in rev_forest_probs]
+        session['forest_dist'] = {}
 
         #with open('linear.sav', 'rb') as file:
         #    linear = pickle.load(file)
-        session['linear_ans'] = linear.predict(model_input_data)
-        session['linear_dist'] = [abs(dist) for dist in linear.decision_function(model_input_data)]
-
-        return redirect(url_for('results'))
+        session['linear_ans'] = linear.predict(model_input_data)[0]
+        linear_dist = [abs(dist) for dist in linear.decision_function(model_input_data)]
+        session['linear_dist'] = {}
+        return redirect(url_for('hats.results'))
     else:
         return render_template('/hats/index.html', form = form)
 
 @hats.route('/hats/results')
 def results():
-    return render_template('/hats/results.html')
+    return render_template('/hats/results.html', avg_ans = session['avg_ans'], avg_dist = session['avg_dist'],
+     forest_ans = session['forest_ans'], forest_dist = session['forest_dist'], linear_ans = session['linear_ans'],
+      linear_dist = session['linear_dist'], order = session['order'])
 
 def compareValues(userInput, data):
     resultScores = {}
