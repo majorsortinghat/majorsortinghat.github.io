@@ -2,7 +2,8 @@ console.log("hey");
 
 var w = window.innerWidth;
 var h = window.innerHeight * 0.95;
-var majors = cleanData(userScores);
+var majors = sortMajors(cleanData(userScores))[0];
+var sortedMajorScores = sortMajors(cleanData(userScores))[1];
 var majors_len = Object.keys(majors).length;
 //console.log(majors_len);
 var minScreensDimension = Math.min.apply(null, [w, h]);
@@ -17,18 +18,19 @@ document.getElementById("headline").innerHTML = "Your closest major is " + findB
 //console.log(data);
 
 function findBestMajor(majors, value) {
+    console.log(majors);
 
     for (var key in majors) {
+        console.log("key: " + key);
 
-        if (majors[key] == value) {
-            return key;
+        if (key == value) {
+            return majors[key];
         }
     }
 
     return null;
 
 }
-
 
 
 
@@ -56,14 +58,16 @@ function draw() {
 
     var x = mouseX,
         y = mouseY;
-    for (var key in majors) {
+    for (var i = 0; i < sortedMajorScores.length; i++) {
+        var key = sortedMajorScores[i];
+        //console.log(key);
 
         textSize(14);
         colorMode(HSL);
 
         stroke(100, 255, 40 + n * 2.5);
-        var dx = (minScreensDimension / 6) * Math.cos(2 * Math.PI * n / majors_len) * majors[key];
-        var dy = (minScreensDimension / 6) * Math.sin(2 * Math.PI * n / majors_len) * majors[key];
+        var dx = (minScreensDimension / 6) * Math.cos(2 * Math.PI * n / majors_len) * key;
+        var dy = (minScreensDimension / 6) * Math.sin(2 * Math.PI * n / majors_len) * key;
 
         var corrY = 1 * (dx);
         var corrX = 1;
@@ -89,47 +93,52 @@ function draw() {
 
 
 
-        if ((highlightKey == key && (x > posX - 40 && x < posX + 40 && y > posY - 40 && y < posY + 40)) || (x > posX - 20 && x < posX + 20 && y > posY - 10 && y < posY + 10)) {
+        if ((highlightKey == majors[key] && (x > posX - 40 && x < posX + 40 && y > posY - 40 && y < posY + 40)) || (x > posX - 20 && x < posX + 20 && y > posY - 10 && y < posY + 10)) {
             //console.log(key);
-            highlightKey = key;
+            highlightKey = majors[key];
             colorMode(HSL);
-            fill(15 * sq(sq(majors[key])), 100, 45);
+            fill(15 * sq(sq(key)), 100, 45);
             //posX += dx * 1.01;
             //posY += dy * 1.01;
             ellipse(posX, posY, 90);
             colorMode(RGB);
             textSize(12);
             fill(textcolor);
-            text("Distance: " + userScores[key].toFixed(2) + "\nlearn more", posX, posY + 15);
-            textSize(30);
-            text(key, posX, posY - 15);
+            text("Distance: " + userScores[majors[key]].toFixed(2) + "\nlearn more", posX, posY + 15);
+            if (majors[key].length < 5) {
+                textSize(30);
+            } else {
+                textSize(21);
+            }
+
+            text(majors[key], posX, posY - 15);
             if (mouseIsPressed) {
                 //console.log("Pressed");
                 var urlEnd = "";
                 //sessionStorage.setItem(key, )
 
                 for (var reply in replies) {
-                    sessionStorage.setItem("reply", [reply, parseInt(replies[reply])]);
+                    sessionStorage.setItem(reply, parseInt(replies[reply]));
 
                     //urlEnd = urlEnd.concat("&" + reply + "=t[" + replies[reply] + "]");
                 }
                 //console.log(urlEnd);
 
                 //console.log(sessionStorage);
-                var url = "http://" + window.location.host + "/" + "major.php?id=" + key;
+                var url = "http://" + window.location.host + "/" + "major.php?id=" + majors[key];
                 //console.log(url);
                 window.location = url;
             }
 
 
         } else {
-            text(key, posX, posY);
+            text(majors[key], posX, posY);
         }
 
 
         n++;
 
-        //console.log(key, majors[key]);
+        //console.log(key, key);
     }
 
 
@@ -181,7 +190,22 @@ function cleanData(dirtyData) {
             //console.log(key, dictionary[key]);
         }
     }
-    findBestMajor(cleanDict, min_value);
+    //findBestMajor(cleanDict, min_value);
 
     return cleanDict;
+}
+
+
+function sortMajors(majors) {
+    tempDict = {};
+    tempArr = [];
+    for (var major in majors) {
+        tempDict[majors[major]] = major;
+        tempArr.push(majors[major]);
+    }
+
+    tempArr.sort();
+    //console.log("tempArr: " + tempArr);
+    return [tempDict, tempArr];
+
 }
