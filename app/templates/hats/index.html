@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
-{% block header %}
-<h1>{% block title %}Sorting Hat Quiz{% endblock %}</h1>
+{% block title %}
+Questionnaire
+{% endblock %}
+
+{% block content %}
 <script type="text/javascript">
     var pos = 1;
     function upPos() {
@@ -17,9 +20,7 @@
     }
 </script>
 <script src="{{ url_for('static', filename='FormScript.js') }}"></script>
-{% endblock %}
 
-{% block content %}
 <form id="theForm" method="POST">
     {% for field in form %}
         {% if loop.first %}
@@ -27,55 +28,51 @@
         {% else %}
             <div id='{{ "FormPage" ~ loop.index }}' style="display:none">
         {% endif %}
-
-        {% if loop.index < 10 %}
-            <h3>Rate how much you enjoy the following activities.</h3>
-        {% elif loop.index < 19 %}
-            <h3>Which of these talks would you like to watch?</h3>
-        {% elif loop.index < 29 %}
-            <h3>How much did you like these subjects in high school? Only give an answer if you had the subject.</h3>
+        <br>
+        <quest>Question {{ loop.index }} of 52</quest>
+        <br>
+        {% if loop.index < 11 %}
+            <h1>Rate how much you enjoy the following activities.</h1>
+        {% elif loop.index < 20 %}
+            <h1>Which of these talks would you like to watch?</h1>
+        {% elif loop.index < 30 %}
+            <h1>How much did you like these subjects in high school? Only give an answer if you had the subject.</h1>
         {% else %}
-            <h3>Rate how much you agree with the following statements.</h3>
+            <h1>Rate how much you agree with the following statements.</h1>
         {% endif %}
 
         <div class="radioObject">
-            <h4>{{ field.label }}</h4>
+            <h2>{{ field.label }}</h2>
+            <br>
             <div class="loveHateRating">
-                {% if loop.index < 10 %}
-                    Hate it
-                {% elif loop.index < 19 %}
-                    I would hate to watch it
-                {% elif loop.index < 29 %}
-                    Hated it
+                {% if loop.index < 11 %}
+                    <hate>Hate it</hate>
+                    <love>Love it</love>
+                {% elif loop.index < 20 %}
+                    <hate>I would hate to watch it</hate>
+                    <love>I would love to watch it</love>
+                {% elif loop.index < 30 %}
+                    <hate>Hated it</hate>
+                    <love>Loved it</love>
                 {% else %}
-                    Strongly disagree
+                    <hate>Strongly disagree</hate>
+                    <love>Strongly agree</love>
                 {% endif %}
                 {% if not loop.last %}
-                    {{ field(onchange="upPos(); return show('FormPage' + (getPos()), 'FormPage' + (getPos()-1));") }}
+                    {{ field(onchange="upPos(); return show('FormPage' + (getPos()), 'FormPage' + (getPos()-1));", **{'class': "radioObjectField"}) }}
                 {% else %}
-                    {{ field() }}
-                {% endif %}
-                {% if loop.index < 10 %}
-                    Love it
-                {% elif loop.index < 19 %}
-                    I would love to watch it
-                {% elif loop.index < 29 %}
-                    Loved it
-                {% else %}
-                    Strongly agree
+                    {{ field(**{'class': "radioObjectField"}) }}
                 {% endif %}
             </div>
         </div>
-        Question {{ loop.index }} of 52
         <br>
         {% if not loop.first %}
             <button class="prevPage" onclick="downPos(); return show('FormPage' + (getPos()), 'FormPage' + (getPos()+1));">Previous page</button>
         {% endif %}
         {% if not loop.last %}
             <button class="nextPage" onclick="upPos(); return show('FormPage' + (getPos()), 'FormPage' + (getPos()-1));">Next page</button>
-        {% else %}
-            <input id="submitButton" type="submit" value="Submit">
         {% endif %}
+        <input id="submitButton" type="submit" value="Submit">
         </div>
     {% endfor %}
 {% endblock %}

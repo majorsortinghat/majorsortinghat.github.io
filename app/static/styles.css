@@ -9,27 +9,31 @@ body {
     padding-top: 100px;
 }
 
+#linecontainer {
+    color: white;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    background-color: rgb(0, 30, 50);
+}
+
 #graphHeadline {
     padding-bottom: 10px;
     font-size: 18px;
 }
 
 p {
+    position: relative;
     margin-left: 10px;
     margin-right: 20px;
     width: 75%;
+    bottom: 20px;
     padding: 50px;
 }
 
 a {
     text-decoration: none;
-}
-
-
-h1 {
-    margin: auto;
-    width: 95%;
-    padding: 10px;
+    color: #ADD8E6;
 }
 
 header {
@@ -65,13 +69,6 @@ a.bestButton:active {
     box-shadow: 0px 0px 2px 0px #bbbbbb;
 }
 
-a.footerLink {
-    text-align: center;
-    font-size: 12px;
-    color: rgba(54, 54, 54, 0.747);
-    margin: 15px;
-}
-
 
 #headline {
     font-size: 30px;
@@ -87,6 +84,59 @@ a.footerLink {
     z-index: 0;
 }
 
+.loveHateRating {
+    position: relative;
+    margin-left: 0%;
+}
+
+love {
+    float: right;
+    font-size: 22px;
+}
+
+hate {
+    float: left;
+    font-size: 22px;
+}
+
+.radioObject {
+    position: relative;
+    width: 50%;
+    min-width: 400px;
+    margin: auto;
+    padding: 70px 0;
+    text-align: center;
+}
+
+/* Customize the label (the container) */
+.radioObjectField {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: top;
+}
+
+ul {
+    list-style: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+li {
+    display: inline-block;
+    margin-right: 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;;
+}
+
 #HomeButton {
     width: 300px;
     color: black;
@@ -95,13 +145,15 @@ a.footerLink {
     text-decoration: none;
 }
 
+#HomeButton a:visited {
+    text-decoration: none;
+    color: black;
+}
+
 a:hover {
     text-decoration: none;
 }
 
-a.homebutton {
-    color: black;
-}
 
 #sorthat {
     text-decoration: none;
@@ -136,8 +188,9 @@ a:visited {
 }
 
 #graphExplanation {
-    margin: auto;
-    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 svg {
@@ -155,11 +208,157 @@ a.footerLink {
 }
 
 footer {
-    text-align: center;
-    width: 300px;
     position: absolute;
-    bottom: 30px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
     color: white;
+}
+
+#overviewBtn {
+    text-decoration: none;
+}
+
+#submitButton {
+    position: fixed;
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    background-color: #A31F34;
+    color: white;
+    border: 2px solid #A31F34;
+    text-decoration: none;
+    bottom: 5%;
+    right: 47%;
+    box-shadow: 1px 1px 3px 1px #bbbbbb;
+}
+
+button:disabled {
+    border: 2px solid rgba(163, 31, 53, 0.5);
+    color: rgba(163, 31, 53, 0.5);
+}
+
+button:hover {
+    box-shadow: 1px 1px 6px 3px #bbbbbb;
+}
+
+button:active {
+    box-shadow: 0px 0px 2px 0px #bbbbbb;
+}
+
+button.nextPage {
+    position: fixed;
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    background-color: #A31F34;
+    color: white;
+    border: 2px solid #A31F34;
+    text-decoration: none;
+    bottom: 5%;
+    right: 25%;
+    box-shadow: 1px 1px 3px 1px #bbbbbb;
+}
+
+button.prevPage {
+    position: fixed;
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    background-color: #A31F34;
+    color: white;
+    border: 2px solid #A31F34;
+    text-decoration: none;
+    bottom: 5%;
+    left: 25%;
+    box-shadow: 1px 1px 3px 1px #bbbbbb;
+}
+
+
+.subpersona {
+    width: 150px;
+    height: 250px;
+    padding: 3%;
+    text-align: justify;
+}
+
+#personas {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position: absolute;
+    bottom: 0%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-60%, 0);
+}
+
+#numOfPeople {
+    position: absolute;
+    font-size: 12px;
+    right: 5%;
+}
+
+quest {
+    font-size: 18px;
+    text-align: right;
+}
+
+#majorHead {
+    text-decoration: none;
+    color: #ADD8E6;
+    font-size: 50px;
+    position: relative;
+    margin: auto;
+    bottom: 50px;
+    margin-left: 6%;
+}
+
+@media screen and (min-width: 1351px) {
+    #majorHead {
+        text-decoration: none;
+        color: #ADD8E6;
+        font-size: 50px;
+        position: relative;
+        margin: auto;
+        bottom: 50px;
+        margin-left: 6%;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    #majorHead {
+        text-decoration: none;
+        color: #ADD8E6;
+        font-size: 40px;
+        position: relative;
+        margin: auto;
+        bottom: 40px;
+        margin-left: 6%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    #majorHead {
+        text-decoration: none;
+        color: #ADD8E6;
+        font-size: 30px;
+        position: relative;
+        margin: auto;
+        bottom: 30px;
+        margin-left: 6%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    #majorHead {
+        text-decoration: none;
+        color: #ADD8E6;
+        font-size: 30px;
+        position: relative;
+        margin: auto;
+        bottom: 66px;
+        margin-left: 6%;
+    }
 }

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% block header %}
-  <h1>{% block title %}Sorting Hat Results{% endblock %}</h1>
+{% block title %}
+Results
 {% endblock %}
 
 {% block content %}
@@ -11,19 +11,16 @@
 		var linearScores = ({{linear_dist | safe}})
 		var order = ({{order | safe}})
 	</script>
-	Our three hats have tried to sort you!
+	<h2 style="text-align: center">Our three hats have tried to sort you!</h2>
 	<div id="headline1">Average Hat: Your closest major is {{avg_ans}}</div>
-	{{avg_dist | safe}}
 	<div id="visualization_1">
 	</div>
 	<br>
 	<div id="headline2">Forest Hat: Your closest major is {{forest_ans}}</div>
-	{{forest_dist | safe}}
 	<div id="visualization_2">
 	</div>
 	<br>
 	<div id="headline3">Linear Hat: Your closest major is {{linear_ans}}</div>
-	{{linear_dist | safe}}
 	<div id="visualization_3">
 	</div>
 	<script src="https://d3js.org/d3.v4.min.js"></script>

@@ -182,7 +182,7 @@ function draw_dist(userScores, sortedMajorScores, majors, majors_len, p) {
                 //console.log(urlEnd);
 
                 //console.log(sessionStorage);
-                var url = "http://" + window.location.host + "/" + "major.php?id=" + majors[key];
+                var url = "http://" + window.location.host + "/" + "major/" + majors[key];
                 //console.log(url);
                 window.location = url;
             }

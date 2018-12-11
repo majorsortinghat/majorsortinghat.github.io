@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{major}}
+{% endblock %}
+
+{% block content%}
+    <script type="text/javascript">
+        var majorDescriptionsQuote = ({{major_descriptions_quote | safe}})
+        var outData = ({{outdata | safe}})
+        var majorTranslator = ({{major_translator | safe}})
+        var majorNum = ({{major | safe}})
+        var keys = ({{keys | safe}})
+        var vals = ({{vals | safe}})
+    </script>
+
+<div id= "linecontainer">
+    <div id="linegraph">
+        <div id="graphHeadline" style="display: none">Explore how close your match is with course {{major}}</div>
+    </div>
+    <div id="numOfPeople"></div>
+    <div id="graphExplanation">
+        <svg><rect id="userDot" /></svg>You <svg ><rect id="majorDot" /></svg>{{major}}
+    </div>
+</div>
+<div>
+         
+    
+</div>
+   
+<h1 id = "majorHead">
+<a href="{{ major_descriptions_quote[major]['CourseSite'] | safe}}">
+    {{ major }}
+    {{ major_descriptions_quote[major]['Name'] }}
+</a>
+
+
+</h1>
+
+<h3 id="matchScore">
+</h3>
+
+
+<div id ="paragraph">
+    <p>
+        {{ major_descriptions_quote[major]['Description'] }}        
+</p>
+</div>
+<br>
+<div id="personas">
+    <div id="persona0" class ="subpersona">
+        <img id="personaImg1"  style="height: 150px; width: 150px; border-radius: 75px; float: left;">
+        <q id="personaQuote1"></q>
+    </div>
+
+    <div id="persona1"class ="subpersona">
+        <img id="personaImg1"  style="height: 150px; width: 150px; border-radius: 75px; float: center">
+        <q id="personaQuote1"></q>
+    </div>
+´
+    <div id="persona2"class ="subpersona">
+        <img id="personaImg1"  style="height: 150px; width: 150px; border-radius: 75px; float: right;">
+        <q id="personaQuote1"></q>
+    </div>
+
+</div>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script src="{{ url_for('static', filename='major.js') }}"></script>
+{% endblock %}
+
+
+{% block footer %}<a class="footerLink" href="{{ major_descriptions_quote[major]['TextCitation'] | safe}}" > Text adapted from this site </a>{% endblock %}

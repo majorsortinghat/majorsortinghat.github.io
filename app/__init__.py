@@ -4,34 +4,6 @@ from flask import Flask, request, render_template, session, redirect, Blueprint
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
 APP_STATIC = os.path.join(APP_ROOT, 'static')
 
-def loadRaw(rawDataFile):
-    with open(rawDataFile, "r") as read_file:
-        rawData = json.load(read_file)
-
-        alldataarr = []
-        alllabelsarr = []
-
-        for person in rawData:
-            if person["Major_1"] != "Undeclared":
-                alllabelsarr.append(person["Major_1"])
-                add_data = []
-                for key in keys:
-                    if key in person:
-                        if person[key] != 'N/A' and person[key] != "":
-                            add_data.append(int(person[key]))
-                        else:
-                            add_data.append(-1)
-                    else:
-                        add_data.append(-1)
-                alldataarr.append(add_data)
-
-                if person["Major_2"] != "":
-                    alllabelsarr.append(person["Major_2"])
-                    alldataarr.append(add_data)
-
-        alldata = np.array(alldataarr)
-        alllabels = np.array(alllabelsarr)
-    return alldata, alllabels
 
 def create_app(test_config = None):
     app = Flask(__name__, instance_relative_config=True)
@@ -60,9 +32,13 @@ def create_app(test_config = None):
     def index():
         return render_template('index.html')
 
-    @app.route('/major/<major_num>')
-    def major():
-        return 'Major %s' % major_num
+    @app.route('/about')
+    def about():
+        return render_template('about.html')
+
+    @app.route('/dataset')
+    def dataset():
+        return render_template('dataset.html')
     return app
 
 if __name__ == "__main__":

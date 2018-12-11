@@ -13,6 +13,7 @@ import os
 import random
 from . import APP_STATIC
 from wtforms import Form, RadioField, StringField, validators
+from treeinterpreter import treeinterpreter as ti
 
 hats = Blueprint('hats', __name__)
 
@@ -31,6 +32,12 @@ with open(os.path.join(APP_STATIC, 'forest.sav'), 'rb') as file:
 
 with open(os.path.join(APP_STATIC, 'linear.sav'), 'rb') as file:
     linear = pickle.load(file)
+
+with open(os.path.join(APP_STATIC, 'majorTranslator.json'), 'r') as file:
+    major_translator = json.load(file)
+
+with open(os.path.join(APP_STATIC, 'major_Descriptions_quote.json'), 'r', encoding="utf8") as file:
+    major_descriptions_quote = json.load(file)
 
 @hats.route('/hats', methods=['GET', 'POST'])
 def out():
@@ -61,6 +68,9 @@ def out():
         log_forest_probs = [-math.log(prob) if prob != 0 else 10**6 for prob in forest_probs[0]]
         forest_dist = {forest.classes_[i]: log_forest_probs[i] + random.random()/1000000 for i in range(len(log_forest_probs))}
         session['forest_dist'] = json.dumps(forest_dist)
+        prediction, bias, contributions = ti.predict(forest, model_input_data)
+        forest_dist = {forest.classes_[i]: log_forest_probs[i] + random.random()/1000000 for i in range(len(log_forest_probs))}
+        forest_contrib = {}
 
         #with open('linear.sav', 'rb') as file:
         #    linear = pickle.load(file)
@@ -77,6 +87,14 @@ def results():
     return render_template('/hats/results.html', avg_ans = session['avg_ans'], avg_dist = session['avg_dist'],
      forest_ans = session['forest_ans'], forest_dist = session['forest_dist'], linear_ans = session['linear_ans'],
       linear_dist = session['linear_dist'], order = session['order'])
+
+@hats.route('/major/<major_num>')
+def major(major_num):
+    vals = []
+    for key in session['order']:
+        vals.append(session[session['order'][key]]-3)
+    return render_template('major.html', major = major_num, outdata = avg_model, major_translator = major_translator, major_descriptions_quote = major_descriptions_quote, keys = keys,  vals = vals)
+
 
 def compareValues(userInput, data):
     resultScores = {}
@@ -95,4 +113,7 @@ def compareValues(userInput, data):
 
 class sortingQuiz(Form):
     for i in range(len(questions)):
-        exec(keys[i] + " = RadioField(questions[i], choices = [(val, '') for val in range(-2,3)])")
+        if i > 3:
+            exec(keys[i] + " = RadioField(questions[i], choices = [(val, '') for val in range(-2,3)], default = 2)")
+        else:
+            exec(keys[i] + " = RadioField(questions[i], choices = [(val, '') for val in range(-2,3)])")
