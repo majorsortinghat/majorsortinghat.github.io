@@ -5,7 +5,7 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_
 APP_STATIC = os.path.join(APP_ROOT, 'static')
 
 
-def create_app(test_config = None):
+def create_app(environ, start_response, test_config = None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
