@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-    <title>About the Project</title>
-    <link rel="shortcut icon" type="image/png" href="HatLogo_favicon.png" />
-    <link rel="stylesheet" href="resultsPage.css">
-</head>
+{% block title %}
+About
+{% endblock %}
 
-<body>
-    <header>
-
-        <div id="HomeButton">
-
-            <a href="index.php" class="homebutton"><img id="logoImg" src="HatLogo.png"> <span id="sorthat"> The MIT Sorting Hat</span></a>
-        </div>
-    </header>
-
-</body>
-
-</html>
+{% block content %}
+<div>
+    <p>Hello! Our names are Caspar, Zidane, and Priya, and we're taking CMS.633: Digital Humanities together at MIT. For our final project, we wanted to work on a problem that had some personal relevance. Zidane and Priya both struggled through MIT attempting to figured out what exactly they were interested, and we as a group want to encourage students entering MIT to get an idea of what majors they might be interested in outside of the common ones.</p>
+    <p>To do this, we created MIT Sorting Hat, an online questionnaire that can give students an idea of how close their personality might be to each major here specifically. Check out <a href="{{url_for('dataset')}}">Our Dataset</a> to see some more details about our process.</p>
+    <br>
+    Also, check out our final presentation below for more details on MIT Sorting Hat!
+    <br>
+</div>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS2M7HpnyKXYK_8Gy1hr5miYYBVaQAg1-AmKh0VUQrjWPP3MfIYmGCti5LxIOHlYtIkpDfuHWeu2poq/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+{% endblock %}
