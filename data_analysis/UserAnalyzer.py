@@ -5,6 +5,7 @@ import sklearn.ensemble
 import sklearn.linear_model
 import numpy as np
 import pickle
+import matplotlib.pyplot as plt
 
 keys = ["Satisfaction",
     "Like_Parties",
@@ -384,8 +385,8 @@ dt6_2Input = np.array([7, 1, 5, 1, 2, 1, 5, 5, 1, 1, 4, 4, 1, 2, 1, 2, 5, 5, 1, 
 
 
 values, labels = loadRaw('Major_Mapping_Survey_2.json')
-dtree = sklearn.tree.DecisionTreeClassifier()
-dtree = dtree.fit(values, labels)
+#dtree = sklearn.tree.DecisionTreeClassifier()
+#dtree = dtree.fit(values, labels)
 
 forest = sklearn.ensemble.RandomForestClassifier(n_estimators = 50)
 forest = forest.fit(values, labels)
@@ -393,20 +394,73 @@ forest = forest.fit(values, labels)
 linear = sklearn.linear_model.SGDClassifier(loss = 'modified_huber', alpha = .1, max_iter=100, tol=1e-3)
 linear = linear.fit(values, labels)
 
-filename = 'linear.sav'
+filename = 'forest.sav'
 pickling_on = open(filename, "rb")
-linear = pickle.load(pickling_on)
+forest = pickle.load(pickling_on)
 pickling_on.close()
 
-print("DTREE 6-2: ", dtree.predict(dt6_2Input.reshape(1,-1)))
-print("DTREE score: ", dtree.score(values, labels))
+#print("DTREE 6-2: ", dtree.predict(dt6_2Input.reshape(1,-1)))
+#print("DTREE score: ", dtree.score(values, labels))
 print("FOREST 6-2: ", forest.predict(dt6_2Input.reshape(1,-1)))
 print("FOREST 6-2 prob: ", forest.predict_proba(dt6_2Input.reshape(1,-1)))
 print("FOREST score: ", forest.score(values, labels))
+i_62 = list(forest.classes_).index('6-2')
+i_63 = list(forest.classes_).index('6-3')
+i_2 = list(forest.classes_).index('2')
 print("LINEAR 6-2: ", linear.predict(dt6_2Input.reshape(1,-1)))
 print("LINEAR 6-2 prob: ", linear.predict_proba(dt6_2Input.reshape(1,-1)))
 print("LINEAR 6-2 dfn: ", linear.decision_function(dt6_2Input.reshape(1,-1)))
 print("LINEAR score: ", linear.score(values, labels))
+
+col = keys
+'''
+#modelname.feature_importance_
+y = forest.feature_importances_
+#plot
+fig, ax = plt.subplots() 
+width = 0.4 # the width of the bars 
+ind = np.arange(len(y)) # the x locations for the groups
+ax.barh(ind, y, width, color="green")
+ax.set_yticks(ind+width/10)
+ax.set_yticklabels(col, minor=False)
+plt.title('Feature importance in RandomForest Classifier')
+plt.xlabel('Relative importance')
+plt.ylabel('feature') 
+plt.figure(figsize=(5,5))
+fig.set_size_inches(6.5, 4.5, forward=True)
+#plt.show()
+'''
+from treeinterpreter import treeinterpreter as ti
+prediction, bias, contributions = ti.predict(forest, dt6_2Input.reshape(1,-1))
+N = 54 # no of entries in plot , 4 ---> features & 1 ---- class label
+major62 = []
+major63 = []
+major2 = []
+indexes = [i_62, i_63, i_2]
+for j in range(3):
+    list_ =  [major62 , major63, major2]
+    for i in range(53):
+       val = contributions[0,i,indexes[j]]
+       list_[j].append(val)
+major62.append(prediction[0,i_62]/5)
+major63.append(prediction[0,i_63]/5)
+major2.append(prediction[0,i_2]/5)
+print(major62)
+print(major63)
+print(major2)
+fig, ax = plt.subplots()
+ind = np.arange(N)
+width = 0.15
+p1 = ax.bar(ind, major62, width, color='red', bottom=0)
+p2 = ax.bar(ind+width, major63, width, color='green', bottom=0)
+p3 = ax.bar(ind+ (2*width), major2, width, color='yellow', bottom=0)
+ax.set_title('Contribution of all feature for a particular \n sample of flower ')
+ax.set_xticks(ind + width / 2)
+ax.set_xticklabels(col, rotation = 90)
+ax.legend((p1[0], p2[0] ,p3[0]), ('62', '63', '2' ) , bbox_to_anchor=(1.04,1), loc="upper left")
+ax.autoscale_view()
+plt.show()
+
 
 '''
 print('2A Returns...')
