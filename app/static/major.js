@@ -106,7 +106,7 @@ function fillPersonas(desc) {
         personas[tempString] = document.getElementById(tempString);
         var dim = (Math.ceil(Math.random() * 100) * 10 + 50).toString();
         personas[tempString].children[0].src = "https://www.placecage.com/" + dim + "/" + dim;
-        personas[tempString].children[1].children[0].innerHTML = desc[currentSearch]["Quote"][i];
+        personas[tempString].children[1].innerHTML = desc[currentSearch]["Quote"][i];
     }
 
 }

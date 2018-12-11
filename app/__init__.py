@@ -4,8 +4,10 @@ from flask import Flask, request, render_template, session, redirect, Blueprint
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
 APP_STATIC = os.path.join(APP_ROOT, 'static')
 
+def heroku_work(environ, start_response):
+    return create_app()
 
-def create_app(environ, start_response, test_config = None):
+def create_app(test_config = None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
