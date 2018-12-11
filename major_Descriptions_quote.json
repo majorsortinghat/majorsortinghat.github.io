@@ -4,7 +4,7 @@
         "Description": "This major equips you with the fundamental skills to succeed as an engineer in today\u2019s complex world. Grounded in science and engineering, Course 1 students understand the world, invent and lead with creative design. They pursue education in classrooms, laboratories, design subjects, as well as field subjects. Many pursue opportunities such as UROPs and experiences abroad through MISTI. Course 1 pursues big engineering through innovations which may begin locally, but scale broadly and quickly to impact people everywhere. Read more about Course 1 and the different educational tracks and opportunities here!",
         "Name": "Civil & Environmetnal Engineering",
         "Number": "1",
-        "Quote": ["I enjoyed this.", "Yup", "I fully agree"],
+        "Quote": ["Course 1 has given me the unique opportunity to take on environmental issues in the developing world while simultaneously being a part of cutting-edge research at MIT. In addition to developing a close relationship with my professors, Course 1 stimulates me to think outside the box and to apply myself to real world problems.  - Sidhant Pai '14", "“I had opportunities to be part of many really cool projects in Course 1: studying the effects of volcanic smog as part of TREX Hawaii, exploring microbial ecology in UROP, and building a variable rainmaker and automated solar water purifier in my design classes.” – Majdolene Z Khweis ’15", "“Our faculty make every effort to get to know students as people and learn about what makes them tick. The professors know you by name, and ask how your weekend or break was when they pass you in the hallway, even years after taking their class. Our classes encourage us to work in teams and groups, some of which have fostered my best friendships at MIT. We’re a friendly, happy major that supports each other both in and out of the classroom” – Linda M Seymour ’14"],
         "TextCitation": "https://cee.mit.edu/undergraduate/"
     },
     "1-ENG": {
@@ -116,7 +116,7 @@
         "Description": "This program is designed to prepare the graduate for an entry-level position in aerospace and related fields and for further education at the master's level, and includes an opportunity to study abroad for a year. The program builds a conceptual understanding in the foundational engineering sciences and professional subjects that span the topics critical to aerospace. The skills and attributes emphasized go beyond the formal classroom curriculum and include: modeling, design, the ability for self education, computer literacy, communication and teamwork skills, ethics, and\u2014underlying all of these\u2014appreciation for and understanding of interfaces and connectivity between various disciplines. Read more about Course 16 here!",
         "Name": "Aerospace Engineering",
         "Number": "16",
-        "Quote": ["This is so great", "Best thing ever", "Do it. Just... DO IT"],
+        "Quote": ["Each person in this department has some kind of drive, some problem they want to solve. It’s the people around you that keep you going, and that’s one of the main things I love about AeroAstro. Archeology is like discovering our past and where we’ve been. AeroAstro is understanding where we can go. - Aaron Okello, '16", "Best thing ever", "Do it. Just... DO IT"],
         "TextCitation": "http://catalog.mit.edu/schools/engineering/aeronautics-astronautics/#undergraduatetext"
     },
     "16-ENG": {
@@ -156,7 +156,7 @@
         "Description": "The Mechanical Engineering, or \u2018MechE\u2019 program provides a broad intellectual foundation in the field of mechanical engineering. It develops relevant engineering fundamentals, provides real experience in application of concepts, and introduces important methods and techniques of engineering practice. Within a few years of graduation, the majority of Course 2 graduates will have completed or be progressing through top graduate programs; advancing in leadership tracks in industry, non-profit organizations, or the public sector; or pursuing entrepreneurial ventures. Read more about Course 2 and the different opportunities here!",
         "Name": "Mechanical Engineering",
         "Number": "2",
-        "Quote": ["This is so great", "Best thing ever", "Do it. Just... DO IT"],
+        "Quote": ["Some people are very technology focused,” he says. “But I’m more driven by the impact I can make. If the next problem I encounter happens to be completely different, maybe not even in the field of robotics, I’d consider it a privilege and challenge to work on it. But there is always going to be that robotics bent in me,” he laughs. “I’ll find a way to put some automation in it. -Albert Wang", "Mechanical engineering attracted me because it gave me the flexibility to delve into a range of things — mechanics, materials, fluid and thermal sciences, and so on. This is liberal arts. It’s a multidisciplinary field that mixes a ton of things, - Marie Elimbi Moudo, 16", "“It’s frustrating when you try to build really cool planes and rockets, but it can be painfully slow,” she says. “I’m drawn to those multidimensional problems — to look at it from a technical standpoint, a business standpoint, and human standpoint. All of those dimensions have to work together. - Dora Aldama '11"],
         "TextCitation": "http://catalog.mit.edu/schools/engineering/mechanical-engineering/#undergraduatetext"
     },
     "2-A": {
@@ -180,7 +180,7 @@
         "Description": "This major offers a curriculum emphasizing quantitative, engineering-based analysis, design, and synthesis in the study of modern biology from the molecular to the systems level. It prepares students for careers in diverse fields ranging from the pharmaceutical and biotechnology industries to materials, devices, ecology, and public health. Graduates of the program will be prepared to enter positions in basic research or project-oriented product development, as well as graduate school or further professional study. Read more about the intricacies of Biological Engineering here!",
         "Name": "Biological Engineering",
         "Number": "20",
-        "Quote": ["This is so great", "Best thing ever", "Do it. Just... DO IT"],
+        "Quote": ["One of my favorite things about the BE department is how inclusive and positive the culture is. I had always assumed that an MIT program would be hypercompetitive and cold, and my experience with BE has been the exact opposite of that since the first day of interview weekend.", "Best thing ever", "Do it. Just... DO IT"],
         "TextCitation": "http://catalog.mit.edu/schools/engineering/biological-engineering/#undergraduatetext"
     },
     "21": {
@@ -324,7 +324,7 @@
         "Description": "The Department of Chemistry offers an degree sufficiently broad as to provide excellent preparation for careers in many different areas of chemistry. It is designed to provide an education based on science, both for those who intend to go on to graduate study and those who intend to pursue a professional career immediately in either chemistry or an allied field, such as medicine, in which a sound knowledge of chemistry is important. Students receive thorough instruction in the principles of chemistry, supplemented by a strong foundation in mathematics, physics, biology, and the humanities. Read more about Course 5 here![Obtained here, edited slightly]",
         "Name": "Chemistry",
         "Number": "5",
-        "Quote": ["This is so great", "Best thing ever", "Do it. Just... DO IT"],
+        "Quote": ["The MIT experience produces critical thinkers and innovators. The Chemistry program has pushed me forwards by leaps and bounds in terms of my work ethic, reasoning, and problem solving abilities. -Ruth Tweedy, '20", "MIT as a community is constantly pushing the limits of science and technology. The ‘Mens et Manus’ MIT motto provides a very accurate description of this unique experience. Problem solving truly is part of campus culture on a conceptual and on a practical level. As a material scientist, my appointment at MIT Chemistry is essentially an ideal crash course to gain expertise in the chemistry of materials. I am learning new chemistry within my area of interest by working among the best. - Ivo Stassen, Researcher", "Do it. Just... DO IT"],
         "TextCitation": "http://catalog.mit.edu/schools/engineering/"
     },
     "5-7": {
@@ -380,7 +380,7 @@
         "Description": "This degree is designed to prepare students for a professional career in the area of the biological sciences. Graduates of this program are well prepared for positions in industrial or research institutes. However, experience has shown that many graduates choose to continue their education at a graduate school in order to obtain a PhD in an area such as biochemistry, microbiology, genetics, biophysics, cell biology, or physiology, followed by research or teaching in one of those areas. The undergraduate curriculum is also excellent preparation for students who wish to continue their education toward an MD, particularly if their career plans include laboratory investigations bearing on human disease. Read more about MIT\u2019s Biology degree here!",
         "Name": "Biology",
         "Number": "7",
-        "Quote": ["This is so great", "Best thing ever", "Do it. Just... DO IT"],
+        "Quote": ["Biology classes have a reputation for being memorization-heavy, but MIT Bio’s approach is all about taking the information you’ve learned and using it to solve interesting problems — which I find incredibly enjoyable. I’ve also had the opportunity for hands-on practice; joining the Grossman lab was the best decision I’ve made. I’ve learned different lab techniques, how to plan and troubleshoot experiments, and so much about bacterial DNA replication that wasn’t covered in my classes. It’s a great place to come each day. If I could, I’d spend all my time there. - Leah McKinney, '20 ", "MIT Biology trained me as a scientist and exposed me to a wide variety of cutting edge techniques. This has been extremely helpful in developing my own research on engineering neural tissue and understanding stem cell behavior. I would highly recommend doing UROPs and becoming involved in the research while at MIT. You will be exposed to a variety of labs and see how differently they are run, which will teach you an array of lab skills. - Stephanie Willerth '03", "Do it. Just... DO IT"],
         "TextCitation": "http://catalog.mit.edu/schools/science/biology/#undergraduatetext"
     },
     "7-A": {
