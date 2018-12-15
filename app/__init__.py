@@ -1,7 +1,6 @@
 import os
 from flask import Flask, request, render_template, session, redirect, Blueprint
 
-app = create_app()
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
 APP_STATIC = os.path.join(APP_ROOT, 'static')
 
@@ -43,3 +42,4 @@ def create_app(test_config = None):
 
     return app
 
+app = create_app()
