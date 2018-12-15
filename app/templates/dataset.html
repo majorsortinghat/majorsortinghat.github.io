@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-    <title>Our Dataset</title>
-    <link rel="shortcut icon" type="image/png" href="HatLogo_favicon.png" />
-    <link rel="stylesheet" href="resultsPage.css">
-</head>
+{% block title %}
+About
+{% endblock %}
 
-<body>
-    <header>
+{% block content %}
+<div>
+    <p>
+    	To generate the data for this questionnaire, we sent out a survey to the MIT undergraduate population living in the dorms. We got 265 responses, from which we gathered the averages and standard deviations, trained a random forest classifier, and trained a linear classifier to allow us to predict what majors an incoming MIT student could be interested in based on their responses. We decided to use 3 different methods to make it clear that there is no one correct answer to the question of what major you should be in; we believe that while major choice is important, you will still be able to accomplish and learn what you need to regardless of it. That being said, we hope this website encourages students to explore majors they were not previously considering.
+    </p>
+    <p>
+    	We nicknamed the three models the Average Hat, the Forest Hat, and the Linear Hat. The Average Hat will tell you your major based on the sum of each of your answers' distance from the mean answer for that question and that major, normalized by standard deviation. The Forest Hat will tell you your major based on essentially looking at a bunch of different flow charts it created (called "trees") and taking the most common result. The Linear Hat will plug your answers into different linear equations for each major, and then tell you which major outputted the highest value. On our test data, the forest hat was the most successful at reclassifying, but all were pretty effective. However, we do not have enough data to draw large conclusions, so we strongly suggest using this as an explorative tool, and not to make you final decision!
+    </p>
+</div>
 
-        <div id="HomeButton">
-
-            <a href="index.php" class="homebutton"><img id="logoImg" src="HatLogo.png"> <span id="sorthat"> The MIT Sorting Hat</span></a>
-        </div>
-    </header>
-
-</body>
-
-</html>
+{% endblock %}

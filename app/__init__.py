@@ -45,4 +45,5 @@ def create_app(test_config = None):
 
 if __name__ == "__main__":
     FLASK_APP = create_app()
+    app = FLASK_APP
     app.run()

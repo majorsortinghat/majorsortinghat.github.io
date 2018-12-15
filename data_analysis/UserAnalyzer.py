@@ -74,15 +74,15 @@ def loadRaw(rawDataFile):
         for person in rawData:
             if person["Major_1"] != "Undeclared":
                 alllabelsarr.append(person["Major_1"])
-                add_data = []
+                add_data = {}
                 for key in keys:
                     if key in person:
                         if person[key] != 'N/A' and person[key] != "":
-                            add_data.append(int(person[key]))
+                            add_data[key] = (int(person[key]))
                         else:
-                            add_data.append(-1)
+                            add_data[key] = -1
                     else:
-                        add_data.append(-1)
+                        add_data[key] = -1
                 alldataarr.append(add_data)
 
                 if person["Major_2"] != "":
@@ -100,8 +100,10 @@ def loadRaw(rawDataFile):
 def compareValues(userInput):
     #print("userInput: "+str(userInput))
     resultScores = {}
+    length = len(userInput)
     for major in data:
         tempScore = 0;
+        i = 0
         #print(major)
         for trait in userInput:
             if trait in data[str(major)]:
@@ -110,18 +112,20 @@ def compareValues(userInput):
                 #print(str(major))
                 #print(data[str(major)])
                 #print(data[str(major)][trait]['Mean'])
-
-                tempScore += ((float(userInput[trait])-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']))
+                i += 1
+                tempScore += ((float(userInput[trait])-3-data[str(major)][trait]['Mean'])**2/(data[str(major)][trait]['SD']))**2
         #print(tempScore)
-        resultScores[major] = math.sqrt(tempScore);
-    #print(resultScores)
+        resultScores[major] = math.sqrt(tempScore)/i * length;
+
     #print()
     invDict = invertDict(resultScores)
     #print(invDict)
     #print(dictToSortedList(invDict))
 
-    for i in dictToSortedList(invDict):
-        print(str(invDict[i]) +": "+ str(i))
+    #for i in dictToSortedList(invDict):
+        #print(str(invDict[i]) +": "+ str(i))
+
+    return invDict
 
 
 def invertDict(d):
@@ -385,20 +389,34 @@ dt6_2Input = np.array([7, 1, 5, 1, 2, 1, 5, 5, 1, 1, 4, 4, 1, 2, 1, 2, 5, 5, 1, 
 
 
 values, labels = loadRaw('Major_Mapping_Survey_2.json')
+#print(values)
 #dtree = sklearn.tree.DecisionTreeClassifier()
 #dtree = dtree.fit(values, labels)
 
+total = 0
+correct = 0
+for i in range(len(values)):
+    
+    total += 1
+    results = compareValues(processInput(values[i]))
+    if labels[i] == results[min(results.keys())]:
+        correct += 1
+
+print(correct/total)
+        
+
+'''
 forest = sklearn.ensemble.RandomForestClassifier(n_estimators = 50)
 forest = forest.fit(values, labels)
 
 linear = sklearn.linear_model.SGDClassifier(loss = 'modified_huber', alpha = .1, max_iter=100, tol=1e-3)
 linear = linear.fit(values, labels)
-
-filename = 'forest.sav'
+'''
+filename = 'linear.sav'
 pickling_on = open(filename, "rb")
-forest = pickle.load(pickling_on)
+linear = pickle.load(pickling_on)
 pickling_on.close()
-
+'''
 #print("DTREE 6-2: ", dtree.predict(dt6_2Input.reshape(1,-1)))
 #print("DTREE score: ", dtree.score(values, labels))
 print("FOREST 6-2: ", forest.predict(dt6_2Input.reshape(1,-1)))
@@ -411,11 +429,11 @@ print("LINEAR 6-2: ", linear.predict(dt6_2Input.reshape(1,-1)))
 print("LINEAR 6-2 prob: ", linear.predict_proba(dt6_2Input.reshape(1,-1)))
 print("LINEAR 6-2 dfn: ", linear.decision_function(dt6_2Input.reshape(1,-1)))
 print("LINEAR score: ", linear.score(values, labels))
-
-col = keys
 '''
+col = keys
+
 #modelname.feature_importance_
-y = forest.feature_importances_
+y = linear.feature_importances_
 #plot
 fig, ax = plt.subplots() 
 width = 0.4 # the width of the bars 
@@ -454,21 +472,21 @@ width = 0.15
 p1 = ax.bar(ind, major62, width, color='red', bottom=0)
 p2 = ax.bar(ind+width, major63, width, color='green', bottom=0)
 p3 = ax.bar(ind+ (2*width), major2, width, color='yellow', bottom=0)
-ax.set_title('Contribution of all feature for a particular \n sample of flower ')
+ax.set_title('Contribution of all features for a major ')
 ax.set_xticks(ind + width / 2)
 ax.set_xticklabels(col, rotation = 90)
 ax.legend((p1[0], p2[0] ,p3[0]), ('62', '63', '2' ) , bbox_to_anchor=(1.04,1), loc="upper left")
 ax.autoscale_view()
 plt.show()
-
-
 '''
+
+
 print('2A Returns...')
 compareValues(processInput(fake2AInput()))
 print('12 Returns...')
 compareValues(processInput(fake12Input()))
 print('6-2 Returns...')
 compareValues(processInput(fake6_2Input()))
-
 '''
-userInput = {}
+#userInput = {}
+'''
