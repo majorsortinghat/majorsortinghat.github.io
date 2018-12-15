@@ -15,7 +15,7 @@ from . import APP_STATIC
 from wtforms import Form, RadioField, StringField, validators
 from treeinterpreter import treeinterpreter as ti
 
-hats = Blueprint('hats', __name__)
+bp = Blueprint('hats', __name__)
 
 
 with open(os.path.join(APP_STATIC, 'keys.txt'), 'r') as file:
@@ -39,7 +39,7 @@ with open(os.path.join(APP_STATIC, 'majorTranslator.json'), 'r') as file:
 with open(os.path.join(APP_STATIC, 'major_Descriptions_quote.json'), 'r', encoding="utf8") as file:
     major_descriptions_quote = json.load(file)
 
-@hats.route('/hats', methods=['GET', 'POST'])
+@bp.route('/hats', methods=('GET', 'POST'))
 def out():
     form = sortingQuiz(request.form)
     if request.method == "POST":
@@ -82,13 +82,13 @@ def out():
     else:
         return render_template('/hats/index.html', form = form)
 
-@hats.route('/hats/results')
+@bp.route('/hats/results')
 def results():
     return render_template('/hats/results.html', avg_ans = session['avg_ans'], avg_dist = session['avg_dist'],
      forest_ans = session['forest_ans'], forest_dist = session['forest_dist'], linear_ans = session['linear_ans'],
       linear_dist = session['linear_dist'], order = session['order'])
 
-@hats.route('/major/<major_num>')
+@bp.route('/major/<major_num>')
 def major(major_num):
     vals = []
     for key in session['order']:

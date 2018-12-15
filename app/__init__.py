@@ -4,8 +4,6 @@ from flask import Flask, request, render_template, session, redirect, Blueprint
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
 APP_STATIC = os.path.join(APP_ROOT, 'static')
 
-def heroku_work(environ, start_response):
-    return create_app()
 
 def create_app(test_config = None):
     app = Flask(__name__, instance_relative_config=True)
@@ -27,8 +25,8 @@ def create_app(test_config = None):
         pass
 
     from . import hats
-    app.register_blueprint(hats.hats)
-    app.add_url_rule('/hats', endpoint='out')
+    app.register_blueprint(hats.bp)
+    # app.add_url_rule('/hats', endpoint='out')
 
     @app.route('/')
     def index():
@@ -41,9 +39,7 @@ def create_app(test_config = None):
     @app.route('/dataset')
     def dataset():
         return render_template('dataset.html')
+
     return app
 
-if __name__ == "__main__":
-    FLASK_APP = create_app()
-    app = FLASK_APP
-    app.run()
+
